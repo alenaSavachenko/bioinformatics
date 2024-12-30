@@ -1,8 +1,5 @@
 Welcome! 
 
-This is a course DSFB portfolio. It covers reproducible science, 
-version control, code and data sharing in different ways,
-collaboration, security, databases, and communicating data. 
+This is a  DSFB portfolio.
 
-
-The **bookdown** book:  https://alenagrrr3.github.io/pds_portfolio_alena_savachenko/
+The **bookdown** book:  
