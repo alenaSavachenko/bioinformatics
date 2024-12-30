@@ -1,0 +1,13 @@
+sample;gene;start;Column4;Column5;Column6;Column7;Column8;Column9;mutation;Column11
+1;A2ML1;144568;genome.wustl.edu;37;12;8994100;8994100;+;Missense_Mutation;SNP
+2;AADAC;13;genome.wustl.edu;37;3;151545656;151545656;+;Missense_Mutation;SNP
+3;AADAT;51166;genome.wustl.edu;37;4;170991750;170991750;+;Silent;SNP
+4;AASS;10157;genome.wustl.edu;37;7;121756793;121756793;+;Missense_Mutation;SNP
+5;ABAT;0;genome.wustl.edu;37;16;8857972;8857962;+;Silent;SNP
+6;ABCA3;21;genome.wustl.edu;37;16;2335611;2335611;+;Missense_Mutation;SNP
+7;A2ML1;144568;genome.wustl.edu;37;12;8994108;8994108;+;Missense_Mutation;SNP
+8;AADAC;13;genome.wustl.edu;37;3;151545656;151545656;+;Silent;SNP
+9;AADAT;51166;genome.wustl.edu;37;4;170991750;170991750;+;Silent;SNP
+10;AASS;10157;genome.wustl.edu;37;7;121756793;121756793;+;Silent;SNP
+11;ABAT;0;genome.wustl.edu;37;16;8857982;8857982;+;Silent;SNP
+12;ABCA3;21;genome.wustl.edu;37;16;2335631;2335631;+;Silent;SNP

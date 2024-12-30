@@ -1,0 +1,89 @@
+SELECT *
+  FROM movies
+ ORDER BY title ASC;
+
+SELECT *
+  FROM movies
+ WHERE year   > 2010
+   AND rating = 'PG';
+
+
+SELECT genre,
+       AVG(rating) AS avg_rating
+  FROM movies
+ GROUP BY genre
+HAVING AVG(rating) > 8
+
+*   выбрать жанр, посчитать средний rating  (другая колонка) , затем пост фильтр
+
+SELECT MIN(release_year)
+  FROM movies
+ WHERE genre = 'Drama';
+
+* найти минимальный год выпуска, из колонки кино, где жанр драма
+
+SELECT COUNT(*)
+  FROM movies;
+
+* посчитать все фильмы из колонки фильмы
+
+
+SELECT AVG(rating)
+  FROM movies
+ WHERE genre = 'Drama';
+
+ * посчитать средний рейтинг для заданной колонки 
+ 
+ 
+SELECT SUM(budget)
+  FROM movies
+ WHERE genre = 'Drama';
+
+
+SELECT movies.title,
+       movies.genre,
+       reviews.review
+  FROM movies
+ INNER JOIN reviews
+    ON movies.id = reviews.movie_id;
+
+SELECT movies.title,
+       movies.genre,
+       reviews.review
+  FROM movies
+  LEFT JOIN reviews
+    ON movies.id = reviews.movie_id;
+
+(первая таблица полностью  movies, вторая, присоединяемая   reviews)
+
+SELECT movies.title,
+       movies.release_year,
+       movies.genre,
+       movies.rating,
+       actors.name
+  FROM movies
+  FULL JOIN actors
+    ON movies.id = actors.movie_id;
+
+
+CREATE TABLE movies (
+  id INTEGER NOT NULL,
+  title TEXT NOT NULL,
+  release_year INTEGER NOT NULL,
+  genre TEXT NOT NULL,
+  rating INTEGER NOT NULL,
+  PRIMARY KEY (id));
+
+ALTER TABLE movies
+  MODIFY COLUMN release_year DATE NOT NULL
+
+DROP TABLE movies
+
+
+INSERT INTO movies (id, title, release_year, genre, rating)
+VALUES (1, 'The Shawshank Redemption', 1994, 'Drama', 9);
+
+UPDATE movies
+SET rating = 8
+WHERE release_year > 2000;
+

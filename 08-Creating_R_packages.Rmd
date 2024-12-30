@@ -1,0 +1,122 @@
+# Creating R packages
+
+
+   <h3> Creating R packages  </h3>
+   <h4> Create your own package and publish it on Github  </h4>
+
+
+<div class="azure"> 
+To complete this portfolio assingment you need to perform the following steps:
+
+    From your collection of RMarkdown files, collect 1 or a few that you know contain duplication of code (which should be fixed by writing a function). If there are already functions in your RMarkdown files, you can also select those
+    Setup a new RStudio project with an R package (think about a cool name* - cannot included special character and spaces), linked to a github repo in your Github account
+    Transfer the RMarkdown files that you selected in step 1 (and all their dependencies like data and scripts) to your new package (put them in the appropriate folders).
+    Using what you have learnt so far (and what you can read from https://r-pkgs.org/index.html and https://emilyriederer.netlify.app/post/rmarkdown-driven-development/), transform your RMarkdown files into one R package. Publish the link to this package in your portfolio:
+
+*When choosing a name for a package, this quote from might help:
+
+“Side-note, if you are to create an R package, you need a name. It needs to be unique, especially if you plan on getting your package on CRAN. The {available} package can help you evaluate possible names to make sure they do not clash with other names and that they do not mean something rude.”
+
+We do not appreciate package names including offensive words
+
+Use this code to check the name you would like to use:
+
+library(available)
+available("your_intended_package_name")
+
+To pass this assignment, your new package should at least include:
+
+    A properly formatted DESCRIPTION file, with all the fields including relevant information (so change the default values)
+    4 different functions that you wrote and with proper documentation, using roxygen2 comments
+    A NAMESPACE file, generated with the command devtools::document()
+    1 Raw dataset that is documented and cleaned into a clean dataset. This clean dataset should be accessible inside your package. This means that if I install your package from Github, I would be able to call data(<dataset_name>, <package_name>) to load the cleaned dataset of interest in the Global Environment.
+    One vignette that is accessible via the command browseVignettes(<package_name>) or vignette(<package_name>)
+    The package installs from Github without errors when I run: devtools::install_github("account_name/package_name")
+
+
+</div>
+
+[link to package  source code :](https://github.com/alenagrrr3/dscurve)
+
+
+Install package from github. View dataset
+
+```{r ,warning=FALSE, error=FALSE}
+
+library("devtools")
+
+install_github("alenagrrr3/dscurve")
+
+library(dscurve)
+
+try(data(package = "dscurve"), silent = TRUE )
+
+data(celegance)
+
+
+head(celegance)
+
+
+
+
+```
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(dscurve)
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+
+```
+
+
+
+```{r, message=FALSE, warning=FALSE}
+
+
+df <- data.frame(celegance)
+
+components <-c("2,6-diisopropylnaphthalene","S-medium","naphthalene", "decane")
+
+dscurve::dosisresponse(df,components)
+
+```
+
+
+<div class="pd22" > </div>
+
+```{r}
+dscurve::basestats(df)
+```
+
+
+<div class="pd22" > </div>
+
+
+<h3>  Vignettes  </h3>
+
+
+```{r, eval=FALSE}
+
+
+browseVignettes("dscurve")
+
+
+```
+
+<div class="pd22" > </div>
+
+<div class="pd22" > </div>
+
+
+
+<object data="assets/about.pdf" type="application/pdf" width="100%" height="750px">
+    <embed src="assets/about.pdf">
+</object>
+
+
+
+
+
+

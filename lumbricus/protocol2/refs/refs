@@ -1,0 +1,23 @@
+
+ 
+reference genome: https://pmc.ncbi.nlm.nih.gov/articles/PMC10799228/#T1
+
+ protein dataset comes from OrthoDB, Arthropoda  : https://bioinf.uni-greifswald.de/bioinf/partitioned_odb11/
+ 
+https://ftp.ensembl.org/pub/rapid-release/species/Lumbricus_terrestris/GCA_949752735.1/ensembl/genome/ 
+reference transcriptome:
+run accession: ERR10851549
+https://www.ebi.ac.uk/ena/browser/view/PRJEB59399
+ 
+ GeneMark  Prothint:
+https://github.com/gatech-genemark/ProtHint
+
+GeneMark ET:
+
+https://exon.gatech.edu/GeneMark/license_download.cgi
+
+ORTHO DB:
+
+https://bioinf.uni-greifswald.de/bioinf/partitioned_odb11/
+
+

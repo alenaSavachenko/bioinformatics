@@ -1,0 +1,58 @@
+---
+title: "Plan van aanpak Regenworm"
+author: "Laisja Thomasia  & Alena"
+date: "2024-11-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Achtergrond**
+
+Regenwormen zijn bodembewonende wormen die behoren tot de familie Lumbricidae. Regenwormen spelen een heel belangrijke rol in het ecosysteem, vooral in de bodem. Regenwormen zijn bekend om hun vermogen om organisch materiaal, zoals dode bladeren en plantenresten, af te breken en te verwerken tot humus, een voedzame stof die belangrijk is voor planten. Lumbricus terrestris, ook wel de gewone regenworm of zandworm genoemd, is een van de bekendste en grootste soorten regenwormen. Volwassen Lumbricus kunnen tussen de de 20 en 30 cm lang worden, en in uitzonderlijke gevallen zelfs tot 40 cm. Lumbricus terrestris hebben een een roze-bruine kleur en is voorzien van segmenten, met een duidelijk zichtbaar clitellum. Ze hebben ook een lichaam die cilindrisch is, met een glad oppervlak en segmenten die door een dunne slijmlaag verbonden zijn. in dit project wordt er een genoom annotatie uitgevoerd op Lumbricus terrestris. Genoomannotatie is het proces waarbij wetenschappers de verschillende functies van de genen en andere elementen binnen het genoom van een organisme identificeren en labelen. Het doel van genoomannotatie is om de informatie in het DNA te begrijpen, zodat onderzoekers kunnen bepalen welke stukken van het genoom coderen voor eiwitten, welke functies deze eiwitten hebben, en hoe ze bijdragen aan de werking van de cel of het organisme. Dit wordt uitgevoerd met de behulp van C.elegans als basemodel voor L. terrestris. Dit is omdat C. elegans goed geannoteerd is en als modelorganisme gebruikt kan worden voor de genoom annotatieprocess van Lumbricus terrestris. Doordat het genoom van L terrestris niet volledig geannoteerd is is het doel van dit onderzoek om een genoomannotatie uit te voeren op L. terrestris door C.elegans te gebruiken als basemodel. Dit wordt samen uitgevoerd met een positieve control om ons resultaten te verifieren
+
+Als onderzoeksvraag hebben wij “Hoe draagt de genoomannotatie van Lumbricus terrestris bij aan het inzicht in de genetische architectuur en functionele complexiteit van dit organisme ?”
+Met als deelvragen 
+
+1.	Welke soort genetische elementen komen voor in L.terrestris ? 
+2.	Uit hoeveel procent herhalende sequenties bestaat de genoom van L.terrestris ?
+3.	Hoe verschilt de genoomstructuur van Lumbricus terrestris van andere modelorganismen, zoals C. elegans of de muis (Mus musculus) ? 
+4.	Welke evolutionaire patronen kunnen worden herkend door de vergelijking van Lumbricus terrestris met andere organismen ? 
+Om deze vragen te kunnen beantwoorden is dit project onderveeld in twee delen. Eerste deel is de impact van herhalende sequenties op de genoomstructuur en de tweede identificatie en functionele annotaties van coderende eiwitten. 
+Als positieve controle wordt de muis (Mus musculus) gebruikt. Het genoom van de muis is compleet en nauwkeurig geannoteerd. Hoewel de muis een zoogdier is en Lumbricus terrestris een annelide (ringworm), is de muis een evolutionair model dat genen en genoomstructuren deelt met veel soorten, wat helpt om resultaten te verifieren.
+
+Workflow: Herhalende Sequenties identificeren in Lumbricus terrestris met C. elegans als Model en de Muis als Positieve Controle
+Stap 1: Verkrijg Genoomdata van Lumbricus terrestris, C. elegans en de Muis
+Acties:
+1.	Lumbricus terrestris Genoom: Verkrijg de genoomdata van Lumbricus terrestris in FASTA- bestand
+2.	C. elegans Genoom: Verkrijg het genoom van C. elegans als base model voor genoomvergelijking en herhalingen.
+3.	Muis Genoom: Verkrijg het genoom van de muis als positieve controle, in FASTA bestand 
+Stap 2: Herhalende Sequenties Identificeren met RepeatMasker
+Acties:
+o	RepeatMasker wordt uitgevoerd op het genoom van L.terrestris om herhalende sequenties te identificeren. RepeatMasker kan worden geinstalleerd via conda op de server. 
+o	RepeatMasker wordt dan ook uitgevoerd op de referentiegnomen van C. elegans en de muis 
+o	Output : het genereert een bestand waarin herhalende sequenties en hun locaties  zijn gemarkeerd.
+
+Stap 3: herhalende sequenties in  AUGUSTUS
+•	Acties:
+Gebruik AUGUSTUS om de herhalende sequenties in het genoom van Lumbricus terrestris te annoteren. Doe hetzelfde voor C.elegans en de muis 
+
+Stap 4: Visualisatie in IGV (Integrative Genomics Viewer)
+•	Doel: Visualiseer de herhalende sequenties en de geannoteerde genen voor alle drie de organismen.
+•	Acties:
+1.	Herhalende Sequenties in IGV: Converteer de output van RepeatMasker (in BED of GFF-formaat) naar een formaat dat kan worden gevisualiseerd in IGV.
+	Herhalende sequenties worden gemarkeerd in de genoomvisualisatie en kunnen worden vergeleken tussen de drie organismen.
+2.	Genannotaties in IGV: Converteer de AUGUSTUS-output naar GFF3 of GTF-formaat en laad deze in IGV.
+	Visualiseer genen, exons en introns en bekijk de overlap met herhalende sequenties in de drie genomen.
+3.	Vergelijkende Visualisatie: Gebruik IGV om:
+	Herhalingen te vergelijken tussen Lumbricus terrestris, C. elegans, en de muis.
+	Te onderzoeken of herhalingen dicht bij genen of andere functionele regio's liggen.
+
+Stap 5: Vergelijkende Analyse van Herhalingen
+•	Doel: Vergelijk herhalingen in Lumbricus terrestris met C. elegans en de muis om te begrijpen hoe herhalingen evolutionair conservatief of variabel zijn.
+•	Acties:
+1.	Herhalingen in Lumbricus terrestris vs. C. elegans: Vergelijk de locatie en het type herhalingen in Lumbricus terrestris met die in C. elegans om te zien of er evolutionaire overeenkomsten zijn tussen deze twee nematoden.
+2.	Herhalingen in Lumbricus terrestris vs. de Muis: Vergelijk herhalingen in Lumbricus terrestris met die in de muis. Dit geeft je inzicht in hoe herhalingen in gewervelde dieren zich verhouden tot die in ongewervelde dieren.
+3.	Herhalingen in genen: Analyseer of herhalingen in Lumbricus terrestris zich in of nabij belangrijke genen bevinden, vergelijk dit met de genlocaties in C. elegans en de muis.

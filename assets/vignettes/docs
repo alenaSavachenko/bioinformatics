@@ -1,0 +1,16 @@
+
+
+delete map  from remote :
+
+git fetch  origin master
+
+git rm -rf _book
+
+
+ git commit -m "remove _book"
+
+
+ git push origin master
+
+
+

@@ -1,0 +1,45 @@
+# Read in 1975 genbank sequences.
+Quantiles of the GC contents in the training set:
+0%	0.35
+5%	0.385	10%	0.395
+15%	0.403	20%	0.41
+25%	0.416	30%	0.421
+35%	0.426	40%	0.431
+45%	0.436	50%	0.441
+55%	0.446	60%	0.452
+65%	0.46	70%	0.467
+75%	0.477	80%	0.489
+85%	0.501	90%	0.518
+95%	0.541	100%	0.622
+HMM-training the parameters...
+i= 0 bc= (0.237, 0.263, 0.263, 0.237)
+ ** building model for exons *EXON*
+start codon frequencies: ATG(1975)
+# admissible start codons and their probabilities: ATG(1), CTG(0), TTG(0)
+ number of bases in the reading frames: 585624 587599 587599
+--- frame = 0 ---    minPatSum = 233
+--- frame = 1 ---    minPatSum = 233
+--- frame = 2 ---    minPatSum = 233
+--- initial frame = 0 ---    minPatSum = 233
+--- initial frame = 1 ---    minPatSum = 233
+--- initial frame = 2 ---    minPatSum = 233
+--- internal exon terminal frame = 0 ---    minPatSum = 233
+--- internal exon terminal frame = 1 ---    minPatSum = 233
+--- internal exon terminal frame = 2 ---    minPatSum = 233
+single, initial, internal, terminal mean exon lengths :
+711	n.a.	n.a.	n.a.
+single exon : 1975
+initial exon 0 : 0
+initial exon 1 : 0
+initial exon 2 : 0
+internal exon 0 : 0
+internal exon 1 : 0
+internal exon 2 : 0
+terminal exon : 0
+Frequency of stop codons:
+tag:  511 (0.259)
+taa:  700 (0.354)
+tga:  764 (0.387)
+end *EXON*
+Storing parameters to file...
+Writing exon model parameters [1] to file /home/alena/anaconda3/envs/c/config/species/wormET0/wormET0_exon_probs.pbl.

@@ -1,0 +1,245 @@
+gene OX457036.1_t_gene3_mRNA3 transcr. 1 in sequence OX457036.1_102144-115856: Initial exon does not begin with start codon but with gaa
+gene OX457036.1_t_gene6_mRNA6 transcr. 1 in sequence OX457036.1_180282-185623: Single exon gene does not begin with start codon but with ann
+gene OX457036.1_t_gene7_mRNA7 transcr. 1 in sequence OX457036.1_225887-235418: Initial exon does not begin with start codon but with aga
+gene OX457036.1_t_gene9_mRNA9 transcr. 1 in sequence OX457036.1_345964-351295: Initial exon does not begin with start codon but with agg
+gene OX457036.1_t_gene12_mRNA12 transcr. 1 in sequence OX457036.1_411769-417637: Initial exon does not begin with start codon but with gtc
+gene OX457036.1_t_gene13_mRNA13 transcr. 1 in sequence OX457036.1_418604-428585: Initial exon does not begin with start codon but with tca
+gene OX457036.1_t_gene14_mRNA21 transcr. 1 in sequence OX457036.1_428586-437296: Initial exon does not begin with start codon but with nnn
+gene OX457036.1_t_gene15_mRNA22 transcr. 1 in sequence OX457036.1_468333-473965: Initial exon does not begin with start codon but with ttc
+gene OX457036.1_t_gene16_mRNA23 transcr. 1 in sequence OX457036.1_488481-495418: Initial exon does not begin with start codon but with aac
+gene OX457036.1_t_gene18_mRNA25 transcr. 1 in sequence OX457036.1_549522-554402: Single exon gene does not begin with start codon but with aat
+gene OX457036.1_t_gene25_mRNA32 transcr. 1 in sequence OX457036.1_793349-799539: Single exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene28_mRNA35 transcr. 1 in sequence OX457036.1_828087-833443: Single exon gene does not begin with start codon but with aaa
+gene OX457036.1_t_gene31_mRNA38 transcr. 1 in sequence OX457036.1_939570-946624: Initial exon does not begin with start codon but with cct
+gene OX457036.1_t_gene34_mRNA41 transcr. 1 in sequence OX457036.1_995660-1003555: Initial exon does not begin with start codon but with aga
+gene OX457036.1_t_gene35_mRNA42 transcr. 1 in sequence OX457036.1_1102542-1107738: Initial exon has length < 3!
+gene OX457036.1_t_gene36_mRNA45 transcr. 1 in sequence OX457036.1_1107739-1111598: Initial exon does not begin with start codon but with acg
+gene OX457036.1_t_gene36_mRNA45 transcr. 1 in sequence OX457036.1_1107739-1111598: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene37_mRNA46 transcr. 1 in sequence OX457036.1_1227964-1235673: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene50_mRNA59 transcr. 1 in sequence OX457036.1_1382767-1388011: Initial exon does not begin with start codon but with aca
+gene OX457036.1_t_gene56_mRNA65 transcr. 1 in sequence OX457036.1_1418271-1424226: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene65_mRNA74 transcr. 1 in sequence OX457036.1_1492452-1501245: Initial exon does not begin with start codon but with gca
+gene OX457036.1_t_gene73_mRNA82 transcr. 1 in sequence OX457036.1_1696383-1701967: Initial exon does not begin with start codon but with aaa
+gene OX457036.1_t_gene75_mRNA84 transcr. 1 in sequence OX457036.1_1864193-1870189: Initial exon does not begin with start codon but with tct
+gene OX457036.1_t_gene75_mRNA84 transcr. 1 in sequence OX457036.1_1864193-1870189: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene79_mRNA98 transcr. 1 in sequence OX457036.1_1958047-1966250: Initial exon does not begin with start codon but with act
+gene OX457036.1_t_gene81_mRNA100 transcr. 1 in sequence OX457036.1_2071006-2080256: Initial exon does not begin with start codon but with agc
+gene OX457036.1_t_gene81_mRNA100 transcr. 1 in sequence OX457036.1_2071006-2080256: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene85_mRNA106 transcr. 1 in sequence OX457036.1_2379310-2387763: Initial exon does not begin with start codon but with gac
+gene OX457036.1_t_gene87_mRNA112 transcr. 1 in sequence OX457036.1_2561265-2567109: Initial exon does not begin with start codon but with tgg
+gene OX457036.1_t_gene87_mRNA112 transcr. 1 in sequence OX457036.1_2561265-2567109: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene93_mRNA124 transcr. 1 in sequence OX457036.1_2975037-2982552: Initial exon does not begin with start codon but with acg
+gene OX457036.1_t_gene98_mRNA130 transcr. 1 in sequence OX457036.1_3121791-3127296: Initial exon does not begin with start codon but with tgg
+gene OX457036.1_t_gene100_mRNA132 transcr. 1 in sequence OX457036.1_3169142-3174603: Initial exon does not begin with start codon but with nnn
+gene OX457036.1_t_gene100_mRNA132 transcr. 1 in sequence OX457036.1_3169142-3174603: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene102_mRNA134 transcr. 1 in sequence OX457036.1_3254876-3258078: Initial exon does not begin with start codon but with tgc
+gene OX457036.1_t_gene103_mRNA135 transcr. 1 in sequence OX457036.1_3258079-3261568: Single exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene105_mRNA137 transcr. 1 in sequence OX457036.1_3297799-3304519: Initial exon does not begin with start codon but with tcg
+gene OX457036.1_t_gene106_mRNA138 transcr. 1 in sequence OX457036.1_3359681-3374933: Initial exon does not begin with start codon but with tac
+gene OX457036.1_t_gene107_mRNA139 transcr. 1 in sequence OX457036.1_3570104-3579686: Initial exon does not begin with start codon but with ccc
+gene OX457036.1_t_gene108_mRNA143 transcr. 1 in sequence OX457036.1_3648454-3654286: Single exon gene does not begin with start codon but with aaa
+gene OX457036.1_t_gene110_mRNA148 transcr. 1 in sequence OX457036.1_3680134-3686759: Initial exon does not begin with start codon but with agt
+gene OX457036.1_t_gene110_mRNA148 transcr. 1 in sequence OX457036.1_3680134-3686759: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene115_mRNA168 transcr. 1 in sequence OX457036.1_3861322-3869876: Initial exon does not begin with start codon but with gac
+gene OX457036.1_t_gene117_mRNA171 transcr. 1 in sequence OX457036.1_3896603-3901932: Single exon gene does not begin with start codon but with att
+gene OX457036.1_t_gene119_mRNA173 transcr. 1 in sequence OX457036.1_3930278-3940123: Initial exon does not begin with start codon but with gaa
+gene OX457036.1_t_gene119_mRNA173 transcr. 1 in sequence OX457036.1_3930278-3940123: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene122_mRNA176 transcr. 1 in sequence OX457036.1_3998737-4003955: Initial exon does not begin with start codon but with gct
+gene OX457036.1_t_gene128_mRNA184 transcr. 1 in sequence OX457036.1_4536556-4541279: Initial exon does not begin with start codon but with ggc
+gene OX457036.1_t_gene132_mRNA192 transcr. 1 in sequence OX457036.1_4640716-4646111: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene140_mRNA205 transcr. 1 in sequence OX457036.1_5013697-5019623: Initial exon does not begin with start codon but with cat
+gene OX457036.1_t_gene147_mRNA214 transcr. 1 in sequence OX457036.1_5505955-5511224: Single exon gene does not begin with start codon but with gac
+gene OX457036.1_t_gene153_mRNA228 transcr. 1 in sequence OX457036.1_6794286-6799750: Single exon gene does not begin with start codon but with cta
+gene OX457036.1_t_gene173_mRNA268 transcr. 1 in sequence OX457036.1_9910247-9921061: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene178_mRNA273 transcr. 1 in sequence OX457036.1_9979431-9986135: Initial exon does not begin with start codon but with gac
+gene OX457036.1_t_gene179_mRNA274 transcr. 1 in sequence OX457036.1_9993286-10000490: Initial exon does not begin with start codon but with gag
+gene OX457036.1_t_gene180_mRNA275 transcr. 1 in sequence OX457036.1_10009217-10038260: Initial exon does not begin with start codon but with att
+gene OX457036.1_t_gene181_mRNA276 transcr. 1 in sequence OX457036.1_10082478-10095441: Initial exon does not begin with start codon but with gcg
+gene OX457036.1_t_gene182_mRNA277 transcr. 1 in sequence OX457036.1_10097694-10102280: Initial exon does not begin with start codon but with ctc
+gene OX457036.1_t_gene182_mRNA277 transcr. 1 in sequence OX457036.1_10097694-10102280: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene189_mRNA284 transcr. 1 in sequence OX457036.1_10205252-10211280: Single exon gene does not begin with start codon but with gga
+gene OX457036.1_t_gene190_mRNA285 transcr. 1 in sequence OX457036.1_10216378-10228154: Initial exon does not begin with start codon but with ggc
+gene OX457036.1_t_gene190_mRNA285 transcr. 1 in sequence OX457036.1_10216378-10228154: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene193_mRNA288 transcr. 1 in sequence OX457036.1_10250866-10263303: Initial exon does not begin with start codon but with gct
+gene OX457036.1_t_gene200_mRNA295 transcr. 1 in sequence OX457036.1_10345403-10364194: Initial exon does not begin with start codon but with agg
+gene OX457036.1_t_gene201_mRNA296 transcr. 1 in sequence OX457036.1_10364461-10369820: Single exon gene does not begin with start codon but with aga
+gene OX457036.1_t_gene202_mRNA297 transcr. 1 in sequence OX457036.1_10374730-10382407: Initial exon does not begin with start codon but with gct
+gene OX457036.1_t_gene203_mRNA298 transcr. 1 in sequence OX457036.1_10382497-10389321: Initial exon does not begin with start codon but with agg
+gene OX457036.1_t_gene204_mRNA299 transcr. 1 in sequence OX457036.1_10391569-10396787: Single exon gene does not begin with start codon but with cag
+gene OX457036.1_t_gene206_mRNA301 transcr. 1 in sequence OX457036.1_10413134-10424326: Initial exon does not begin with start codon but with tcg
+gene OX457036.1_t_gene209_mRNA304 transcr. 1 in sequence OX457036.1_10495298-10507106: Initial exon does not begin with start codon but with att
+gene OX457036.1_t_gene211_mRNA306 transcr. 1 in sequence OX457036.1_10533789-10538161: Single exon gene does not begin with start codon but with cac
+gene OX457036.1_t_gene216_mRNA311 transcr. 1 in sequence OX457036.1_10613588-10629777: Initial exon does not begin with start codon but with gat
+gene OX457036.1_t_gene221_mRNA316 transcr. 1 in sequence OX457036.1_10696814-10706294: Initial exon does not begin with start codon but with gag
+gene OX457036.1_t_gene225_mRNA322 transcr. 1 in sequence OX457036.1_10772550-10783247: Initial exon does not begin with start codon but with ggc
+gene OX457036.1_t_gene228_mRNA325 transcr. 1 in sequence OX457036.1_10831207-10841502: Initial exon does not begin with start codon but with tgg
+gene OX457036.1_t_gene229_mRNA326 transcr. 1 in sequence OX457036.1_10841503-10847628: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene234_mRNA331 transcr. 1 in sequence OX457036.1_10928283-10936080: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene237_mRNA334 transcr. 1 in sequence OX457036.1_10981454-11006179: Initial exon does not begin with start codon but with gca
+gene OX457036.1_t_gene242_mRNA339 transcr. 1 in sequence OX457036.1_11067060-11072560: Single exon gene does not begin with start codon but with nnn
+gene OX457036.1_t_gene243_mRNA340 transcr. 1 in sequence OX457036.1_11088540-11104071: Initial exon does not begin with start codon but with aag
+gene OX457036.1_t_gene244_mRNA341 transcr. 1 in sequence OX457036.1_11107302-11119488: Initial exon does not begin with start codon but with agt
+gene OX457036.1_t_gene247_mRNA344 transcr. 1 in sequence OX457036.1_11128186-11137943: Initial exon does not begin with start codon but with gaa
+gene OX457036.1_t_gene253_mRNA351 transcr. 1 in sequence OX457036.1_11195586-11198238: Single exon gene does not begin with start codon but with gac
+gene OX457036.1_t_gene255_mRNA353 transcr. 1 in sequence OX457036.1_11224642-11232126: Initial exon does not begin with start codon but with aaa
+gene OX457036.1_t_gene257_mRNA355 transcr. 1 in sequence OX457036.1_11280933-11286145: Initial exon does not begin with start codon but with aat
+gene OX457036.1_t_gene258_mRNA356 transcr. 1 in sequence OX457036.1_11305719-11308798: Initial exon does not begin with start codon but with ggg
+gene OX457036.1_t_gene259_mRNA357 transcr. 1 in sequence OX457036.1_11308799-11313807: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene261_mRNA359 transcr. 1 in sequence OX457036.1_11337441-11356370: Initial exon does not begin with start codon but with ggc
+gene OX457036.1_t_gene263_mRNA361 transcr. 1 in sequence OX457036.1_11422172-11435579: Initial exon does not begin with start codon but with gac
+gene OX457036.1_t_gene286_mRNA385 transcr. 1 in sequence OX457036.1_11669977-11680124: Initial exon does not begin with start codon but with aga
+gene OX457036.1_t_gene296_mRNA397 transcr. 1 in sequence OX457036.1_11777360-11784303: Initial exon does not begin with start codon but with tgg
+gene OX457036.1_t_gene302_mRNA403 transcr. 1 in sequence OX457036.1_11831195-11840855: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene320_mRNA430 transcr. 1 in sequence OX457036.1_11972123-11974375: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene329_mRNA439 transcr. 1 in sequence OX457036.1_12028102-12034370: Initial exon does not begin with start codon but with ttt
+gene OX457036.1_t_gene333_mRNA444 transcr. 1 in sequence OX457036.1_12068482-12078355: Initial exon does not begin with start codon but with aag
+gene OX457036.1_t_gene336_mRNA447 transcr. 1 in sequence OX457036.1_12103654-12107566: Initial exon does not begin with start codon but with gtt
+gene OX457036.1_t_gene339_mRNA452 transcr. 1 in sequence OX457036.1_12133940-12144845: Initial exon does not begin with start codon but with aca
+gene OX457036.1_t_gene345_mRNA458 transcr. 1 in sequence OX457036.1_12158878-12167080: Initial exon does not begin with start codon but with tgg
+gene OX457036.1_t_gene353_mRNA467 transcr. 1 in sequence OX457036.1_12253460-12272906: Initial exon does not begin with start codon but with tca
+gene OX457036.1_t_gene363_mRNA478 transcr. 1 in sequence OX457036.1_12439179-12444479: Initial exon does not begin with start codon but with ggg
+gene OX457036.1_t_gene371_mRNA486 transcr. 1 in sequence OX457036.1_12528860-12534204: Single exon gene does not begin with start codon but with gga
+gene OX457036.1_t_gene372_mRNA487 transcr. 1 in sequence OX457036.1_12550006-12558476: Initial exon does not begin with start codon but with cgc
+gene OX457036.1_t_gene376_mRNA491 transcr. 1 in sequence OX457036.1_12635558-12646780: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene377_mRNA492 transcr. 1 in sequence OX457036.1_12646781-12657708: Initial exon does not begin with start codon but with aag
+gene OX457036.1_t_gene383_mRNA499 transcr. 1 in sequence OX457036.1_12739368-12753619: Initial exon does not begin with start codon but with gat
+gene OX457036.1_t_gene388_mRNA504 transcr. 1 in sequence OX457036.1_12846190-12856900: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene391_mRNA507 transcr. 1 in sequence OX457036.1_12960383-12967876: Initial exon does not begin with start codon but with cgc
+gene OX457036.1_t_gene395_mRNA512 transcr. 1 in sequence OX457036.1_13027769-13033390: Initial exon does not begin with start codon but with gag
+gene OX457036.1_t_gene397_mRNA514 transcr. 1 in sequence OX457036.1_13051998-13056982: Initial exon does not begin with start codon but with acg
+gene OX457036.1_t_gene402_mRNA519 transcr. 1 in sequence OX457036.1_13140825-13161161: Initial exon does not begin with start codon but with att
+gene OX457036.1_t_gene413_mRNA530 transcr. 1 in sequence OX457036.1_13397191-13405858: Initial exon does not begin with start codon but with ggg
+gene OX457036.1_t_gene418_mRNA535 transcr. 1 in sequence OX457036.1_13484649-13489920: Initial exon does not begin with start codon but with tgt
+gene OX457036.1_t_gene423_mRNA541 transcr. 1 in sequence OX457036.1_13594277-13597795: Initial exon does not begin with start codon but with tcg
+gene OX457036.1_t_gene425_mRNA543 transcr. 1 in sequence OX457036.1_13602291-13606653: Initial exon does not begin with start codon but with ata
+gene OX457036.1_t_gene426_mRNA544 transcr. 1 in sequence OX457036.1_13606654-13620185: Initial exon does not begin with start codon but with aaa
+gene OX457036.1_t_gene431_mRNA550 transcr. 1 in sequence OX457036.1_13669051-13674619: Initial exon does not begin with start codon but with ttt
+gene OX457036.1_t_gene434_mRNA554 transcr. 1 in sequence OX457036.1_13757095-13762171: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene435_mRNA555 transcr. 1 in sequence OX457036.1_13762172-13772308: Initial exon does not begin with start codon but with cga
+gene OX457036.1_t_gene441_mRNA561 transcr. 1 in sequence OX457036.1_13839972-13854769: Initial exon does not begin with start codon but with tac
+gene OX457036.1_t_gene445_mRNA566 transcr. 1 in sequence OX457036.1_13901788-13906868: Initial exon does not begin with start codon but with gga
+gene OX457036.1_t_gene445_mRNA566 transcr. 1 in sequence OX457036.1_13901788-13906868: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene446_mRNA567 transcr. 1 in sequence OX457036.1_13906869-13911761: Initial exon does not begin with start codon but with tgg
+gene OX457036.1_t_gene447_mRNA568 transcr. 1 in sequence OX457036.1_13911762-13923073: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene459_mRNA582 transcr. 1 in sequence OX457036.1_14092369-14102667: Initial exon does not begin with start codon but with aga
+gene OX457036.1_t_gene460_mRNA583 transcr. 1 in sequence OX457036.1_14110130-14128285: Initial exon does not begin with start codon but with gga
+gene OX457036.1_t_gene471_mRNA598 transcr. 1 in sequence OX457036.1_14313501-14330986: Initial exon does not begin with start codon but with att
+gene OX457036.1_t_gene474_mRNA601 transcr. 1 in sequence OX457036.1_14364215-14373980: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene476_mRNA603 transcr. 1 in sequence OX457036.1_14392406-14404202: Initial exon does not begin with start codon but with gaa
+gene OX457036.1_t_gene476_mRNA603 transcr. 1 in sequence OX457036.1_14392406-14404202: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene478_mRNA605 transcr. 1 in sequence OX457036.1_14461152-14466403: Single exon gene does not begin with start codon but with tca
+gene OX457036.1_t_gene479_mRNA606 transcr. 1 in sequence OX457036.1_14473081-14492232: Initial exon does not begin with start codon but with cca
+gene OX457036.1_t_gene481_mRNA609 transcr. 1 in sequence OX457036.1_14513472-14521008: Initial exon does not begin with start codon but with aag
+gene OX457036.1_t_gene482_mRNA610 transcr. 1 in sequence OX457036.1_14545906-14556390: Initial exon does not begin with start codon but with agc
+gene OX457036.1_t_gene484_mRNA615 transcr. 1 in sequence OX457036.1_14609593-14636959: Initial exon does not begin with start codon but with act
+gene OX457036.1_t_gene487_mRNA618 transcr. 1 in sequence OX457036.1_14656204-14668619: Initial exon does not begin with start codon but with gat
+gene OX457036.1_t_gene489_mRNA620 transcr. 1 in sequence OX457036.1_14702303-14705945: Initial exon does not begin with start codon but with cac
+gene OX457036.1_t_gene491_mRNA623 transcr. 1 in sequence OX457036.1_14749863-14764227: Initial exon does not begin with start codon but with agg
+gene OX457036.1_t_gene493_mRNA625 transcr. 1 in sequence OX457036.1_14783001-14800947: Initial exon does not begin with start codon but with acg
+gene OX457036.1_t_gene500_mRNA632 transcr. 1 in sequence OX457036.1_14921870-14932479: Initial exon does not begin with start codon but with atc
+gene OX457036.1_t_gene502_mRNA634 transcr. 1 in sequence OX457036.1_14981346-14987357: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene505_mRNA637 transcr. 1 in sequence OX457036.1_15032110-15044241: Initial exon does not begin with start codon but with ccc
+gene OX457036.1_t_gene512_mRNA646 transcr. 1 in sequence OX457036.1_15158677-15193903: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene513_mRNA647 transcr. 1 in sequence OX457036.1_15197718-15206715: Initial exon does not begin with start codon but with ccg
+gene OX457036.1_t_gene516_mRNA650 transcr. 1 in sequence OX457036.1_15241512-15258529: Initial exon does not begin with start codon but with ttt
+gene OX457036.1_t_gene522_mRNA658 transcr. 1 in sequence OX457036.1_15382172-15393407: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene523_mRNA659 transcr. 1 in sequence OX457036.1_15396679-15413245: Initial exon does not begin with start codon but with ggc
+gene OX457036.1_t_gene525_mRNA661 transcr. 1 in sequence OX457036.1_15466614-15490650: Initial exon does not begin with start codon but with cag
+gene OX457036.1_t_gene528_mRNA664 transcr. 1 in sequence OX457036.1_15551222-15559522: Initial exon does not begin with start codon but with tgg
+gene OX457036.1_t_gene531_mRNA667 transcr. 1 in sequence OX457036.1_15619757-15631432: Initial exon does not begin with start codon but with ttt
+gene OX457036.1_t_gene533_mRNA669 transcr. 1 in sequence OX457036.1_15648400-15656275: Initial exon does not begin with start codon but with tcg
+gene OX457036.1_t_gene536_mRNA672 transcr. 1 in sequence OX457036.1_15689424-15692016: Initial exon does not begin with start codon but with agt
+gene OX457036.1_t_gene542_mRNA679 transcr. 1 in sequence OX457036.1_15776588-15783847: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene548_mRNA686 transcr. 1 in sequence OX457036.1_15849091-15856449: Initial exon does not begin with start codon but with gac
+gene OX457036.1_t_gene549_mRNA687 transcr. 1 in sequence OX457036.1_15865698-15871891: Initial exon does not begin with start codon but with gcg
+gene OX457036.1_t_gene550_mRNA688 transcr. 1 in sequence OX457036.1_15897477-15904571: Initial exon does not begin with start codon but with agg
+gene OX457036.1_t_gene554_mRNA692 transcr. 1 in sequence OX457036.1_15945308-15950870: Initial exon does not begin with start codon but with gac
+gene OX457036.1_t_gene557_mRNA701 transcr. 1 in sequence OX457036.1_16029826-16043888: Initial exon does not begin with start codon but with aga
+gene OX457036.1_t_gene560_mRNA705 transcr. 1 in sequence OX457036.1_16110064-16156047: Initial exon does not begin with start codon but with gga
+gene OX457036.1_t_gene567_mRNA714 transcr. 1 in sequence OX457036.1_16218716-16244266: Initial exon does not begin with start codon but with aag
+gene OX457036.1_t_gene568_mRNA715 transcr. 1 in sequence OX457036.1_16277390-16292370: Initial exon does not begin with start codon but with atc
+gene OX457036.1_t_gene570_mRNA717 transcr. 1 in sequence OX457036.1_16303384-16314512: Initial exon does not begin with start codon but with atc
+gene OX457036.1_t_gene571_mRNA718 transcr. 1 in sequence OX457036.1_16319223-16330199: Initial exon does not begin with start codon but with cac
+gene OX457036.1_t_gene572_mRNA719 transcr. 1 in sequence OX457036.1_16345315-16362379: Initial exon does not begin with start codon but with tgg
+gene OX457036.1_t_gene581_mRNA729 transcr. 1 in sequence OX457036.1_16445729-16449359: Initial exon does not begin with start codon but with agg
+gene OX457036.1_t_gene583_mRNA731 transcr. 1 in sequence OX457036.1_16482050-16490699: Initial exon does not begin with start codon but with cgg
+gene OX457036.1_t_gene584_mRNA732 transcr. 1 in sequence OX457036.1_16491313-16495315: Initial exon does not begin with start codon but with ata
+gene OX457036.1_t_gene584_mRNA732 transcr. 1 in sequence OX457036.1_16491313-16495315: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene585_mRNA733 transcr. 1 in sequence OX457036.1_16495316-16503463: Initial exon does not begin with start codon but with gga
+gene OX457036.1_t_gene591_mRNA739 transcr. 1 in sequence OX457036.1_16600202-16609093: Initial exon does not begin with start codon but with tac
+gene OX457036.1_t_gene593_mRNA741 transcr. 1 in sequence OX457036.1_16643179-16655152: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene599_mRNA747 transcr. 1 in sequence OX457036.1_16731342-16734506: Initial exon does not begin with start codon but with gaa
+gene OX457036.1_t_gene603_mRNA751 transcr. 1 in sequence OX457036.1_16813342-16817285: Single exon gene does not begin with start codon but with aca
+gene OX457036.1_t_gene604_mRNA752 transcr. 1 in sequence OX457036.1_16817286-16823059: Initial exon does not begin with start codon but with tac
+gene OX457036.1_t_gene611_mRNA759 transcr. 1 in sequence OX457036.1_16958336-16962778: Single exon gene does not begin with start codon but with agc
+gene OX457036.1_t_gene614_mRNA762 transcr. 1 in sequence OX457036.1_16978735-16983905: Single exon gene does not begin with start codon but with aaa
+gene OX457036.1_t_gene617_mRNA765 transcr. 1 in sequence OX457036.1_17042978-17057198: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene619_mRNA767 transcr. 1 in sequence OX457036.1_17073623-17079359: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene621_mRNA769 transcr. 1 in sequence OX457036.1_17094834-17130276: Initial exon does not begin with start codon but with gtt
+gene OX457036.1_t_gene623_mRNA771 transcr. 1 in sequence OX457036.1_17190425-17193814: Single exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene626_mRNA775 transcr. 1 in sequence OX457036.1_17257381-17271171: Initial exon does not begin with start codon but with ctc
+gene OX457036.1_t_gene631_mRNA780 transcr. 1 in sequence OX457036.1_17348930-17377096: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene632_mRNA781 transcr. 1 in sequence OX457036.1_17378010-17381863: Single exon gene does not begin with start codon but with tcg
+gene OX457036.1_t_gene640_mRNA798 transcr. 1 in sequence OX457036.1_17497068-17525209: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene642_mRNA800 transcr. 1 in sequence OX457036.1_17529650-17541578: Initial exon does not begin with start codon but with aag
+gene OX457036.1_t_gene645_mRNA803 transcr. 1 in sequence OX457036.1_17596130-17619797: Initial exon does not begin with start codon but with ggg
+gene OX457036.1_t_gene647_mRNA805 transcr. 1 in sequence OX457036.1_17629290-17632389: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene649_mRNA807 transcr. 1 in sequence OX457036.1_17634550-17639074: Initial exon does not begin with start codon but with gga
+gene OX457036.1_t_gene655_mRNA815 transcr. 1 in sequence OX457036.1_17744508-17750240: Initial exon does not begin with start codon but with agg
+gene OX457036.1_t_gene660_mRNA820 transcr. 1 in sequence OX457036.1_17835220-17838511: Initial exon does not begin with start codon but with gct
+gene OX457036.1_t_gene662_mRNA823 transcr. 1 in sequence OX457036.1_17849842-17853785: Initial exon does not begin with start codon but with gaa
+gene OX457036.1_t_gene663_mRNA824 transcr. 1 in sequence OX457036.1_17853786-17857449: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene664_mRNA825 transcr. 1 in sequence OX457036.1_17857450-17863139: Initial exon does not begin with start codon but with agt
+gene OX457036.1_t_gene672_mRNA834 transcr. 1 in sequence OX457036.1_17990480-18009219: Initial exon does not begin with start codon but with cta
+gene OX457036.1_t_gene673_mRNA835 transcr. 1 in sequence OX457036.1_18035626-18051537: Initial exon does not begin with start codon but with aga
+gene OX457036.1_t_gene677_mRNA839 transcr. 1 in sequence OX457036.1_18119255-18129507: Initial exon does not begin with start codon but with aaa
+gene OX457036.1_t_gene681_mRNA843 transcr. 1 in sequence OX457036.1_18193378-18208400: Initial exon does not begin with start codon but with tgc
+gene OX457036.1_t_gene682_mRNA844 transcr. 1 in sequence OX457036.1_18208401-18213272: Initial exon does not begin with start codon but with gtt
+gene OX457036.1_t_gene684_mRNA846 transcr. 1 in sequence OX457036.1_18217335-18223985: Initial exon does not begin with start codon but with aga
+gene OX457036.1_t_gene688_mRNA851 transcr. 1 in sequence OX457036.1_18314004-18319600: Single exon gene does not begin with start codon but with agt
+gene OX457036.1_t_gene693_mRNA856 transcr. 1 in sequence OX457036.1_18374726-18387789: Initial exon does not begin with start codon but with acg
+gene OX457036.1_t_gene696_mRNA859 transcr. 1 in sequence OX457036.1_18423734-18444918: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene700_mRNA863 transcr. 1 in sequence OX457036.1_18483239-18487988: Initial exon does not begin with start codon but with gct
+gene OX457036.1_t_gene704_mRNA867 transcr. 1 in sequence OX457036.1_18578939-18598050: Initial exon does not begin with start codon but with aga
+gene OX457036.1_t_gene706_mRNA869 transcr. 1 in sequence OX457036.1_18634893-18645146: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene708_mRNA871 transcr. 1 in sequence OX457036.1_18670706-18685076: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene724_mRNA899 transcr. 1 in sequence OX457036.1_19002118-19008622: Initial exon does not begin with start codon but with aac
+gene OX457036.1_t_gene726_mRNA901 transcr. 1 in sequence OX457036.1_19028984-19045696: Initial exon does not begin with start codon but with ggg
+gene OX457036.1_t_gene729_mRNA904 transcr. 1 in sequence OX457036.1_19078166-19090109: Initial exon does not begin with start codon but with ccg
+gene OX457036.1_t_gene729_mRNA904 transcr. 1 in sequence OX457036.1_19078166-19090109: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene730_mRNA905 transcr. 1 in sequence OX457036.1_19123375-19174501: Initial exon does not begin with start codon but with tgt
+gene OX457036.1_t_gene740_mRNA915 transcr. 1 in sequence OX457036.1_19352598-19358042: Initial exon does not begin with start codon but with aat
+gene OX457036.1_t_gene744_mRNA919 transcr. 1 in sequence OX457036.1_19434406-19465854: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene749_mRNA924 transcr. 1 in sequence OX457036.1_19606015-19611206: Single exon gene does not begin with start codon but with acg
+gene OX457036.1_t_gene751_mRNA926 transcr. 1 in sequence OX457036.1_19682132-19695097: Initial exon does not begin with start codon but with cat
+gene OX457036.1_t_gene753_mRNA930 transcr. 1 in sequence OX457036.1_19741846-19780645: Initial exon does not begin with start codon but with tcg
+gene OX457036.1_t_gene764_mRNA945 transcr. 1 in sequence OX457036.1_23014763-23023715: Initial exon does not begin with start codon but with aga
+gene OX457036.1_t_gene768_mRNA963 transcr. 1 in sequence OX457036.1_23456961-23465364: Initial exon does not begin with start codon but with tcg
+gene OX457036.1_t_gene771_mRNA969 transcr. 1 in sequence OX457036.1_23995161-24004302: Initial exon does not begin with start codon but with gtc
+gene OX457036.1_t_gene799_mRNA1026 transcr. 1 in sequence OX457036.1_29952059-29958075: Initial exon does not begin with start codon but with aca
+gene OX457036.1_t_gene799_mRNA1026 transcr. 1 in sequence OX457036.1_29952059-29958075: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene800_mRNA1027 transcr. 1 in sequence OX457036.1_30002033-30007536: Single exon gene does not begin with start codon but with cta
+gene OX457036.1_t_gene801_mRNA1028 transcr. 1 in sequence OX457036.1_30140557-30146091: Initial exon does not begin with start codon but with gat
+gene OX457036.1_t_gene803_mRNA1030 transcr. 1 in sequence OX457036.1_30446959-30515442: Initial exon does not begin with start codon but with tcg
+gene OX457036.1_t_gene810_mRNA1043 transcr. 1 in sequence OX457036.1_31074367-31080836: Initial exon does not begin with start codon but with agg
+gene OX457036.1_t_gene810_mRNA1043 transcr. 1 in sequence OX457036.1_31074367-31080836: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene812_mRNA1045 transcr. 1 in sequence OX457036.1_31440190-31447427: Initial exon does not begin with start codon but with aga
+gene OX457036.1_t_gene815_mRNA1048 transcr. 1 in sequence OX457036.1_31982116-31992214: Initial exon does not begin with start codon but with tta
+gene OX457036.1_t_gene841_mRNA1115 transcr. 1 in sequence OX457036.1_38587149-38593016: Initial exon does not begin with start codon but with cgg
+gene OX457036.1_t_gene843_mRNA1118 transcr. 1 in sequence OX457036.1_39204601-39212053: Initial exon does not begin with start codon but with acc
+gene OX457036.1_t_gene856_mRNA1149 transcr. 1 in sequence OX457036.1_43541964-43548118: Initial exon does not begin with start codon but with cta
+gene OX457036.1_t_gene867_mRNA1169 transcr. 1 in sequence OX457036.1_46355246-46360813: Initial exon has length < 3!
+gene OX457036.1_t_gene867_mRNA1169 transcr. 1 in sequence OX457036.1_46355246-46360813: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene877_mRNA1186 transcr. 1 in sequence OX457036.1_48353548-48363475: Initial exon does not begin with start codon but with cac
+gene OX457036.1_t_gene899_mRNA1228 transcr. 1 in sequence OX457036.1_53396257-53402369: Initial exon does not begin with start codon but with gag
+gene OX457036.1_t_gene912_mRNA1262 transcr. 1 in sequence OX457036.1_56743606-56749445: Single exon gene does not begin with start codon but with ctc
+gene OX457036.1_t_gene964_mRNA1375 transcr. 1 in sequence OX457036.1_70935559-70942114: Initial exon does not begin with start codon but with cca
+gene OX457036.1_t_gene965_mRNA1376 transcr. 1 in sequence OX457036.1_70984509-70990321: Initial exon does not begin with start codon but with gga
+gene OX457036.1_t_gene973_mRNA1391 transcr. 1 in sequence OX457036.1_72087260-72095563: Initial exon does not begin with start codon but with aac
+gene OX457036.1_t_gene994_mRNA1431 transcr. 1 in sequence OX457036.1_77046037-77051600: Single exon gene does not begin with start codon but with act
+gene OX457036.1_t_gene1003_mRNA1454 transcr. 1 in sequence OX457036.1_80264327-80269533: Single exon gene does not begin with start codon but with agg
+gene OX457036.1_t_gene1012_mRNA1473 transcr. 1 in sequence OX457036.1_82306032-82311964: Initial exon does not begin with start codon but with gtg
+gene OX457036.1_t_gene1018_mRNA1485 transcr. 1 in sequence OX457036.1_83519819-83526493: Terminal exon doesn't end in stop codon. Variable stopCodonExcludedFromCDS set right?
+gene OX457036.1_t_gene1029_mRNA1511 transcr. 1 in sequence OX457036.1_85356189-85367403: Initial exon does not begin with start codon but with cgt
+gene OX457036.1_t_gene1039_mRNA1542 transcr. 1 in sequence OX457036.1_87513969-87519492: Initial exon does not begin with start codon but with ttt
+gene OX457036.1_t_gene1058_mRNA1577 transcr. 1 in sequence OX457036.1_92067632-92073579: Initial exon does not begin with start codon but with agc

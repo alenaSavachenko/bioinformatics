@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Alignment. Ruwe gegevens inspecteren | Portfolio</title>
+  <meta name="description" content="Chapter 4 Alignment. Ruwe gegevens inspecteren | Portfolio" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Alignment. Ruwe gegevens inspecteren | Portfolio" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Alignment. Ruwe gegevens inspecteren | Portfolio" />
+  
+  
+  
+
+<meta name="author" content="alena savachenko" />
+
+
+<meta name="date" content="2024-12-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="samenvatting.html"/>
+<link rel="next" href="differential-gene-expression.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="./"><img src="assets/img/logo_toc.png"></a></li>
+<li><a href="./">Data science for biology </a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction. CV</a></li>
+<li class="chapter" data-level="2" data-path="genome-annotatie-ab-de-novo.html"><a href="genome-annotatie-ab-de-novo.html"><i class="fa fa-check"></i><b>2</b> Genome annotatie ab de novo.Inleiding</a></li>
+<li class="chapter" data-level="3" data-path="samenvatting.html"><a href="samenvatting.html"><i class="fa fa-check"></i><b>3</b> Samenvatting</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="samenvatting.html"><a href="samenvatting.html#training-van-het-augustus-programma-voor-het-ontdekken-van-nieuwe-genmodellen-en-hun-patronen."><i class="fa fa-check"></i><b>3.1</b> 1.Training van het AUGUSTUS-programma voor het ontdekken van nieuwe genmodellen en hun patronen.</a></li>
+<li class="chapter" data-level="3.2" data-path="samenvatting.html"><a href="samenvatting.html#de-training-van-het-augustus-programma-met-proteïne-van-langere-evolutionaire-afstand"><i class="fa fa-check"></i><b>3.2</b> 2.. De training van het AUGUSTUS-programma met proteïne van langere evolutionaire afstand</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html"><i class="fa fa-check"></i><b>4</b> Alignment. Ruwe gegevens inspecteren</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#genemarket.-model-opbouwen-protocol-1.-mrna-pijplijnne"><i class="fa fa-check"></i><b>4.1</b> GenemarkET. Model opbouwen (protocol 1). mRna pijplijnne</a></li>
+<li class="chapter" data-level="4.2" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#deel-1.-model-opbouwen"><i class="fa fa-check"></i><b>4.2</b> Deel 1. Model opbouwen</a></li>
+<li class="chapter" data-level="4.3" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#etrain-protocol7"><i class="fa fa-check"></i><b>4.3</b> Etrain (protocol7)</a></li>
+<li class="chapter" data-level="4.4" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#prothints-en-de-eiwitpijplijn"><i class="fa fa-check"></i><b>4.4</b> ProtHints en de eiwitpijplijn</a></li>
+<li class="chapter" data-level="4.5" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#prothints"><i class="fa fa-check"></i><b>4.5</b> ProtHints</a></li>
+<li class="chapter" data-level="4.6" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#protocol-2.-het-creëren-van-genstructuren-voor-training-op-basis-van-eiwitten."><i class="fa fa-check"></i><b>4.6</b> Protocol 2. Het creëren van genstructuren voor training op basis van eiwitten.</a></li>
+<li class="chapter" data-level="4.7" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#genomethreader"><i class="fa fa-check"></i><b>4.7</b> GenomeThreader</a></li>
+<li class="chapter" data-level="4.8" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#protocol-6.verwijderen-van-redundant-genstructuren-protocol-6"><i class="fa fa-check"></i><b>4.8</b> Protocol 6.Verwijderen van Redundant Genstructuren (protocol 6)</a></li>
+<li class="chapter" data-level="4.9" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#trainingsset-van-proteins.etrain"><i class="fa fa-check"></i><b>4.9</b> Trainingsset van Proteins.Etrain</a></li>
+<li class="chapter" data-level="4.10" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#prediction-met-behulp-van-extrinsiek-bewijs-protocol-11-12"><i class="fa fa-check"></i><b>4.10</b> Prediction met behulp van extrinsiek bewijs (Protocol 11-12)</a></li>
+<li class="chapter" data-level="4.11" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#identificatie-en-visualisatie"><i class="fa fa-check"></i><b>4.11</b> Identificatie en visualisatie</a></li>
+<li class="chapter" data-level="4.12" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#gen-identificatie"><i class="fa fa-check"></i><b>4.12</b> Gen-identificatie</a></li>
+<li class="chapter" data-level="4.13" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#visualisatie"><i class="fa fa-check"></i><b>4.13</b> Visualisatie</a></li>
+<li class="chapter" data-level="4.14" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#genviz"><i class="fa fa-check"></i><b>4.14</b> GenViz</a></li>
+<li class="chapter" data-level="4.15" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#jbrowse"><i class="fa fa-check"></i><b>4.15</b> JBrowse</a></li>
+<li class="chapter" data-level="4.16" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#artemis"><i class="fa fa-check"></i><b>4.16</b> Artemis</a></li>
+<li class="chapter" data-level="4.17" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#bijlage"><i class="fa fa-check"></i><b>4.17</b> Bijlage</a></li>
+<li class="chapter" data-level="4.18" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#references"><i class="fa fa-check"></i><b>4.18</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="differential-gene-expression.html"><a href="differential-gene-expression.html"><i class="fa fa-check"></i><b>5</b> Differential gene expression</a></li>
+<li class="chapter" data-level="6" data-path="creating-r-packages.html"><a href="creating-r-packages.html"><i class="fa fa-check"></i><b>6</b> Creating R packages</a></li>
+<li class="chapter" data-level="7" data-path="genvisr.html"><a href="genvisr.html"><i class="fa fa-check"></i><b>7</b> GenVisR</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="genvisr.html"><a href="genvisr.html#introduction-to-dataset"><i class="fa fa-check"></i><b>7.1</b> Introduction to dataset</a></li>
+<li class="chapter" data-level="7.2" data-path="genvisr.html"><a href="genvisr.html#implementation-genvizr"><i class="fa fa-check"></i><b>7.2</b> Implementation genVizR</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/alenagrrr3/portfolio_alena_savachenko" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Portfolio</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="alignment.-ruwe-gegevens-inspecteren" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Alignment. Ruwe gegevens inspecteren<a href="alignment.-ruwe-gegevens-inspecteren.html#alignment.-ruwe-gegevens-inspecteren" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Voor de Alignment zijn Bowtie en Tophat gebruikt. Het transcriptome ID49 is afkomstig van Project: PRJEB59399<span class="citation">(<strong>ENABrowser?</strong>)</span>, dat een verzameling genomische en transcriptomische data bevat voor Lumbricus terrestris, ook wel de gewone regenworm genoemd. Dit project is opgezet om de assemblage en annotatie van het genoom te ondersteunen. Je kunt de ruwe gegevens hier bekijken: <a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB59399" class="uri">https://www.ebi.ac.uk/ena/browser/view/PRJEB59399</a>.
+Reference genoom: <a href="https://ftp.ensembl.org/pub/rapid-release/species/Lumbricus_terrestris/GCA_949752735.1/ensembl/genome/" class="uri">https://ftp.ensembl.org/pub/rapid-release/species/Lumbricus_terrestris/GCA_949752735.1/ensembl/genome/</a></p>
+<p>Eerst wordt de index opgebouwd met bowtie2. Daarna vindt de Alignmenet plaats met Tophat. Cufflinks voegt alle reads samen tot transcripties met: cufflinks accepted_hits.bam.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb1-1" tabindex="-1"></a><span class="ex">bowtie2-build</span> <span class="at">-f</span>  Lumbricus_terrestris-GCA_949752735.1-softmasked.fa  lumter  <span class="at">--large-index</span> </span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb2-1" tabindex="-1"></a><span class="ex">tophat</span> lumter     sample_1.fastq  sample_2.fastq <span class="dt">\ </span>                          </span>
+<span id="cb2-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb2-2" tabindex="-1"></a> <span class="ex">--output-dir</span> TopHAT <span class="dt">\ </span></span>
+<span id="cb2-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb2-3" tabindex="-1"></a> </span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb3-1" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb3-2" tabindex="-1"></a> <span class="ex">cufflinks</span>  accepted_hits.bam</span>
+<span id="cb3-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb3-3" tabindex="-1"></a> </span></code></pre></div>
+Cufflink zal transcripts.gtf genereren, terwijl TopHat accepted_hits.bam aanmaakt met de resultaten van de uitlijning en een lijst van uitlijningen in jucntions.bed. Elke junction bestaat uit twee verbonden BED-blokken, waarbij elk blok zo lang is als de maximale overhang van een lees die de junction overspant. De score is het aantal uitlijningen dat de junction overspant.
+Het uitvoerbestand introns.gff bevat informatie over de strengen die gebruikt kan worden voor ET-training.
+<p>
+OX457036.1 TopHat2 intron 253060 254504 12 + . .
+</p>
+<p>Ten eerste moeten we de ruwe gegevens bekijken die we hebben van de genoom-Alignment . Elke junction bestaat uit twee verbonden BED-blokken, waarbij elk blok zo lang is als de maximale overhang van een lees die de junction overspant. De score is het aantal uitlijningen dat de junction overspant. Junctions.bed (TopHat, protocol1, script2):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb4-1" tabindex="-1"></a><span class="fu">head</span>(junctions)</span></code></pre></div>
+<pre><code>##           V1     V2     V3           V4 V5 V6     V7     V8      V9 V10    V11
+## 1 OX457036.1 135689 136300 JUNC00000001 16  - 135689 136300 255,0,0   2 143,22
+## 2 OX457036.1 136278 139661 JUNC00000002 13  - 136278 139661 255,0,0   2  22,37
+## 3 OX457036.1 139624 150988 JUNC00000003  9  - 139624 150988 255,0,0   2  37,70
+## 4 OX457036.1 150918 153142 JUNC00000004  1  - 150918 153142 255,0,0   2  70,16
+## 5 OX457036.1 150929 156647 JUNC00000005  1  - 150929 156647 255,0,0   2  59,92
+## 6 OX457036.1 155453 155919 JUNC00000006  2  - 155453 155919 255,0,0   2  92,59
+##       V12
+## 1   0,589
+## 2  0,3346
+## 3 0,11294
+## 4  0,2208
+## 5  0,5626
+## 6   0,407</code></pre>
+<p>Cufflink verwerkt de uitgelijnde RNA-Seq-reads die van Tophat komen en bouwt ze op in de transcripten en exonen.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb6-1" tabindex="-1"></a>transcripts <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;lumbricus/protocol1/data_processing/TOPHAT/transcripts.gtf&quot;</span>, <span class="at">sep=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>) </span>
+<span id="cb6-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb6-3" tabindex="-1"></a><span class="fu">colnames</span>(transcripts) <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">&quot;chr&quot;</span>, <span class="st">&quot;versie&quot;</span>, <span class="st">&quot;feature&quot;</span>, <span class="st">&quot;start&quot;</span>, <span class="st">&quot;end&quot;</span>, <span class="st">&quot;score&quot;</span>, <span class="st">&quot;strain&quot;</span>, <span class="st">&quot;v8&quot;</span>)</span>
+<span id="cb6-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb6-5" tabindex="-1"></a>transcripts  <span class="sc">%&gt;%</span>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)  <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##          chr    versie    feature  start    end
+## 1 OX457036.1 Cufflinks transcript 109191 109546
+## 2 OX457036.1 Cufflinks       exon 109191 109546
+## 3 OX457036.1 Cufflinks transcript 124949 125423
+## 4 OX457036.1 Cufflinks       exon 124949 125423
+## 5 OX457036.1 Cufflinks transcript 135006 155436
+## 6 OX457036.1 Cufflinks       exon 135006 135832</code></pre>
+<ol style="list-style-type: decimal">
+<li>We gaan de outputbestanden van Tophat+Cufflink, namelijk accepted_hits.bam en junctions.bed, in IGV zetten, samen met het transcriptbestand van Cufflinks. Eerst hebben we een bed-bestand nodig.</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb8-1" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb8-2" tabindex="-1"></a><span class="fu">awk</span> <span class="st">&#39;{if($3==&quot;exon&quot; ) {print $1,$4,$5, $7, $3 }}&#39;</span>  transcripts.gtf  <span class="op">&gt;</span> exon_ids.bed</span>
+<span id="cb8-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb8-4" tabindex="-1"></a><span class="fu">awk</span> <span class="st">&#39;{if($3==&quot;transcript&quot; ) {print $1,$4,$5, $7, $3 }}&#39;</span>  transcripts.gtf  <span class="op">&gt;</span> tranasctips_ids.b</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Bekijk de bed-bestanden voor de genoombrowser:</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb9-1" tabindex="-1"></a>exons_ids <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;lumbricus/protocol1/data_processing/TOPHAT/igv/exon_ids.bed&quot;</span>, <span class="at">sep=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>) </span>
+<span id="cb9-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb9-3" tabindex="-1"></a>transcript_ids <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;lumbricus/protocol1/data_processing/TOPHAT/igv/transctipts_ids.bed&quot;</span>, <span class="at">sep=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>) </span>
+<span id="cb9-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb9-4" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb9-5" tabindex="-1"></a><span class="fu">head</span>(exons_ids)</span></code></pre></div>
+<pre><code>##                                V1
+## 1 OX457036.1 109191 109546 . exon
+## 2 OX457036.1 124949 125423 . exon
+## 3 OX457036.1 135006 135832 - exon
+## 4 OX457036.1 136279 136300 - exon
+## 5 OX457036.1 139625 139661 - exon
+## 6 OX457036.1 150919 150988 - exon</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb11-1" tabindex="-1"></a><span class="fu">head</span>(transcript_ids)</span></code></pre></div>
+<pre><code>##                                      V1
+## 1 OX457036.1 109191 109546 . transcript
+## 2 OX457036.1 124949 125423 . transcript
+## 3 OX457036.1 135006 155436 - transcript
+## 4 OX457036.1 135006 156649 - transcript
+## 5 OX457036.1 135006 156649 - transcript
+## 6 OX457036.1 135006 156649 - transcript</code></pre>
+<p>Bekijk de exonen (diepblauw) en transcripties (lichtblauw) in IGV:</p>
+<div class="figure"><span style="display:block;" id="fig:junctions1"></span>
+<img src="lumbricus/protocol1/data_processing/TOPHAT/igv/exontranscripts.png" alt="exon-transcripts structure chr1:23kb" width="100%" />
+<p class="caption">
+Figure 4.1: exon-transcripts structure chr1:23kb
+</p>
+</div>
+<p>Vervolgens plaatsen we junctions.bed (rood) en geaccepteerde hits of reads (grijs) op dezelfde track om de exon-intronstructuur te visualiseren.</p>
+<div class="figure"><span style="display:block;" id="fig:junctions2"></span>
+<img src="lumbricus/protocol1/data_processing/TOPHAT/igv/igv_snapshot_bed_vs_juncions.png" alt="exon-intron structure chr1:23kb, reads in grey" width="100%" />
+<p class="caption">
+Figure 4.2: exon-intron structure chr1:23kb, reads in grey
+</p>
+</div>
+<p>Voordat we GeneMarkET uitvoeren, verzamelen we enkele statistieken uit de primaire analyse.
+Eerst bekijken we de gemiddelde introns, exonen en lengtes.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb13-1" tabindex="-1"></a>introns  <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;lumbricus/protocol1/data_processing/TOPHAT/introns.gff&quot;</span>, <span class="at">sep=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb13-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb13-2" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb13-3" tabindex="-1"></a><span class="fu">colnames</span>(introns) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;chr&quot;</span>,<span class="st">&quot;aligner&quot;</span>,<span class="st">&quot;structure&quot;</span>, <span class="st">&quot;start&quot;</span>, <span class="st">&quot;end&quot;</span>, <span class="st">&quot;score&quot;</span>, <span class="st">&quot;strand&quot;</span>, <span class="st">&quot;v8&quot;</span>, <span class="st">&quot;v9&quot;</span>)</span>
+<span id="cb13-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb13-4" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb13-5" tabindex="-1"></a><span class="fu">head</span>(introns)</span></code></pre></div>
+<pre><code>##          chr aligner structure  start    end score strand v8 v9
+## 1 OX457036.1 TopHat2    intron 135833 136278    16      -  .  .
+## 2 OX457036.1 TopHat2    intron 136301 139624    13      -  .  .
+## 3 OX457036.1 TopHat2    intron 139662 150918     9      -  .  .
+## 4 OX457036.1 TopHat2    intron 150989 153126     1      -  .  .
+## 5 OX457036.1 TopHat2    intron 150989 156555     1      -  .  .
+## 6 OX457036.1 TopHat2    intron 155546 155860     2      -  .  .</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb15-1" tabindex="-1"></a>introns_length <span class="ot">&lt;-</span> introns <span class="sc">%&gt;%</span>   <span class="fu">mutate</span>(<span class="at">ilength=</span>end<span class="sc">-</span>start)</span>
+<span id="cb15-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb15-3" tabindex="-1"></a>max_intron <span class="ot">&lt;-</span>  <span class="fu">max</span>(introns_length<span class="sc">$</span>ilength)  <span class="sc">%&gt;%</span>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">1</span>)</span>
+<span id="cb15-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb15-4" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb15-5" tabindex="-1"></a> avr_intron <span class="ot">&lt;-</span>  <span class="fu">mean</span>(introns_length<span class="sc">$</span>ilength)  <span class="sc">%&gt;%</span>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb16-1" tabindex="-1"></a>exons  <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;lumbricus/protocol1/data_processing/TOPHAT/transcripts.gtf&quot;</span>, <span class="at">sep=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb16-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb16-2" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb16-3" tabindex="-1"></a>exons  <span class="ot">&lt;-</span> exons <span class="sc">%&gt;%</span>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb16-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb16-4" tabindex="-1"></a><span class="fu">colnames</span>(exons) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;chr&quot;</span>,<span class="st">&quot;aligner&quot;</span>,<span class="st">&quot;structure&quot;</span>, <span class="st">&quot;start&quot;</span>, <span class="st">&quot;end&quot;</span>)</span>
+<span id="cb16-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb16-5" tabindex="-1"></a>exons_length <span class="ot">&lt;-</span> exons <span class="sc">%&gt;%</span>   <span class="fu">mutate</span>(<span class="at">elength=</span>end<span class="sc">-</span>start)</span>
+<span id="cb16-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb16-6" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb16-7" tabindex="-1"></a>max_exon <span class="ot">&lt;-</span>  <span class="fu">max</span>(exons_length<span class="sc">$</span>elength)  <span class="sc">%&gt;%</span>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">1</span>)</span>
+<span id="cb16-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb16-8" tabindex="-1"></a>max_exon</span></code></pre></div>
+<pre><code>## [1] 255549</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb18-1" tabindex="-1"></a>avr_exon <span class="ot">&lt;-</span>  <span class="fu">mean</span>(exons_length<span class="sc">$</span>elength) <span class="sc">%&gt;%</span>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p>
+maximale lengte van intron : 2.91919^{5}
+</p>
+<p>
+gemiddelde intronlengte 4760.9
+</p>
+<p>
+maximale lengte van exon : 2.55549^{5}
+</p>
+<p>
+gemiddelde lengte exon 1719.6
+</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb19-1" tabindex="-1"></a>plot</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/figures-side-1.png" width="50%" /></p>
+<div id="genemarket.-model-opbouwen-protocol-1.-mrna-pijplijnne" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> GenemarkET. Model opbouwen (protocol 1). mRna pijplijnne<a href="alignment.-ruwe-gegevens-inspecteren.html#genemarket.-model-opbouwen-protocol-1.-mrna-pijplijnne" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="deel-1.-model-opbouwen" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Deel 1. Model opbouwen<a href="alignment.-ruwe-gegevens-inspecteren.html#deel-1.-model-opbouwen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Het script bed_to_gff.pl van GeneMarkES maakt introns.gff aan vanuit de TopHat junctions.bed. Dit bestand bevat informatie over de strengen en kan direct gebruikt worden met GeneMarkET (protocol 1, script 2).</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb20-1" tabindex="-1"></a>introns  <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;lumbricus/protocol1/data_processing/TOPHAT/introns.gff&quot;</span>, <span class="at">sep=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb20-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb20-2" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb20-3" tabindex="-1"></a><span class="fu">colnames</span>(introns) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;chr&quot;</span>,<span class="st">&quot;aligner&quot;</span>,<span class="st">&quot;structure&quot;</span>, <span class="st">&quot;start&quot;</span>, <span class="st">&quot;end&quot;</span>, <span class="st">&quot;score&quot;</span>, <span class="st">&quot;strand&quot;</span>, <span class="st">&quot;v8&quot;</span>, <span class="st">&quot;v9&quot;</span>)</span>
+<span id="cb20-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb20-4" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb20-5" tabindex="-1"></a><span class="fu">head</span>(introns)</span></code></pre></div>
+<pre><code>##          chr aligner structure  start    end score strand v8 v9
+## 1 OX457036.1 TopHat2    intron 135833 136278    16      -  .  .
+## 2 OX457036.1 TopHat2    intron 136301 139624    13      -  .  .
+## 3 OX457036.1 TopHat2    intron 139662 150918     9      -  .  .
+## 4 OX457036.1 TopHat2    intron 150989 153126     1      -  .  .
+## 5 OX457036.1 TopHat2    intron 150989 156555     1      -  .  .
+## 6 OX457036.1 TopHat2    intron 155546 155860     2      -  .  .</code></pre>
+<p>Om genemark met introns.gff uit te voeren:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb22-1" tabindex="-1"></a> </span>
+<span id="cb22-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb22-2" tabindex="-1"></a> <span class="ex">../../gmes_petap.pl</span>     <span class="at">--verbose</span> <span class="at">--sequence</span>   genome.fa   <span class="at">--ET</span>  introns.gff</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>GeneMarkET gaat een ghmm-model en genemark.gtf produceren. Dit bestand(gtf) bevat informatie over de start- en eindcoördinaten van genen, die in de daaropvolgende stap gebruikt zal worden.</li>
+</ol>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb23-1" tabindex="-1"></a> <span class="fu">cut</span> <span class="at">-f</span> 2,3,4,5  lumbricus/protocol1<span class="dt">\</span></span>
+<span id="cb23-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb23-2" tabindex="-1"></a> /data_processing/GeneMarkES/genemark.gtf  <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<pre><code>## cut: lumbricus/protocol1: Is a directory
+## cut: /data_processing/GeneMarkES/genemark.gtf: No such file or directory</code></pre>
+<ol style="list-style-type: decimal">
+<li>Genemark maakt gebruik van filterGenemark.pl voor kwaliteitscontrole. Dit zorgt ervoor dat alleen de genmodellen die geregistreerd zijn in de exon-intronstructuur behouden blijven. (protocol1, script3) Na het filteren van de primaire resultaten wordt er een set van 1.975 genmodellen voor één chromosoom opgeslagen in genemark.f.good.gtf.</li>
+</ol>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb25-1" tabindex="-1"></a> <span class="fu">cut</span> <span class="at">-f</span> 2,3,4,5  lumbricus/protocol1/data_processing/GeneMarkES/genemark.f.good.gtf   <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<pre><code>## GeneMark.hmm3    stop_codon  51009   51011
+## GeneMark.hmm3    CDS 51009   54860
+## GeneMark.hmm3    exon    51009   54860
+## GeneMark.hmm3    start_codon 54858   54860
+## GeneMark.hmm3    stop_codon  82883   82885
+## GeneMark.hmm3    CDS 82883   86734
+## GeneMark.hmm3    exon    82883   86734
+## GeneMark.hmm3    start_codon 86732   86734
+## GeneMark.hmm3    stop_codon  116110  116112
+## GeneMark.hmm3    CDS 116110  117048</code></pre>
+<ol style="list-style-type: decimal">
+<li>Genemark.f.good.gtf is nu klaar om een trainingsset te maken van (protocol1, stap 4 en 5). Eerst wordt gtf omgezet naar gb. Zie protocol1, data_processing, Bonafide.</li>
+</ol>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb27-1" tabindex="-1"></a></span>
+<span id="cb27-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb27-2" tabindex="-1"></a><span class="ex">gff2gbSmallDNA.pl</span> bonafide.gtf genome.fa 450 tmp.gb</span>
+<span id="cb27-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb27-3" tabindex="-1"></a><span class="ex">filterGenesIn_mRNAname.pl</span> bonafide.gtf tmp.gb <span class="op">&gt;</span> bonafide.gb</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb28-1" tabindex="-1"></a></span>
+<span id="cb28-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb28-2" tabindex="-1"></a><span class="fu">cat</span> lumbricus/protocol1/data_processing/bonafide/bonafide.gb <span class="kw">|</span> <span class="fu">head</span> </span></code></pre></div>
+<pre><code>## LOCUS       OX457036.1 Lumbricus terrestris genome assembly, chromosome: 1_50559-55310   4752 bp  DNA
+## FEATURES             Location/Qualifiers
+##      source          1..4752
+##      mRNA            complement(451..4302)
+##                      /gene=&quot;1_t&quot;
+##      CDS             complement(451..4302)
+##                      /gene=&quot;1_t&quot;
+## BASE COUNT     1219 a   994 c  853 g   1655 t   31 n
+## ORIGIN
+##         1 catccgtctt tttggaatcg atttttatcg tattctgaaa tgttcttatc aatcttacac</code></pre>
+</div>
+<div id="etrain-protocol7" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Etrain (protocol7)<a href="alignment.-ruwe-gegevens-inspecteren.html#etrain-protocol7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Op basis van de genen die we hebben verkregen via mRNA-alignment, gaan we een trainingsset opstellen om een nieuw model te trainen. In de vorige sectie hebben we bonafide.gb aangemaakt, waarin 1.975 geverifieerde genen voor een specifiek chromosoom zijn opgenomen. We zijn nu klaar om de ontwikkeling van een nieuwe species te starten.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb30-1" tabindex="-1"></a></span>
+<span id="cb30-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb30-2" tabindex="-1"></a><span class="ex">conda</span> activate c </span>
+<span id="cb30-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb30-3" tabindex="-1"></a><span class="ex">new_species.pl</span> <span class="at">--species</span><span class="op">=</span>lumter</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb31-1" tabindex="-1"></a></span>
+<span id="cb31-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb31-2" tabindex="-1"></a><span class="ex">etraining</span> <span class="at">--species</span><span class="op">=</span>lumter bonafide.gb <span class="op">&amp;&gt;</span> bonafide.out</span></code></pre></div>
+<p>Check for Stop Codonds:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb32-1" tabindex="-1"></a></span>
+<span id="cb32-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb32-2" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">&quot;Variable stopCodonExcludedFromCDS set right&quot;</span> bonafide.out</span></code></pre></div>
+<p>0</p>
+<p>We hoeven geen bad lijst op te stellen, omdat er geen stopcodons in de CDS aanwezig zijn.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb33-1" tabindex="-1"></a></span>
+<span id="cb33-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb33-2" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> LOCUS bonafide.gb</span></code></pre></div>
+<p>1975</p>
+<p>Het randomSplit.pl-script splitst de data op in twee segmenten: een kleinere sectie genaamd test.gb voor trainingsdoeleinden, en een grotere sectie die train.gb wordt genoemd voor de evaluatie van het trainingsproces.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb34-1" tabindex="-1"></a></span>
+<span id="cb34-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb34-2" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb34-3" tabindex="-1"></a><span class="ex">randomSplit.pl</span> bonafide.gb 200</span>
+<span id="cb34-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb34-4" tabindex="-1"></a><span class="fu">mv</span> bonafide.gb.test test.gb</span>
+<span id="cb34-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb34-5" tabindex="-1"></a><span class="fu">mv</span> bonafide.gb.train train.gb</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb35-1" tabindex="-1"></a></span>
+<span id="cb35-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb35-2" tabindex="-1"></a><span class="ex">etraining</span> <span class="at">--species</span><span class="op">=</span>lumter train.gb <span class="op">&amp;&gt;</span> etrain.out</span></code></pre></div>
+<p>Deze configuratie kan worden aangepast in het configuratiebestand (map config, species, lumter_parameters.cfg).</p>
+<p>tag: 511 (0.259)
+taa: 700 (0.354)
+tga: 764 (0.387)</p>
+<p>Evaluatie van de voorspelling:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb36-1" tabindex="-1"></a><span class="ex">augustus</span> <span class="at">--species</span><span class="op">=</span>lumter test.gb <span class="op">&gt;</span> test.out</span></code></pre></div>
+<p>******* Evaluation of gene prediction *******</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-1" tabindex="-1"></a><span class="ex">---------------------------------------------</span><span class="dt">\</span></span>
+<span id="cb37-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-2" tabindex="-1"></a>                 <span class="kw">|</span> <span class="ex">sensitivity</span> <span class="kw">|</span> <span class="ex">specificity</span> <span class="kw">|</span></span>
+<span id="cb37-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-3" tabindex="-1"></a><span class="ex">---------------------------------------------</span><span class="kw">|</span></span>
+<span id="cb37-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-4" tabindex="-1"></a><span class="ex">nucleotide</span> level <span class="kw">|</span>       <span class="ex">0.963</span> <span class="kw">|</span>       <span class="ex">0.972</span> <span class="kw">|</span></span>
+<span id="cb37-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-5" tabindex="-1"></a><span class="ex">---------------------------------------------/</span></span>
+<span id="cb37-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-6" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-7" tabindex="-1"></a><span class="ex">----------------------------------------------------------------------------------------------------------</span><span class="dt">\</span></span>
+<span id="cb37-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-8" tabindex="-1"></a>           <span class="kw">|</span>  <span class="co">#pred |  #anno |      |    FP = false pos. |    FN = false neg. |             |             |</span></span>
+<span id="cb37-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-9" tabindex="-1"></a>           <span class="kw">|</span> <span class="ex">total/</span> <span class="kw">|</span> <span class="ex">total/</span> <span class="kw">|</span>   <span class="ex">TP</span> <span class="kw">|</span><span class="ex">--------------------</span><span class="kw">|</span><span class="ex">--------------------</span><span class="kw">|</span> <span class="ex">sensitivity</span> <span class="kw">|</span> <span class="ex">specificity</span> <span class="kw">|</span></span>
+<span id="cb37-10"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-10" tabindex="-1"></a>           <span class="kw">|</span> <span class="ex">unique</span> <span class="kw">|</span> <span class="ex">unique</span> <span class="kw">|</span>      <span class="kw">|</span> <span class="ex">part</span> <span class="kw">|</span> <span class="ex">ovlp</span> <span class="kw">|</span> <span class="ex">wrng</span> <span class="kw">|</span> <span class="ex">part</span> <span class="kw">|</span> <span class="ex">ovlp</span> <span class="kw">|</span> <span class="ex">wrng</span> <span class="kw">|</span>             <span class="kw">|</span>             <span class="kw">|</span></span>
+<span id="cb37-11"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-11" tabindex="-1"></a><span class="ex">----------------------------------------------------------------------------------------------------------</span><span class="kw">|</span></span>
+<span id="cb37-12"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-12" tabindex="-1"></a>           <span class="kw">|</span>        <span class="kw">|</span>        <span class="kw">|</span>      <span class="kw">|</span>                 <span class="ex">78</span> <span class="kw">|</span>                 <span class="ex">87</span> <span class="kw">|</span>             <span class="kw">|</span>             <span class="kw">|</span></span>
+<span id="cb37-13"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-13" tabindex="-1"></a><span class="ex">exon</span> level <span class="kw">|</span>    <span class="ex">389</span> <span class="kw">|</span>    <span class="ex">398</span> <span class="kw">|</span>  <span class="ex">311</span> <span class="kw">|</span> <span class="ex">------------------</span> <span class="kw">|</span> <span class="ex">------------------</span> <span class="kw">|</span>       <span class="ex">0.781</span> <span class="kw">|</span>       <span class="ex">0.799</span> <span class="kw">|</span></span>
+<span id="cb37-14"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-14" tabindex="-1"></a>           <span class="kw">|</span>    <span class="ex">389</span> <span class="kw">|</span>    <span class="ex">398</span> <span class="kw">|</span>      <span class="kw">|</span>   <span class="ex">56</span> <span class="kw">|</span>    <span class="ex">6</span> <span class="kw">|</span>   <span class="ex">16</span> <span class="kw">|</span>   <span class="ex">56</span> <span class="kw">|</span>    <span class="ex">6</span> <span class="kw">|</span>   <span class="ex">25</span> <span class="kw">|</span>             <span class="kw">|</span>             <span class="kw">|</span></span>
+<span id="cb37-15"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-15" tabindex="-1"></a><span class="ex">----------------------------------------------------------------------------------------------------------/</span></span>
+<span id="cb37-16"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-16" tabindex="-1"></a></span>
+<span id="cb37-17"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-17" tabindex="-1"></a><span class="ex">----------------------------------------------------------------------------</span><span class="dt">\</span></span>
+<span id="cb37-18"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-18" tabindex="-1"></a><span class="ex">transcript</span> <span class="kw">|</span> <span class="co">#pred | #anno |   TP |   FP |   FN | sensitivity | specificity |</span></span>
+<span id="cb37-19"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-19" tabindex="-1"></a><span class="ex">----------------------------------------------------------------------------</span><span class="kw">|</span></span>
+<span id="cb37-20"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-20" tabindex="-1"></a><span class="ex">gene</span> level <span class="kw">|</span>   <span class="ex">389</span> <span class="kw">|</span>   <span class="ex">398</span> <span class="kw">|</span>  <span class="ex">311</span> <span class="kw">|</span>   <span class="ex">78</span> <span class="kw">|</span>   <span class="ex">87</span> <span class="kw">|</span>       <span class="ex">0.781</span> <span class="kw">|</span>       <span class="ex">0.799</span> <span class="kw">|</span></span>
+<span id="cb37-21"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-21" tabindex="-1"></a><span class="ex">----------------------------------------------------------------------------/</span></span>
+<span id="cb37-22"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-22" tabindex="-1"></a><span class="co"># total time: 31.2</span></span>
+<span id="cb37-23"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-23" tabindex="-1"></a><span class="co"># command line:</span></span>
+<span id="cb37-24"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb37-24" tabindex="-1"></a><span class="co"># augustus --species=wormET0 test.gb</span></span></code></pre></div>
+<p>See also: lumbricus/protocol1/test/test.out</p>
+<p>Hier eindigt onze mRNA-pijplijn, waarbij we een hoge specificiteitsscore hebben bereikt voor het model dat we hebben gemaakt voor Lumbricus Terrestris. Dit model zal dienen voor visualisatie.</p>
+</div>
+<div id="prothints-en-de-eiwitpijplijn" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> ProtHints en de eiwitpijplijn<a href="alignment.-ruwe-gegevens-inspecteren.html#prothints-en-de-eiwitpijplijn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="prothints" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> ProtHints<a href="alignment.-ruwe-gegevens-inspecteren.html#prothints" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Er zijn veel genen in verschillende genoom die door hun evolutionaire oorsprong met elkaar verbonden zijn. De gelijkenis tussen eiwitsequenties is goed zichtbaar. OrthoDB is een belangrijke bron voor eiwitten en dient als een database die eiwitten met een uitgebreider evolutionair verleden omvat. Zie protocol 2.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb38-1" tabindex="-1"></a><span class="ex">../bin/prothint.py</span>  ../OX457036.1.fasta  ../Arthropoda.fa</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb39-1" tabindex="-1"></a><span class="fu">grep</span> <span class="st">&quot;&gt;&quot;</span> seed_proteins.faa  <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
+<p>14733</p>
+<p>Prothint heeft een database met eiwitten voorbereid voor startAlign.pl. Het resultaat was 14.733 eiwitten in het bestand seed_proteins.faa. Dit seed-bestand kan worden gebruikt met startAlign.pl om een gth.concat.alg-object te verkrijgen, dat vervolgens wordt gebruikt om bonafide.gb te genereren.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb40-1" tabindex="-1"></a><span class="fu">head</span> lumbricus/protocol2/data_processing/ProtHints/seed_proteins.faa</span></code></pre></div>
+<pre><code>## &gt;6249_g
+## MPSVSGLIEMMMMMTATITVMMTVTTVRIVERLGWGSYDTDGDDGDDDDDDDDDDDDDDDDDDDDSNNNSSNPPQVTAELCRRELRRCRHRFRSTSSEMTAPPAASAAAAEPGHDGLRTVTELVSGSGSKFVADSTERMNSDDQVDLGNLHSLPPTDSPEALRACSVRTITRTIVDRRMSPIIKVIKGETSKNELLINLDYAARVSENIYIADDDVLGVVEQDSVPHEVREGQAQVQKCRQRHPGRHHVHAEAPKQLRVKDLLKVPTRRLEVDTNFEPSGFKATTPPLHHRAPPIILISITVVGALLSQDDDDDDIDDGEGMIMTTTRTTTMLIYL
+## 
+## &gt;10626_g
+## MLGRGDCERKKQGNGILETAIHEHAWLQYLEGTDERNGKKSKAGNLKAKREKLQKMRKGDIEEIGLLRGFAERKEKQGETEGLTGQVEEMEIDGPTTEKARHCLVAKRARGTSSCPFAAERRARRASMSETGRQRMRSNSIMDALGYWQPMQHITHVGIRPMSRAAERRTRSNRPRTPRGRPTRIEQQWSIRLNYQRIMRERACNHSKLTKLVVTASSNKIDMLAETEFTVKGNTQVTNRGRETNQRQIDLLKLPTATQPNELTDLTPSKRMVVDLLPRLQ
+## 
+## &gt;2633_g
+## MSSAHAHVNASRRQQRQTINVRQRKDGEGRRLKRGVLVGNSEDLTVNWVWKATRCRPVPLRYQGVSNETLRMNCNSTSGEGRFGTAIAIGVRRQKKGAKRQQDEKLPLLVKIQRGGRNYRVLCQLQHSPSTHLQKRIGNDGKQEEGDIPSSSNLHSNPYELKNFYIYAGEVQRGR
+## 
+## &gt;1749_g</code></pre>
+<p>Naast het seed_proteins.faa genereert protHints een prothint_augustus.gff hintsbestand dat je direct kunt gebruiken met augustus.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb42-1" tabindex="-1"></a><span class="fu">head</span> lumbricus/protocol2/data_processing/<span class="dt">\</span></span>
+<span id="cb42-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb42-2" tabindex="-1"></a>ProtHints/prothint_augustus.gff</span></code></pre></div>
+<pre><code>## OX457036.1   ProtHint    stop    51009   51011   2   -   0   src=P;mult=9;pri=4;al_score=0.163636;
+## OX457036.1   ProtHint    start   52806   52808   2   -   0   src=P;mult=2;pri=4;al_score=0.2;
+## OX457036.1   ProtHint    intron  53104   53221   2   -   .   src=P;mult=1;pri=4;al_score=0.361685;
+## OX457036.1   ProtHint    intron  53515   53655   0   -   .   src=P;mult=1;pri=4;al_score=0.108387;
+## OX457036.1   ProtHint    start   55225   55227   0   -   0   src=P;mult=1;pri=4;al_score=0.104132;
+## OX457036.1   ProtHint    stop    82883   82885   2   -   0   src=P;mult=11;pri=4;al_score=0.163636;
+## OX457036.1   ProtHint    intron  84978   85095   2   -   .   src=P;mult=1;pri=4;al_score=0.361685;
+## OX457036.1   ProtHint    intron  85389   85529   0   -   .   src=P;mult=1;pri=4;al_score=0.108387;
+## OX457036.1   ProtHint    start   87099   87101   0   -   0   src=P;mult=1;pri=4;al_score=0.104132;
+## OX457036.1   ProtHint    intron  144544  144597  0   +   .   src=P;mult=1;pri=4;al_score=0.13595;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>We kunnen augustus meteen draaien met de prothint_augustus.gff die door de eiwitten zijn gemaakt, voordat we de trainingsset aanpakken.</li>
+</ol>
+<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb44-1" tabindex="-1"></a></span>
+<span id="cb44-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb44-2" tabindex="-1"></a> <span class="ex">augustus</span> <span class="at">--species</span><span class="op">=</span>lumter<span class="dt">\</span></span>
+<span id="cb44-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb44-3" tabindex="-1"></a> <span class="at">--predictionStart</span><span class="op">=</span>2000000 <span class="at">--predictionEnd</span><span class="op">=</span>3000000<span class="dt">\</span></span>
+<span id="cb44-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb44-4" tabindex="-1"></a> OX457036.1.fasta<span class="dt">\</span></span>
+<span id="cb44-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb44-5" tabindex="-1"></a> <span class="at">--extrinsicCfgFile</span><span class="op">=</span>extrinsic.cfg<span class="dt">\</span></span>
+<span id="cb44-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb44-6" tabindex="-1"></a> <span class="at">--hintsfile</span><span class="op">=</span>prothint_augustus.gff <span class="dt">\</span></span>
+<span id="cb44-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb44-7" tabindex="-1"></a> <span class="op">&gt;</span> augustus.hints.prots.orthodb.arthropoda.2-3mb.gff</span></code></pre></div>
+<p>Hierdoor ontstaat een annotatie voor 2mb-3mb van het chromosoom, gebaseerd op de eiwitindicaties van eiwitten die een lange evolutionaire afstand hebben.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb45-1" tabindex="-1"></a><span class="fu">cat</span>   lumbricus/protocol2/data_processing<span class="dt">\</span></span>
+<span id="cb45-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb45-2" tabindex="-1"></a>/ProtHints/augustus.hints.prots.orthodb.arthropoda.2-3mb.gff <span class="kw">|</span> <span class="dt">\</span></span>
+<span id="cb45-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb45-3" tabindex="-1"></a><span class="fu">tail</span> <span class="at">-n</span> 50</span></code></pre></div>
+<pre><code>## # 3&#39;UTR exons and introns: 0/0
+## # hint groups fully obeyed: 0
+## # incompatible hint groups: 2
+## #      P:   2 (407821_0:000ad4_584_g)
+## # end gene g81
+## ###
+## # start gene g82
+## OX457036.1   AUGUSTUS    gene    2981898 2982863 1   -   .   g82
+## OX457036.1   AUGUSTUS    transcript  2981898 2982863 1   -   .   g82.t1
+## OX457036.1   AUGUSTUS    stop_codon  2981898 2981900 .   -   0   transcript_id &quot;g82.t1&quot;; gene_id &quot;g82&quot;;
+## OX457036.1   AUGUSTUS    CDS 2981898 2982863 1   -   0   transcript_id &quot;g82.t1&quot;; gene_id &quot;g82&quot;;
+## OX457036.1   AUGUSTUS    start_codon 2982861 2982863 .   -   0   transcript_id &quot;g82.t1&quot;; gene_id &quot;g82&quot;;
+## # protein sequence = [MDDEETVPYSLPRTTSTPATKGAAEASAFGQSRAEAYRTFEDPEYQFLDLPKKDRKKVLISETTVSDSKRWEDASHLM
+## # GPRKIQMKPGKFDGTSSLESFLTQFEVCARHNRWDDSDKVDFLRCALDKAATQLLWDFGARADVTYDQLVGRLRQRYGVEGQAETYRAQLYYRRQRAD
+## # ESLSDLLHDIRRLVVLAYPVPSNETTEIVARDSFLEAIRDRELSLKVREREPKSIDEAYRVALRLSAYQQMTDVDDRRRPPNRVRQTQEADAGNQLQT
+## # QLDGFLAAQRKWQRDFEDRISLQLNELRNQSQTHPDVAPATRNPASP]
+## # Evidence for and against this transcript:
+## # % of transcript supported by hints (any source): 100
+## # CDS exons: 1/1
+## #      P:   1 
+## # CDS introns: 0/0
+## # 5&#39;UTR exons and introns: 0/0
+## # 3&#39;UTR exons and introns: 0/0
+## # hint groups fully obeyed: 0
+## # incompatible hint groups: 1
+## #      P:   1 (407821_0:000ad4_584_g)
+## # end gene g82
+## ###
+## # start gene g83
+## OX457036.1   AUGUSTUS    gene    2983320 2984174 0.91    -   .   g83
+## OX457036.1   AUGUSTUS    transcript  2983320 2984174 0.91    -   .   g83.t1
+## OX457036.1   AUGUSTUS    stop_codon  2983320 2983322 .   -   0   transcript_id &quot;g83.t1&quot;; gene_id &quot;g83&quot;;
+## OX457036.1   AUGUSTUS    CDS 2983320 2984174 0.91    -   0   transcript_id &quot;g83.t1&quot;; gene_id &quot;g83&quot;;
+## OX457036.1   AUGUSTUS    start_codon 2984172 2984174 .   -   0   transcript_id &quot;g83.t1&quot;; gene_id &quot;g83&quot;;
+## # protein sequence = [MEKAGLYFNLKKTKLMTTENWTSFEVDGEEMKVVTCFCFFGAMIENDGGCERYCGSLAGGINFFAVCVFFACSERTCL
+## # SEPLVASSSCPLEPAPSSRLFARSNLPLRAARCLFELPDRTCPSEPPVRCSSRTCPSEPLAASSSCPLEPAPPSRLSACSGRLRPLRAASSLFELLAR
+## # TSLFRTFAAESNLFVRAACLLLRTGLETYKRRKKKKPSFAVGIEVGESQSLRVNPSGVSQRNEKGSSSSVVRSPSPRKVISSIRQSEVSSSFKLRLKL
+## # RLNSGQFVVE]
+## # Evidence for and against this transcript:
+## # % of transcript supported by hints (any source): 0
+## # CDS exons: 0/1
+## # CDS introns: 0/0
+## # 5&#39;UTR exons and introns: 0/0
+## # 3&#39;UTR exons and introns: 0/0
+## # hint groups fully obeyed: 0
+## # incompatible hint groups: 0
+## # end gene g83
+## ###
+## # command line:
+## # augustus --species=lumter --predictionStart=2000000 --predictionEnd=3000000 OX457036.1.fasta --extrinsicCfgFile=extrinsic.cfg --hintsfile=prothint_augustus.gff</code></pre>
+</div>
+<div id="protocol-2.-het-creëren-van-genstructuren-voor-training-op-basis-van-eiwitten." class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Protocol 2. Het creëren van genstructuren voor training op basis van eiwitten.<a href="alignment.-ruwe-gegevens-inspecteren.html#protocol-2.-het-creëren-van-genstructuren-voor-training-op-basis-van-eiwitten." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="genomethreader" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> GenomeThreader<a href="alignment.-ruwe-gegevens-inspecteren.html#genomethreader" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We hebben 14.733 eiwitten verzameld uit de eerdere secties. Nu gaan we een trainingsset opzetten met deze eiwitten. Uit de oorspronkelijke 14.733 eiwitten hebben we een klein deel gekozen om de trainingsset te vormen.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb47-1" tabindex="-1"></a></span>
+<span id="cb47-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb47-2" tabindex="-1"></a><span class="ex">startAlign.pl</span>  <span class="at">--genome</span> OX457036.1.fasta  <span class="dt">\</span></span>
+<span id="cb47-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb47-3" tabindex="-1"></a>--prot seed_proteins.faa  <span class="dt">\</span></span>
+<span id="cb47-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb47-4" tabindex="-1"></a>--pos OX457036.1:1-10000000 <span class="dt">\</span></span>
+<span id="cb47-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb47-5" tabindex="-1"></a>--prg gth</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Hierdoor ontstaat het object gth.concat.aln, dat vervolgens kan worden geconverteerd naar het gtf-formaat (protocol2 ,data_processing, protHints).</li>
+</ol>
+<div class="sourceCode" id="cb48"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb48-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb48-1" tabindex="-1"></a> <span class="ex">gth.concat.aln</span> bonafide.gtf</span></code></pre></div>
+<p>Controleer het gtf-bestand :</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb49-1" tabindex="-1"></a><span class="fu">head</span> lumbricus/protocol2/data_processing/Bonafid/bonafide.gtf </span></code></pre></div>
+<pre><code>## OX457036.1   gth CDS 51009   54860   .   -   0   gene_id &quot;OX457036.1_g_gene1_mRNA1&quot;; transcript_id &quot;OX457036.1_t_gene1_mRNA1&quot;;
+## OX457036.1   gth exon    51009   54860   .   -   0   gene_id &quot;OX457036.1_g_gene1_mRNA1&quot;; transcript_id &quot;OX457036.1_t_gene1_mRNA1&quot;;
+## OX457036.1   gth CDS 82883   86734   .   -   0   gene_id &quot;OX457036.1_g_gene2_mRNA2&quot;; transcript_id &quot;OX457036.1_t_gene2_mRNA2&quot;;
+## OX457036.1   gth exon    82883   86734   .   -   0   gene_id &quot;OX457036.1_g_gene2_mRNA2&quot;; transcript_id &quot;OX457036.1_t_gene2_mRNA2&quot;;
+## OX457036.1   gth CDS 104626  104645  .   -   2   gene_id &quot;OX457036.1_g_gene3_mRNA3&quot;; transcript_id &quot;OX457036.1_t_gene3_mRNA3&quot;;
+## OX457036.1   gth exon    104626  104645  .   -   2   gene_id &quot;OX457036.1_g_gene3_mRNA3&quot;; transcript_id &quot;OX457036.1_t_gene3_mRNA3&quot;;
+## OX457036.1   gth CDS 104696  104750  .   -   0   gene_id &quot;OX457036.1_g_gene3_mRNA3&quot;; transcript_id &quot;OX457036.1_t_gene3_mRNA3&quot;;
+## OX457036.1   gth exon    104696  104750  .   -   0   gene_id &quot;OX457036.1_g_gene3_mRNA3&quot;; transcript_id &quot;OX457036.1_t_gene3_mRNA3&quot;;
+## OX457036.1   gth CDS 104904  105745  .   -   2   gene_id &quot;OX457036.1_g_gene3_mRNA3&quot;; transcript_id &quot;OX457036.1_t_gene3_mRNA3&quot;;
+## OX457036.1   gth exon    104904  105745  .   -   2   gene_id &quot;OX457036.1_g_gene3_mRNA3&quot;; transcript_id &quot;OX457036.1_t_gene3_mRNA3&quot;;</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb51-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb51-1" tabindex="-1"></a><span class="ex">computeFlankingRegion.pl</span> bonafide.gtf</span></code></pre></div>
+<p>Output van computeFlankingRegion.pl:</p>
+<p>Total length gene length (including introns): 5412279. Number of genes: 1090. Average Length: 4965.39357798165
+The flanking_DNA value is: 2482 (the Minimum of 10 000 and 2482)</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb52-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb52-1" tabindex="-1"></a><span class="ex">gff2gbSmallDNA.pl</span> bonafide.gtf genome.fa 2482 bonafide.gb</span></code></pre></div>
+<p>Bonafide.gb wordt in de volgende pipeline gebruikt om redundantie te verwijderen.</p>
+</div>
+<div id="protocol-6.verwijderen-van-redundant-genstructuren-protocol-6" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Protocol 6.Verwijderen van Redundant Genstructuren (protocol 6)<a href="alignment.-ruwe-gegevens-inspecteren.html#protocol-6.verwijderen-van-redundant-genstructuren-protocol-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Voor NCBI Blast, controleer de link en stel het Path in naar de Blast uitvoerbare bestanden.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb53-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb53-1" tabindex="-1"></a><span class="fu">wget</span> ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/</span></code></pre></div>
+<p>export PATH=<span class="math inline">\(PATH:\)</span>HOME/ncbi-blast-2.16.0+</p>
+<p>Maak gebruik van de opgegeven commandoregel om het GTF-bestand van de trainingsgenstructuur te transformeren naar een FASTA-bestand dat de eiwitsequentie omvat.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb54-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb54-1" tabindex="-1"></a><span class="ex">gtf2aa.pl</span> genome.fa bonafide.f.gtf prot.aa</span></code></pre></div>
+<p>Inspecteer prot.aa :</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb55-1" tabindex="-1"></a><span class="fu">head</span> lumbricus/protocol2/data_processing/Redundancy/prot.aa</span></code></pre></div>
+<pre><code>## &gt;OX457036.1_t_gene395_mRNA512
+## ESLLPRCCPAGRGGGSQDSIAHARCFDRRITFSMMTLVGLGKEGLKRRKGGMDGERDLNWLEGGMGGEVQNWRVIGIERRY*
+## &gt;OX457036.1_t_gene508_mRNA640
+## MEESRPVTPAQPSRPPSSMEVLLEAIQTNAKSTHDAMTSIQSSLQLNARDTQEAIATVELNVLAVQSNVREEISSVKSYVRDTQDAISSVQSNVSDAISSVQLNVREEISAVRDNVREALTEVVSRLERLETSPVPKPAVDLNPGYLTAITTADAPYHSTIGLEETLGARPKDFTQPGILRRSDRLAGRPPISYREYGSRKDWPPFLGWDSNPEVTSSCPPSISRARPQQHAVPSSEDPEVATPGMPIGAGISSLSQNDYSEALLARKLLGEKKEKQKKWKEGGMEKGKKMKKENKKEEKGKWTEEKGKNKNGKKKEKEKERK*
+## &gt;OX457036.1_t_gene532_mRNA668
+## MTCLRRIEGVTRRERIRNTEIHNRLKIQRDIVDRIQIRRMRYFGHVVRMQSGRYPKVALQGYVHGKRRRGRPRKRWMDVAEEDCLRMGLTVGEATRRAQDRDDWRLSIKERLMRAKASPAP*
+## &gt;OX457036.1_t_gene891_mRNA1213
+## GKGRVNGCCFWRIRSGKLVREISTFCDIEFCEFCKFGRDSFEVSCRGGKMASLEEELIPEFGDVRDIPSDTLRLVSETYGEEVEDVSRSQVRRMAMKPLSPKLGSAAWKLKAQAKKEEAELERLHLKEDREWEREKERMRFEEKKMQIEAEREEKKMQIEAEREEKKMQIEAEENKLRIEAEENKLRIAAEENKLRIEAEETKRRFDMEEKRMNMEFEKQKLEMDGRRIEGGGAVERPAHGNEDLRFGAALKFVPKFDSADIEHYFAAFEQAMTLHQIPMGKWSSLLQPQLSGKAAKVFAALSLEECVQYDIVKSALLTAYERIPEFYRKKFRGLRKEPRETYANYAFRLQSPFQRWIEGTNSWEELAKFKEVILMEQFVQALPIEVHRWLIDKSPDTVASAARLADEYAVLYKQGPNHYSGGFRRDFFDRTRGFSSDESEKKDVWERQGVGYKDGTRRDTNWGRRSPQRGTYGFNKPGRENDDVTGFGEPVTCAFCRAPGHTKASCWKLKRKEGTQMENWRGAKPVGLVQTVSAPVKPQSFPKPIESVDKLYAPFCVIGCVIDDEGARKEAVFLRDSGALQSLVSNEWLNEHEFVHMNETRLLRGISGSIVECPLVKVNVDCAFVQGEVLCCLMNSLPMAGVHCIVGNDTALAGQVLEVAVTTRAQARAHAVRQSERETAVCSEAAPEQSEIVGQSTESADQERTPGEIIDRQVERMNFDEGDLSSLFAATESVVTERSELYVSRQELILRQRRCPELRPLYAQVDETVSVGGRVQPYALVDEVLVRRWEEKCTPLGMGVVQIVVPRDLRQKLLHVAHDIPAAGHLGTRKTLDRLTKHFWWPHVNRDVREFCRSCDVCQRLGKGNRNYRAPMVSMPVMEEVFQRLAMDIVGPLSVCEGTGNRFILTVVDLASHFPFAFPLKNHTAQDVAKCLCEVFSLFXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXDMLKALAETYPGSWDAMLPWILFAYREVPVQGTGFSAFDLMYGRDVRGMLQLMKEEWLAKDVVHEVSGKNVIDYVLQLRERMRVGLKLAGENAVDAKSKSKQLYDKQSRAVSFEEGEKVLLLIPLVGKPLQTKYGGPYVVVRRLGPVDYLVSTPDRRKTERVVHVNLMKRYVDRMDVVYERPNEEVVASVLVVNPDVRMNDVTLEDKVLQCEVSAECRAELRDVLHDFAHVFSDVPGKTSMVSHRIDLVEGARPVRQYPYRLNPEKMARVDKEVNQLLEAGIIEESESPWAAPIVLVPKPNGTDRLCTDFRKLNGLSVPDPFLMPRVEVLIDRVGQSRFITKLDMTKGYWQIPMHPESVPLTAFVTPKGHYQWKXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXLSRIADACLSLNLAKCVFANASVDFLGHHIGIDGVQPRLKKVEAVLKFPRPATKKQVQSFLGLAGYYQRYLPHFSDITLPLTALTKKGIPFRWNEEAEVAFLDLKSRLASRPILIPPDFTKQFCVGVDASQFCLGACLFQMKDGLEHPICYLSRKLLPQEIRYSTIEKEALALMVALRAFSVYFGSAVVLVPHVLVGGYVSVSYLLPLWASLLGLSLTMWELREGQAWRVVRVLRRLSSSIAVPPRW*
+## &gt;OX457036.1_t_gene296_mRNA397
+## WSEEPEEGDGVWLVMIVEELQKIGIHEADHSMVDHIRNEEVLKLAGSRYLEYIIMGRRGRLAGHILRLPKERIARTAIKWVPEGGKRRRGRPRNTWRRTFKGDLERMGLGWNEAEEVADDRVEWRGLVDQCSDRNRRK*</code></pre>
+<p>Voer een Blast uit van alle eiwitsequenties uit de vorige stap met elkaar en toon alleen de eiwitsequenties die minder dan 80% identiek zijn aan een andere sequentie in de groep.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb57-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb57-1" tabindex="-1"></a></span>
+<span id="cb57-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb57-2" tabindex="-1"></a><span class="ex">aa2nonred.pl</span> prot.aa prot.nr.aa</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb58-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb58-1" tabindex="-1"></a><span class="fu">head</span> lumbricus/protocol2/data_processing/Redundancy/prot.nr.aa</span>
+<span id="cb58-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb58-2" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb58-3" tabindex="-1"></a><span class="fu">grep</span> <span class="st">&quot;&gt;&quot;</span>  lumbricus/protocol2/data_processing/Redundancy/prot.nr.aa <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
+<pre><code>## &gt;OX457036.1_t_gene753_mRNA930
+## SIVGAATEVYNRMSSDFLPTPTKSHYIFNLRDLSKCIQESKQVFRLFCHEALRVFHDRLTTSEDKMSFYAILAEIAPKFFNENADAQSFLKHPIIFGDFIKVAAPREDRVYEDLGNLDKIKGALQDIVVEEFLEDINNILNSGEVPNLFEPEEYEMNIVGCRPAAKEVGVAEGNRDGIYEFFINREALLSVSQTAFMPADIGSEEIKASNNGLTKLLETNELIDKMKGDLVALEPELRKKSEDTNVLMEKLAADQEKADTVRKVVMEDEAVAKVKAEETQAIAEDAQRDLDEALPALEAAIRDISEIRVFIKPPELVQTVMEAGFLKSLYEYKKDLIPDAVLKKLKKYTDNPKFTPEAVEKVSKVVMKTLREKQKMLAEVEAKIAELQKTYDISVAEKQRLEKSMSLTQARLRRAGKLTTALADEKTRWEESVALSTIIGDVFVSAACIAYYGAFTSNYRQELVALWARRCVELNIPVSKNMSLVSVLADPYEIRQWNTDGLPRDSVSTENAILVTRGRRWPLMIDPQEQNSIRLGIPVLLEDISETIDPSLEPVLLKQTFMSGGRLVIRLGDSNIEYGKGFKFYMTTKLSNPHYLPEVCIKVTIINFTVTKTGLEDQLLSEVVSLERPDLEEQRNQLIVKINTDKNQLKAIEDRILKLLFESEGNILDNEDLVTSGVISVRLKEAEATEEKISVNRERYRVVATRGSVMFFVVANMAEADPMYQFSLKYFKQLFSGTIQHSESNKELQKRLQILLQATTVDWWCHCLEAGRFESTSSRHIMKIGGLITTDEWNYFLRGAAGLKKELPRKPDIGWLSQALWKESWNMEFMLRSFVGLSRDMTATPCWVQFGQLKFRANPERSNTYGPEPPEPPPLNPGSKEDLADDGKVKGHWDKRLTPFQKLIFIKAFEEEKENLGPSFIESPPTDLATLYADMLNVTPLVFVLSTGSDPMGAFQRFARERGFQDRIQSISLGQGQGPVAEKMILAAYLTGDWVFLQDIVKEMGEKPQTVHPSFRLFLSSMPDVSFPVSVLQNSVKYEFNDCDRECALLNLNMFCVNEVIPWDALIYITGEIQETSNLIATILDMQPRLTGGGAGKSNDDIVYELAADILAQLMDKLDIEEAKQDTFENHARKYGLPVDHLSFKYNVLPVYRDQVEVAEALAKQQFGEEIEPDRKLTSPTDGLLVHGLFMDGFRWDGENRALADALPGEMNSALPVLHMEPVMDYEAEESDYQAPLYKTAARAGVLSTTEKDMCQVARDWLKAIVTALVTTVHCLITNDYRLFFSVSLLQGIRQTLL*
+## &gt;OX457036.1_t_gene803_mRNA1030
+## SQKSRASATIVVCDLDHMMIRLPHFTAKRSVEPFQSTEEQVLGRIRSFPQGSSGGPDGLRPQHLSDLVNCVEIGSELIFAITGLVNLLLKGECPEDIRPVLFGGTLMALRKDSGGLRPIVIGYYWRRLASKCANAFAVTRATAYLAPRQVGVGVPGGAEAAVHAARRFLETMPAGSILVKLDFKNAFNSLYRDQMLSSIDDILPELSPFCHLAYAEPSELRFGQYLISSQVGPQQGDPLGPLLFCLPLQPILQDLSSPLVLGYMDDLSLGGEAVLVAKDVNLLMQKCEQLGLQLNQKKCEIIYQHDLQSHDHLFQNFTVTSPERACLLGAPLSTSEALTTCLEGRCTELALAINRLETIAKHDALILLRCSLSSHRLMYTLRCSPCTGNVLLDKFDGLIRNGLSAVLNIALSNDQWLQASLPVKMGGLGIRRVASLALPAFLASAASTRALQSSMLGNACPEFDERVELMKHLWCTESQSGLPESSVAHKQSSWDKPLMQKMIAELSIALSDPYHKARFMAVAAPHAGDWLFALPVTSCGLRLDDEAVRIAVGLRLGTCICEPHACPCGARVTANGAHGLSCGLGPGRIARHATLNDLFSRSLTRAGFPNIKEPPGLSRSDGRRPDGLTLIPWYKGRNLVWDATVIDTVAPSYIPATSLSAGAAAGLAATRKVDKYNHLTATYLFVPLAFETMGPINIEGMKLLKDLGRLLTRITGDPKETTYLFQRFSVCIQRFNASQPQSTEIGQSFIFCDNTNPEDKSNHTTAIRHPDLPNGLLRHIPKGARTAAAHLLTDIIGGILREPLLPSGWLRLLSFVSGALEKPTRGGKRHNLTQHIKLRIDTFKNDWQTSASLLFWYVLRQRSRRKSKEAASRSQHRGRCSSQARGRQSQRCGAHSLLRRHTSSN*
+## &gt;OX457036.1_t_gene103_mRNA135
+## MSINFAQRIQMPGIERVHGVTKVRNEFNILGYSVSFRYVISVFEDRIPYRLRKEIRLTGIRNAVDIGSSENANCLYVSDYEEKCVRKITRERDGGHKIIKWLITAYRPNTLSVTGEGHLLVVNSWSSILSIYGSDAQLIRFIQLPRGMSYPLHAVETSIGNFIVIHEWIEKEEEGKSGSIGRESDLIKEVNIKDDEDSRSITTIDDEEEGEEEQTWPTAKTTVTV
+## &gt;OX457036.1_t_gene500_mRNA632
+## IMRAEIQGRLNRGRQKKSWMDMIQQDMEFLGLRKEEVRDRTTWRQRIRINGLKYVYVYGHVSVNMKDIIIEHRLTVAELHFLKRAEILDRREKPLDVERKRQTETETGRQTERGRENERERERERERQRERQTDRETERQRERQTERQRDRERERERERENEITRQRDRVIERERERQRERHTETERERDAE*
+## &gt;OX457036.1_t_gene503_mRNA635
+## MCEVAEYFENGELVIFDDSDPAPSYADEMESDEMDDSKSDFPEAECAMALLELAQSFGLVSSLNSFGHINDETGLRNAATEPSNVPLNNTAENLASTADARQHFSAFSNVVPIDESHLRVTPDCSTRTSAFDLLTVVRLDHSYETRRPHAPGSASSGNRAVKKAKSETTLDKLRKIRKRNGKRKPEVAERNDERRALESSSSPHSDRNIFAAAAAVSHLKSQSHPPHLSNTNAWKEEVPLEEPFKIPPAKAGVGIRGRRDELFSS*
+## 602</code></pre>
+<p>Daarna hebben we 602 niet-redudante eiwitten om mee verder te gaan:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb60-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb60-1" tabindex="-1"></a></span>
+<span id="cb60-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb60-2" tabindex="-1"></a><span class="fu">grep</span> <span class="st">&quot;&gt;&quot;</span>  lumbricus/protocol2/data_processing/Redundancy/prot.nr.aa <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
+<pre><code>## 602</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb62-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb62-1" tabindex="-1"></a><span class="fu">cat</span> bonafide.gb <span class="kw">|</span> <span class="fu">perl</span> <span class="at">-ne</span> ’if<span class="er">(</span><span class="ex">m/\/gene=\&quot;</span><span class="er">(</span><span class="ex">\S+</span><span class="kw">)</span><span class="ex">\&quot;/</span><span class="kw">){</span> <span class="dt">\</span></span>
+<span id="cb62-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb62-2" tabindex="-1"></a><span class="ex">print</span> <span class="st">&quot;</span><span class="dt">\&quot;</span><span class="st">&quot;</span>.<span class="va">$1</span>.<span class="st">&quot;</span><span class="dt">\&quot;</span><span class="st">\n&quot;</span><span class="kw">;</span><span class="ex">}’</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-u</span> <span class="op">&gt;</span> traingenes.lst</span></code></pre></div>
+<blockquote>
+<blockquote>
+<p>regel 1: syntaxisfout bij onverwacht token `(’</p>
+</blockquote>
+</blockquote>
+<p>Dit leverde een syntaxisfout op, waarna alle perl -ne regex werden vervangen door Python regex, die werden uitgevoerd in de IDE.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-1" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb63-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-2" tabindex="-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb63-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-3" tabindex="-1"></a></span>
+<span id="cb63-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-4" tabindex="-1"></a><span class="co"># Read from the file &#39;bonafide.gb&#39;</span></span>
+<span id="cb63-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-5" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;bonafide.gb&#39;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb63-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-6" tabindex="-1"></a>    content <span class="op">=</span> <span class="bu">file</span>.read()</span>
+<span id="cb63-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-7" tabindex="-1"></a></span>
+<span id="cb63-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-8" tabindex="-1"></a><span class="co"># Find all unique gene names</span></span>
+<span id="cb63-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-9" tabindex="-1"></a>gene_names <span class="op">=</span> <span class="bu">set</span>(re.findall(<span class="vs">r&#39;/gene=&quot;(\S+)&quot;&#39;</span>, content))</span>
+<span id="cb63-10"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-10" tabindex="-1"></a>        </span>
+<span id="cb63-11"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-11" tabindex="-1"></a><span class="co"># Writing unique gene names to a file</span></span>
+<span id="cb63-12"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-12" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;traingenes.lst&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb63-13"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-13" tabindex="-1"></a>    <span class="cf">for</span> gene <span class="kw">in</span> <span class="bu">sorted</span>(gene_names):</span>
+<span id="cb63-14"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb63-14" tabindex="-1"></a>        f.write(<span class="ss">f&#39;&quot;</span><span class="sc">{</span>gene<span class="sc">}</span><span class="ss">&quot;</span><span class="ch">\n</span><span class="ss">&#39;</span>)</span></code></pre></div>
+<p>De uitvoer bevat de strings die als transcriptnamen worden gebruikt in het bonafide.gtf-bestand, waaruit bonafide.gb oorspronkelijk is gemaakt, met aanhalingstekens.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb64-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb64-1" tabindex="-1"></a></span>
+<span id="cb64-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb64-2" tabindex="-1"></a><span class="fu">head</span> lumbricus/protocol2/data_processing/Redundancy/traingenes.lst </span></code></pre></div>
+<pre><code>## &quot;OX457036.1_t_gene1000_mRNA1441&quot;
+## &quot;OX457036.1_t_gene1001_mRNA1448&quot;
+## &quot;OX457036.1_t_gene1002_mRNA1452&quot;
+## &quot;OX457036.1_t_gene1003_mRNA1454&quot;
+## &quot;OX457036.1_t_gene1004_mRNA1455&quot;
+## &quot;OX457036.1_t_gene1006_mRNA1462&quot;
+## &quot;OX457036.1_t_gene1007_mRNA1463&quot;
+## &quot;OX457036.1_t_gene1008_mRNA1464&quot;
+## &quot;OX457036.1_t_gene1009_mRNA1468&quot;
+## &quot;OX457036.1_t_gene100_mRNA132&quot;</code></pre>
+<p>Hierna volgt een reeks scripts/opdrachten die alleen bedoeld zijn om een lijst te verkrijgen van niet-redudante genen en hun bijbehorende loci in GeneBank.Dit is voornamelijk een bewerking voor tekstbestanden</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb66-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb66-1" tabindex="-1"></a></span>
+<span id="cb66-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb66-2" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-oE</span> <span class="st">&#39;(OX457036[A-Za-z1-9._]{1,})\w+&#39;</span>  prot.nr.aa <span class="op">&gt;</span> nonred.lst</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb67-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb67-1" tabindex="-1"></a></span>
+<span id="cb67-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb67-2" tabindex="-1"></a><span class="fu">head</span> lumbricus/protocol2/data_processing/Redundancy/nonred.lst </span></code></pre></div>
+<pre><code>## OX457036.1_t_gene753_mRNA930
+## OX457036.1_t_gene803_mRNA1030
+## OX457036.1_t_gene103_mRNA135
+## OX457036.1_t_gene500_mRNA632
+## OX457036.1_t_gene503_mRNA635
+## OX457036.1_t_gene504_mRNA636
+## OX457036.1_t_gene573_mRNA720
+## OX457036.1_t_gene618_mRNA766
+## OX457036.1_t_gene384_mRNA500
+## OX457036.1_t_gene496_mRNA628</code></pre>
+<p>Isoleer de genen in traingenes.lst van bonafide.gtf:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb69-1" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-f</span> traingenes.lst <span class="at">-F</span> bonafide.gtf <span class="op">&gt;</span> bonafide.f.gtf</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb70-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb70-1" tabindex="-1"></a><span class="fu">head</span> lumbricus/protocol2/data_processing/Redundancy/bonafide.f.gtf</span></code></pre></div>
+<pre><code>## OX457036.1   gth CDS 51009   54860   .   -   0   gene_id &quot;OX457036.1_g_gene1_mRNA1&quot;; transcript_id &quot;OX457036.1_t_gene1_mRNA1&quot;;
+## OX457036.1   gth exon    51009   54860   .   -   0   gene_id &quot;OX457036.1_g_gene1_mRNA1&quot;; transcript_id &quot;OX457036.1_t_gene1_mRNA1&quot;;
+## OX457036.1   gth CDS 82883   86734   .   -   0   gene_id &quot;OX457036.1_g_gene2_mRNA2&quot;; transcript_id &quot;OX457036.1_t_gene2_mRNA2&quot;;
+## OX457036.1   gth exon    82883   86734   .   -   0   gene_id &quot;OX457036.1_g_gene2_mRNA2&quot;; transcript_id &quot;OX457036.1_t_gene2_mRNA2&quot;;
+## OX457036.1   gth CDS 104626  104645  .   -   2   gene_id &quot;OX457036.1_g_gene3_mRNA3&quot;; transcript_id &quot;OX457036.1_t_gene3_mRNA3&quot;;
+## OX457036.1   gth exon    104626  104645  .   -   2   gene_id &quot;OX457036.1_g_gene3_mRNA3&quot;; transcript_id &quot;OX457036.1_t_gene3_mRNA3&quot;;
+## OX457036.1   gth CDS 104696  104750  .   -   0   gene_id &quot;OX457036.1_g_gene3_mRNA3&quot;; transcript_id &quot;OX457036.1_t_gene3_mRNA3&quot;;
+## OX457036.1   gth exon    104696  104750  .   -   0   gene_id &quot;OX457036.1_g_gene3_mRNA3&quot;; transcript_id &quot;OX457036.1_t_gene3_mRNA3&quot;;
+## OX457036.1   gth CDS 104904  105745  .   -   2   gene_id &quot;OX457036.1_g_gene3_mRNA3&quot;; transcript_id &quot;OX457036.1_t_gene3_mRNA3&quot;;
+## OX457036.1   gth exon    104904  105745  .   -   2   gene_id &quot;OX457036.1_g_gene3_mRNA3&quot;; transcript_id &quot;OX457036.1_t_gene3_mRNA3&quot;;</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb72-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb72-1" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-oE</span> <span class="st">&#39;(OX457036[A-Za-z1-9._]{1,})\w+&#39;</span>  prot.nr.aa <span class="op">&gt;</span> nonred.lst</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb73-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb73-1" tabindex="-1"></a></span>
+<span id="cb73-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb73-2" tabindex="-1"></a><span class="fu">head</span> lumbricus/protocol2/data_processing/Redundancy/nonred.lst</span></code></pre></div>
+<pre><code>## OX457036.1_t_gene753_mRNA930
+## OX457036.1_t_gene803_mRNA1030
+## OX457036.1_t_gene103_mRNA135
+## OX457036.1_t_gene500_mRNA632
+## OX457036.1_t_gene503_mRNA635
+## OX457036.1_t_gene504_mRNA636
+## OX457036.1_t_gene573_mRNA720
+## OX457036.1_t_gene618_mRNA766
+## OX457036.1_t_gene384_mRNA500
+## OX457036.1_t_gene496_mRNA628</code></pre>
+<p>In nonred.lst gaan we nu een niet-redundante subset van genen vinden.</p>
+<p>Voor het filteren van het bestand bonafide.gb hebben we een lijst met loci-namen nodig in plaats van genenamen.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb75-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb75-1" tabindex="-1"></a><span class="fu">cat</span> bonafide.gb <span class="kw">|</span> <span class="fu">perl</span> <span class="at">-ne</span> ’</span>
+<span id="cb75-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb75-2" tabindex="-1"></a><span class="cf">if</span> <span class="kw">(</span> <span class="va">$_</span> =~ m/LOCUS\s<span class="pp">+(</span><span class="dt">\S</span>+<span class="pp">)</span><span class="dt">\s</span>/ <span class="kw">)</span> <span class="kw">{</span></span>
+<span id="cb75-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb75-3" tabindex="-1"></a><span class="va">$txLocus</span> = <span class="va">$1</span><span class="kw">;</span></span>
+<span id="cb75-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb75-4" tabindex="-1"></a><span class="kw">}</span> <span class="ex">elsif</span> <span class="er">(</span> <span class="va">$_</span> =~ m/\/gene=\&quot;<span class="er">(</span><span class="ex">\S+</span><span class="kw">)</span><span class="ex">\&quot;/</span> <span class="kw">)</span> <span class="kw">{</span></span>
+<span id="cb75-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb75-5" tabindex="-1"></a><span class="va">$txInGb3</span><span class="ex">{</span><span class="va">$1</span><span class="ex">}</span> = <span class="va">$txLocus</span></span>
+<span id="cb75-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb75-6" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb75-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb75-7" tabindex="-1"></a><span class="cf">if</span><span class="kw">(</span> <span class="fu">eof()</span> <span class="kw">)</span> <span class="kw">{</span></span>
+<span id="cb75-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb75-8" tabindex="-1"></a><span class="ex">foreach</span> <span class="er">(</span> <span class="ex">keys</span> %txInGb3 <span class="kw">)</span> <span class="kw">{</span></span>
+<span id="cb75-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb75-9" tabindex="-1"></a><span class="ex">print</span> <span class="st">&quot;</span><span class="va">$_</span><span class="st">\t</span><span class="va">$txInGb3</span><span class="st">{</span><span class="va">$_</span><span class="st">}\n&quot;</span><span class="kw">;</span></span>
+<span id="cb75-10"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb75-10" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb75-11"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb75-11" tabindex="-1"></a><span class="ex">}’</span> <span class="op">&gt;</span> loci.lst</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb76-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb76-1" tabindex="-1"></a></span>
+<span id="cb76-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb76-2" tabindex="-1"></a><span class="ex">Unrecognized</span> character <span class="dt">\x</span>E2<span class="kw">;</span> <span class="ex">marked</span> by <span class="op">&lt;</span>-- HERE after <span class="op">&lt;</span>-- HERE near column 1 at <span class="at">-e</span> line 1.</span>
+<span id="cb76-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb76-3" tabindex="-1"></a><span class="ex">cat:</span> write error: Broken pipe</span>
+<span id="cb76-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb76-4" tabindex="-1"></a><span class="ex">./test.sh:</span> line 2: syntax error near unexpected token <span class="kw">`(</span><span class="st">&#39;</span></span>
+<span id="cb76-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb76-5" tabindex="-1"></a><span class="st">./test.sh: line 2: `if ( $_ =~ m/LOCUS\s+(\S+)\s/ ) {&#39;</span></span></code></pre></div>
+<p>Deze commando van het protocol veroorzaakte een fout en is vervangen. Het is nu locilist.py (scripts, protocol2).</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-1" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb77-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-2" tabindex="-1"></a></span>
+<span id="cb77-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-3" tabindex="-1"></a>txInGb3 <span class="op">=</span> {}</span>
+<span id="cb77-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-4" tabindex="-1"></a>txLocus <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb77-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-5" tabindex="-1"></a></span>
+<span id="cb77-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-6" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;bonafideOrtho.gb.db&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb77-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-7" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>:</span>
+<span id="cb77-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-8" tabindex="-1"></a>        <span class="cf">if</span> re.search(<span class="vs">r&#39;LOCUS\s+(\S+)\s&#39;</span>, line):</span>
+<span id="cb77-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-9" tabindex="-1"></a>            txLocus <span class="op">=</span> re.search(<span class="vs">r&#39;LOCUS\s+(\S+)\s&#39;</span>, line).group(<span class="dv">1</span>)</span>
+<span id="cb77-10"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-10" tabindex="-1"></a>        <span class="cf">elif</span> re.search(<span class="vs">r&#39;/gene=&quot;(\S+)&quot;&#39;</span>, line):</span>
+<span id="cb77-11"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-11" tabindex="-1"></a>            gene <span class="op">=</span> re.search(<span class="vs">r&#39;/gene=&quot;(\S+)&quot;&#39;</span>, line).group(<span class="dv">1</span>)</span>
+<span id="cb77-12"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-12" tabindex="-1"></a>            txInGb3[gene] <span class="op">=</span> txLocus</span>
+<span id="cb77-13"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-13" tabindex="-1"></a></span>
+<span id="cb77-14"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-14" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;loci.lst&quot;</span>, <span class="st">&quot;w&quot;</span>) <span class="im">as</span> output_file:</span>
+<span id="cb77-15"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-15" tabindex="-1"></a>    <span class="cf">for</span> key <span class="kw">in</span> txInGb3.keys():</span>
+<span id="cb77-16"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb77-16" tabindex="-1"></a>        output_file.write(<span class="ss">f&quot;</span><span class="sc">{</span>key<span class="sc">}</span><span class="ch">\t</span><span class="sc">{</span>txInGb3[key]<span class="sc">}</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<p>en nonred.loci.py (scripts, protocol2)):</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb78-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-1" tabindex="-1"></a></span>
+<span id="cb78-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-2" tabindex="-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb78-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-3" tabindex="-1"></a></span>
+<span id="cb78-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-4" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;nonred.lst&#39;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb78-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-5" tabindex="-1"></a>    patterns <span class="op">=</span> f.read().splitlines()</span>
+<span id="cb78-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-6" tabindex="-1"></a></span>
+<span id="cb78-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-7" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;loci.lst&#39;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb78-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-8" tabindex="-1"></a>    loci <span class="op">=</span> f.read().splitlines()</span>
+<span id="cb78-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-9" tabindex="-1"></a></span>
+<span id="cb78-10"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-10" tabindex="-1"></a>matched_loci <span class="op">=</span> [locus.split(<span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>)[<span class="dv">1</span>] <span class="cf">for</span> locus <span class="kw">in</span> loci <span class="cf">if</span> <span class="bu">any</span>(pattern <span class="kw">in</span> locus <span class="cf">for</span> pattern <span class="kw">in</span> patterns)]</span>
+<span id="cb78-11"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-11" tabindex="-1"></a></span>
+<span id="cb78-12"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-12" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;nonred.loci.lst&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb78-13"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb78-13" tabindex="-1"></a>    f.write(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>.join(matched_loci))</span></code></pre></div>
+<p>wat nonred.loci.lst en loci.lst (met 2 kolommen) produceert:</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb79-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb79-1" tabindex="-1"></a></span>
+<span id="cb79-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb79-2" tabindex="-1"></a><span class="fu">head</span> lumbricus/protocol2/data_processing/Redundancy/nonred.loci.lst</span></code></pre></div>
+<pre><code>## OX457036.1_102144-115856
+## OX457036.1_161655-167728
+## OX457036.1_180282-185623
+## OX457036.1_225887-235418
+## OX457036.1_345964-351295
+## OX457036.1_411769-417637
+## OX457036.1_418604-428585
+## OX457036.1_428586-437296
+## OX457036.1_468333-473965
+## OX457036.1_488481-495418</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb81-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb81-1" tabindex="-1"></a></span>
+<span id="cb81-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb81-2" tabindex="-1"></a><span class="fu">head</span> lumbricus/protocol2/data_processing/Redundancy/loci.lst</span></code></pre></div>
+<pre><code>## OX457036.1_t_gene1_mRNA1 OX457036.1_48527-57342
+## OX457036.1_t_gene2_mRNA2 OX457036.1_80401-89216
+## OX457036.1_t_gene3_mRNA3 OX457036.1_102144-115856
+## OX457036.1_t_gene4_mRNA4 OX457036.1_138781-147529
+## OX457036.1_t_gene5_mRNA5 OX457036.1_161655-167728
+## OX457036.1_t_gene6_mRNA6 OX457036.1_180282-185623
+## OX457036.1_t_gene7_mRNA7 OX457036.1_225887-235418
+## OX457036.1_t_gene8_mRNA8 OX457036.1_321850-327440
+## OX457036.1_t_gene9_mRNA9 OX457036.1_345964-351295
+## OX457036.1_t_gene10_mRNA10   OX457036.1_389861-394620</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb83-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb83-1" tabindex="-1"></a><span class="ex">filterGenesIn.pl</span> nonred.loci.lst bonafide.gb <span class="op">&gt;</span> bonafide.f.gb</span></code></pre></div>
+<p>Deze commando haalt enkel de laatste locus uit de bonafide.gb. Het doel is om alle unieke loci uit de bonafide.gb te verzamelen, niet alleen de laatste.</p>
+<p>Om alle unieke loci te krijgen, moeten we dit in een loop zetten (protocol2, scripts, bonafide.nonred.f.py).</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-1" tabindex="-1"></a></span>
+<span id="cb84-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-2" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb84-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-3" tabindex="-1"></a>origfilename <span class="op">=</span><span class="st">&quot;bonafideRED.gb&quot;</span></span>
+<span id="cb84-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-4" tabindex="-1"></a>goodfilename <span class="op">=</span><span class="st">&quot;nonred.loci.lst&quot;</span></span>
+<span id="cb84-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-5" tabindex="-1"></a></span>
+<span id="cb84-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-6" tabindex="-1"></a>goodlist <span class="op">=</span> {}</span>
+<span id="cb84-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-7" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(goodfilename, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> goodfile:</span>
+<span id="cb84-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-8" tabindex="-1"></a>     <span class="cf">for</span> line <span class="kw">in</span> goodfile:             </span>
+<span id="cb84-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-9" tabindex="-1"></a>         goodlist[line.strip()] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb84-10"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-10" tabindex="-1"></a>         </span>
+<span id="cb84-11"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-11" tabindex="-1"></a></span>
+<span id="cb84-12"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-12" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(origfilename, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> origfile:</span>
+<span id="cb84-13"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-13" tabindex="-1"></a>    content <span class="op">=</span> origfile.read().split(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">//</span><span class="ch">\n</span><span class="st">&#39;</span>)             </span>
+<span id="cb84-14"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-14" tabindex="-1"></a>    <span class="cf">for</span> gendaten <span class="kw">in</span> content:</span>
+<span id="cb84-15"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-15" tabindex="-1"></a>         match <span class="op">=</span> re.match(<span class="vs">r&#39;^LOCUS +(\S+) .*&#39;</span>, gendaten)</span>
+<span id="cb84-16"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-16" tabindex="-1"></a>         <span class="cf">if</span> match:</span>
+<span id="cb84-17"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-17" tabindex="-1"></a>             genname <span class="op">=</span> match.group(<span class="dv">1</span>)</span>
+<span id="cb84-18"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-18" tabindex="-1"></a>             <span class="cf">if</span> genname <span class="kw">in</span> goodlist:                </span>
+<span id="cb84-19"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-19" tabindex="-1"></a>                 <span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;bonafide.filtered.nonred.gb&#39;</span>, <span class="st">&#39;a&#39;</span>) <span class="im">as</span> f2:</span>
+<span id="cb84-20"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-20" tabindex="-1"></a>                     f2.write( gendaten<span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span><span class="op">+</span><span class="st">&#39;//&#39;</span><span class="op">+</span><span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span>
+<span id="cb84-21"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-21" tabindex="-1"></a>                     f2.close()</span>
+<span id="cb84-22"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-22" tabindex="-1"></a>           </span>
+<span id="cb84-23"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb84-23" tabindex="-1"></a>           </span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb85-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb85-1" tabindex="-1"></a></span>
+<span id="cb85-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb85-2" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> LOCUS lumbricus/protocol2/data_processing/Redundancy/bonafide.f.nonred.gb</span></code></pre></div>
+<pre><code>## 602</code></pre>
+<p>Na deze fase zijn er 602 verschillende loci in Bonafide.</p>
+</div>
+<div id="trainingsset-van-proteins.etrain" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Trainingsset van Proteins.Etrain<a href="alignment.-ruwe-gegevens-inspecteren.html#trainingsset-van-proteins.etrain" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We hebben in de vorige sectie 602 niet-redundante genstructuren ontdekt die kunnen dienen om een nieuwe soort te ontwikkelen. Creëer een nieuwe species</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb87-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb87-1" tabindex="-1"></a></span>
+<span id="cb87-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb87-2" tabindex="-1"></a><span class="ex">new_species.pl</span> <span class="at">--species</span><span class="op">=</span>wormNonredEP</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb88-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb88-1" tabindex="-1"></a><span class="ex">etraining</span> <span class="at">--species</span><span class="op">=</span>wormNonredEP bonafide.gb <span class="op">&amp;&gt;</span> bonafide.out</span></code></pre></div>
+<p>Check for stop-codons:</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb89-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb89-1" tabindex="-1"></a></span>
+<span id="cb89-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb89-2" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">&quot;Variable stopCodonExcludedFromCDS set right&quot;</span> bonafide.out</span></code></pre></div>
+<p>49</p>
+<p>We moeten 49 stopcodons uitfilteren.Bad List:</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb90-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb90-1" tabindex="-1"></a></span>
+<span id="cb90-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb90-2" tabindex="-1"></a><span class="ex">etraining</span> <span class="at">--species</span><span class="op">=</span>wormNonredEP    bonafide.gb <span class="dv">2</span><span class="op">&gt;&amp;</span>1<span class="dt">\</span></span>
+<span id="cb90-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb90-3" tabindex="-1"></a><span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;in sequence&quot;</span> <span class="dt">\</span></span>
+<span id="cb90-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb90-4" tabindex="-1"></a><span class="kw">|</span>  <span class="fu">sed</span> <span class="at">-E</span> <span class="st">&#39;s/.*n sequence (\\S+):.*/\\1/&#39;</span> <span class="dt">\</span></span>
+<span id="cb90-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb90-5" tabindex="-1"></a><span class="kw">|</span> <span class="fu">sort</span> <span class="at">-u</span>   <span class="op">&gt;</span> bad.pre.list</span>
+<span id="cb90-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb90-6" tabindex="-1"></a></span>
+<span id="cb90-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb90-7" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-oE</span>  <span class="st">&quot;in sequence.*(OX457036.[1-9A-Za-z_0-]{1,})\w+&quot;</span> <span class="dt">\</span></span>
+<span id="cb90-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb90-8" tabindex="-1"></a>bad.pre.list<span class="dt">\</span></span>
+<span id="cb90-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb90-9" tabindex="-1"></a><span class="kw">|</span> <span class="fu">grep</span> <span class="at">-oE</span>  <span class="st">&quot;(OX457036.[1-9A-Za-z_0-]{1,})\w+&quot;</span><span class="op">&gt;</span> bad.list</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb91-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb91-1" tabindex="-1"></a><span class="fu">head</span>  lumbricus/protocol2/data_processing/bad-list/bad.list </span></code></pre></div>
+<pre><code>## OX457036.1_80264327-80269533
+## OX457036.1_3169142-3174603
+## OX457036.1_3169142-3174603
+## OX457036.1_82306032-82311964
+## OX457036.1_83519819-83526493
+## OX457036.1_85356189-85367403
+## OX457036.1_3254876-3258078
+## OX457036.1_87513969-87519492
+## OX457036.1_3258079-3261568
+## OX457036.1_92067632-92073579</code></pre>
+<p>Vervolgens fitler bad.list uit bonafide.gb:</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb93-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb93-1" tabindex="-1"></a><span class="fu">perl</span> filterGenes.pl  bad.list  bonafide.filtered.nonred.gb  <span class="dt">\</span></span>
+<span id="cb93-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb93-2" tabindex="-1"></a><span class="op">&gt;</span> bonafide.filtered.gb</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb94-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb94-1" tabindex="-1"></a></span>
+<span id="cb94-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb94-2" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> LOCUS bonafide.gb  bonafide.filtered.gb</span></code></pre></div>
+<p>bonafide.gb:602
+bonafide.filtered.gb:373</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb95-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb95-1" tabindex="-1"></a></span>
+<span id="cb95-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb95-2" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> bonafide.filtered.gb  bonafide.gb </span></code></pre></div>
+<p>test.gb is een klein bestand dat dient voor training. Train.gb is een groot bestand dat gebruikt wordt om de training te evalueren.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb96-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb96-1" tabindex="-1"></a></span>
+<span id="cb96-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb96-2" tabindex="-1"></a></span>
+<span id="cb96-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb96-3" tabindex="-1"></a><span class="ex">randomSplit.pl</span> bonafide.gb 200</span>
+<span id="cb96-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb96-4" tabindex="-1"></a><span class="fu">mv</span> bonafide.gb.test test.gb</span>
+<span id="cb96-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb96-5" tabindex="-1"></a><span class="fu">mv</span> bonafide.gb.train train.gb</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb97-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb97-1" tabindex="-1"></a></span>
+<span id="cb97-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb97-2" tabindex="-1"></a><span class="ex">etraining</span> <span class="at">--species</span><span class="op">=</span>wormNonredEP  train.gb <span class="op">&amp;&gt;</span> etrain.out</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb98-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb98-1" tabindex="-1"></a></span>
+<span id="cb98-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb98-2" tabindex="-1"></a><span class="fu">cat</span>  lumbricus/protocol2/data_processing/Bonafid/etrain.out</span></code></pre></div>
+<pre><code>## # Read in 373 genbank sequences.
+## Quantiles of the GC contents in the training set:
+## 0%   0.351
+## 5%   0.385   10% 0.388
+## 15%  0.393   20% 0.397
+## 25%  0.4 30% 0.403
+## 35%  0.405   40% 0.407
+## 45%  0.412   50% 0.415
+## 55%  0.417   60% 0.419
+## 65%  0.425   70% 0.429
+## 75%  0.432   80% 0.438
+## 85%  0.446   90% 0.456
+## 95%  0.478   100%    0.596
+## HMM-training the parameters...
+## i= 0 bc= (0.237, 0.263, 0.263, 0.237)
+##  ** building model for exons *EXON*
+## gene OX457036.1_t_gene1093_mRNA1640 transcr. 1 in sequence OX457036.1_98424851-98432363: Initial exon does not begin with start codon but with ttc
+## start codon frequencies: ATG(372)
+## # admissible start codons and their probabilities: ATG(1), CTG(0), TTG(0)
+##  number of bases in the reading frames: 160917 161284 161285
+## --- frame = 0 ---    minPatSum = 233
+## --- frame = 1 ---    minPatSum = 233
+## --- frame = 2 ---    minPatSum = 233
+## --- initial frame = 0 ---    minPatSum = 233
+## --- initial frame = 1 ---    minPatSum = 233
+## --- initial frame = 2 ---    minPatSum = 233
+## --- internal exon terminal frame = 0 ---    minPatSum = 233
+## --- internal exon terminal frame = 1 ---    minPatSum = 233
+## --- internal exon terminal frame = 2 ---    minPatSum = 233
+## single, initial, internal, terminal mean exon lengths :
+## 934  275 199 246
+## single exon : 66
+## initial exon 0 : 134
+## initial exon 1 : 79
+## initial exon 2 : 93
+## internal exon 0 : 511
+## internal exon 1 : 196
+## internal exon 2 : 193
+## terminal exon : 307
+## Frequency of stop codons:
+## tag:   97 (0.26)
+## taa:  102 (0.273)
+## tga:  174 (0.466)
+## end *EXON*
+## Storing parameters to file...
+## Writing exon model parameters [1] to file /home/alena/anaconda3/envs/c/config/species/wormNonredEP/wormNonredEP_exon_probs.pbl.</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb100-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb100-1" tabindex="-1"></a></span>
+<span id="cb100-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb100-2" tabindex="-1"></a></span>
+<span id="cb100-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb100-3" tabindex="-1"></a><span class="fu">tail</span> <span class="at">-6</span> etrain.out <span class="kw">|</span> <span class="fu">head</span> <span class="at">-3</span></span></code></pre></div>
+<p>tag: 97 (0.26)
+taa: 102 (0.273)
+tga: 174 (0.466)</p>
+<p>Je moet deze waarden corrigeren in je wormNonredEP_parameters.cfg in config map</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb101-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb101-1" tabindex="-1"></a></span>
+<span id="cb101-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb101-2" tabindex="-1"></a></span>
+<span id="cb101-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb101-3" tabindex="-1"></a><span class="ex">augustus</span> <span class="at">--species</span><span class="op">=</span>wormNonredEP test.gb <span class="op">&gt;</span> test.out</span></code></pre></div>
+<p>Eerst werd er een test gedaan op het model voordat het geoptimaliseerd werd, waarbij redudante structuren werden verwijderd. Deze test gaf een gevoeligheid en specificiteit van 0.01.</p>
+<p>Na het toepassen van het protocol voor het verwijderen van redundante genstructuren, nam de specificiteit toe met 0,3 tot 0,5 punten.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb102-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-1" tabindex="-1"></a><span class="ex">*******</span>      Evaluation of gene prediction     <span class="pp">*******</span></span>
+<span id="cb102-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-2" tabindex="-1"></a></span>
+<span id="cb102-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-3" tabindex="-1"></a><span class="ex">---------------------------------------------</span><span class="dt">\</span></span>
+<span id="cb102-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-4" tabindex="-1"></a>                 <span class="kw">|</span> <span class="ex">sensitivity</span> <span class="kw">|</span> <span class="ex">specificity</span> <span class="kw">|</span></span>
+<span id="cb102-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-5" tabindex="-1"></a><span class="ex">---------------------------------------------</span><span class="kw">|</span></span>
+<span id="cb102-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-6" tabindex="-1"></a><span class="ex">nucleotide</span> level <span class="kw">|</span>       <span class="ex">0.942</span> <span class="kw">|</span>       <span class="ex">0.762</span> <span class="kw">|</span></span>
+<span id="cb102-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-7" tabindex="-1"></a><span class="ex">---------------------------------------------/</span></span>
+<span id="cb102-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-8" tabindex="-1"></a></span>
+<span id="cb102-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-9" tabindex="-1"></a><span class="ex">----------------------------------------------------------------------------------------------------------</span><span class="dt">\</span></span>
+<span id="cb102-10"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-10" tabindex="-1"></a>           <span class="kw">|</span>  <span class="co">#pred |  #anno |      |    FP = false pos. |    FN = false neg. |             |             |</span></span>
+<span id="cb102-11"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-11" tabindex="-1"></a>           <span class="kw">|</span> <span class="ex">total/</span> <span class="kw">|</span> <span class="ex">total/</span> <span class="kw">|</span>   <span class="ex">TP</span> <span class="kw">|</span><span class="ex">--------------------</span><span class="kw">|</span><span class="ex">--------------------</span><span class="kw">|</span> <span class="ex">sensitivity</span> <span class="kw">|</span> <span class="ex">specificity</span> <span class="kw">|</span></span>
+<span id="cb102-12"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-12" tabindex="-1"></a>           <span class="kw">|</span> <span class="ex">unique</span> <span class="kw">|</span> <span class="ex">unique</span> <span class="kw">|</span>      <span class="kw">|</span> <span class="ex">part</span> <span class="kw">|</span> <span class="ex">ovlp</span> <span class="kw">|</span> <span class="ex">wrng</span> <span class="kw">|</span> <span class="ex">part</span> <span class="kw">|</span> <span class="ex">ovlp</span> <span class="kw">|</span> <span class="ex">wrng</span> <span class="kw">|</span>             <span class="kw">|</span>             <span class="kw">|</span></span>
+<span id="cb102-13"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-13" tabindex="-1"></a><span class="ex">----------------------------------------------------------------------------------------------------------</span><span class="kw">|</span></span>
+<span id="cb102-14"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-14" tabindex="-1"></a>           <span class="kw">|</span>        <span class="kw">|</span>        <span class="kw">|</span>      <span class="kw">|</span>               <span class="ex">1071</span> <span class="kw">|</span>                <span class="ex">767</span> <span class="kw">|</span>             <span class="kw">|</span>             <span class="kw">|</span></span>
+<span id="cb102-15"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-15" tabindex="-1"></a><span class="ex">exon</span> level <span class="kw">|</span>   <span class="ex">1884</span> <span class="kw">|</span>   <span class="ex">1580</span> <span class="kw">|</span>  <span class="ex">813</span> <span class="kw">|</span> <span class="ex">------------------</span> <span class="kw">|</span> <span class="ex">------------------</span> <span class="kw">|</span>       <span class="ex">0.515</span> <span class="kw">|</span>       <span class="ex">0.432</span> <span class="kw">|</span></span>
+<span id="cb102-16"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-16" tabindex="-1"></a>           <span class="kw">|</span>   <span class="ex">1884</span> <span class="kw">|</span>   <span class="ex">1580</span> <span class="kw">|</span>      <span class="kw">|</span>  <span class="ex">436</span> <span class="kw">|</span>  <span class="ex">104</span> <span class="kw">|</span>  <span class="ex">531</span> <span class="kw">|</span>  <span class="ex">456</span> <span class="kw">|</span>  <span class="ex">145</span> <span class="kw">|</span>  <span class="ex">166</span> <span class="kw">|</span>             <span class="kw">|</span>             <span class="kw">|</span></span>
+<span id="cb102-17"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-17" tabindex="-1"></a><span class="ex">----------------------------------------------------------------------------------------------------------/</span></span>
+<span id="cb102-18"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-18" tabindex="-1"></a></span>
+<span id="cb102-19"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-19" tabindex="-1"></a><span class="ex">----------------------------------------------------------------------------</span><span class="dt">\</span></span>
+<span id="cb102-20"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-20" tabindex="-1"></a><span class="ex">transcript</span> <span class="kw">|</span> <span class="co">#pred | #anno |   TP |   FP |   FN | sensitivity | specificity |</span></span>
+<span id="cb102-21"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-21" tabindex="-1"></a><span class="ex">----------------------------------------------------------------------------</span><span class="kw">|</span></span>
+<span id="cb102-22"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-22" tabindex="-1"></a><span class="ex">gene</span> level <span class="kw">|</span>   <span class="ex">454</span> <span class="kw">|</span>   <span class="ex">373</span> <span class="kw">|</span>   <span class="ex">88</span> <span class="kw">|</span>  <span class="ex">366</span> <span class="kw">|</span>  <span class="ex">285</span> <span class="kw">|</span>       <span class="ex">0.236</span> <span class="kw">|</span>       <span class="ex">0.194</span> <span class="kw">|</span></span>
+<span id="cb102-23"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb102-23" tabindex="-1"></a><span class="ex">----------------------------------------------------------------------------/</span></span></code></pre></div>
+<p>Zie lumbricus/protocol2/test/test.out voor meer informatie.</p>
+</div>
+<div id="prediction-met-behulp-van-extrinsiek-bewijs-protocol-11-12" class="section level2 hasAnchor" number="4.10">
+<h2><span class="header-section-number">4.10</span> Prediction met behulp van extrinsiek bewijs (Protocol 11-12)<a href="alignment.-ruwe-gegevens-inspecteren.html#prediction-met-behulp-van-extrinsiek-bewijs-protocol-11-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Voor de extrinistiek Hints is proteoom van wormen geselecteerd. Het proteoom komt van UniProt, dat zowel het proteoom van Lumbricus Terrestris als dat van Eisenia Fetida omvat. Twee van de Fasta-bestanden die we van UniProt hebben gekregen, zijn in één bestand samengevoegd.</p>
+<p>Proteome Lumbcricus Terrestris:
+<a href="https://www.uniprot.org/uniprotkb?query=%28taxonomy_id%3A6397%29" class="uri">https://www.uniprot.org/uniprotkb?query=%28taxonomy_id%3A6397%29</a></p>
+<p>Proteome Eisenia Fetida:
+<a href="https://www.uniprot.org/uniprotkb?query=%28taxonomy_id%3A6393%29" class="uri">https://www.uniprot.org/uniprotkb?query=%28taxonomy_id%3A6393%29</a></p>
+<p>Samengevat Lumbricus en Eisenia:</p>
+<p>lumbcricus -&gt; protocl12 -&gt; data_processing -&gt; merged_6393_and_6397.fa</p>
+<p>Fasta files, afkomstig van Uniprot:
+Eisienia: lumbricus -&gt; protocl12 -&gt; data_raw-&gt; uniprotkb_taxonomy_id_6393_2024_12_29.fasta
+Lumbricus : lumbricus -&gt; protocl12 -&gt; data_raw-&gt; uniprotkb_taxonomy_id_6397_2024_12_29.fasta.</p>
+<p>Eerste step is de ProtHints:</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb103-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb103-1" tabindex="-1"></a></span>
+<span id="cb103-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb103-2" tabindex="-1"></a><span class="ex">../bin/prothint.py</span> ../OX457036.1.fasta ../merged_6393_and_6397.fa</span></code></pre></div>
+<p>Het programma ProtHints wordt gebruikt om hints voor te bereiden (ProtHints installatie vond plaats in protocol 2). In deze fase wordt het bestand prothint_augustus.gff aangemaakt.
+Voorbeeld prothint_augustus.gff :</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb104-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb104-1" tabindex="-1"></a><span class="ex">OX457036.1</span>  ProtHint    start   33409650    33409652    2   <span class="at">-</span>   0   src=P<span class="kw">;</span><span class="va">mult</span><span class="op">=</span>2<span class="kw">;</span><span class="va">pri</span><span class="op">=</span>4<span class="kw">;</span><span class="va">al_score</span><span class="op">=</span>0.433058<span class="kw">;</span></span>
+<span id="cb104-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb104-2" tabindex="-1"></a><span class="ex">OX457036.1</span>  ProtHint    intron  34198705    34199175    2   +   .   src=P<span class="kw">;</span><span class="va">mult</span><span class="op">=</span>2<span class="kw">;</span><span class="va">pri</span><span class="op">=</span>4<span class="kw">;</span><span class="va">al_score</span><span class="op">=</span>0.38446<span class="kw">;</span></span>
+<span id="cb104-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb104-3" tabindex="-1"></a><span class="ex">OX457036.1</span>  ProtHint    intron  34199278    34199565    2   +   .   src=P<span class="kw">;</span><span class="va">mult</span><span class="op">=</span>2<span class="kw">;</span><span class="va">pri</span><span class="op">=</span>4<span class="kw">;</span><span class="va">al_score</span><span class="op">=</span>0.26901<span class="kw">;</span></span>
+<span id="cb104-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb104-4" tabindex="-1"></a><span class="ex">OX457036.1</span>  ProtHint    intron  37878497    37880236    2   +   .   src=P<span class="kw">;</span><span class="va">mult</span><span class="op">=</span>1<span class="kw">;</span><span class="va">pri</span><span class="op">=</span>4<span class="kw">;</span><span class="va">al_score</span><span class="op">=</span>0.488541<span class="kw">;</span></span>
+<span id="cb104-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb104-5" tabindex="-1"></a><span class="ex">OX457036.1</span>  ProtHint    intron  37880480    37881139    2   +   .   src=P<span class="kw">;</span><span class="va">mult</span><span class="op">=</span>1<span class="kw">;</span><span class="va">pri</span><span class="op">=</span>4<span class="kw">;</span><span class="va">al_score</span><span class="op">=</span>0.474112<span class="kw">;</span></span>
+<span id="cb104-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb104-6" tabindex="-1"></a><span class="ex">OX457036.1</span>  ProtHint    stop    37881166    37881168    2   +   0   src=P<span class="kw">;</span><span class="va">mult</span><span class="op">=</span>1<span class="kw">;</span><span class="va">pri</span><span class="op">=</span>4<span class="kw">;</span><span class="va">al_score</span><span class="op">=</span>0.429752<span class="kw">;</span></span></code></pre></div>
+<p>Je kunt hints gelijk toepassen in augustus.</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb105-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb105-1" tabindex="-1"></a></span>
+<span id="cb105-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb105-2" tabindex="-1"></a><span class="ex">augustus</span> <span class="at">--species</span><span class="op">=</span>caenorhabditis </span>
+<span id="cb105-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb105-3" tabindex="-1"></a><span class="ex">--predictionStart=2000000</span> <span class="at">--predictionEnd</span><span class="op">=</span>3000000<span class="dt">\</span></span>
+<span id="cb105-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb105-4" tabindex="-1"></a>OX457036.1.fasta </span>
+<span id="cb105-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb105-5" tabindex="-1"></a><span class="ex">--extrinsicCfgFile=extrinsic.cfg</span></span>
+<span id="cb105-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb105-6" tabindex="-1"></a><span class="ex">--hintsfile=prothint_augustus.gff</span> </span>
+<span id="cb105-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb105-7" tabindex="-1"></a><span class="op">&gt;</span> augustus.extrinistics.hints.gff</span></code></pre></div>
+<p>For de extrinsic.cfg zee:</p>
+<p><a href="https://github.com/nextgenusfs/augustus/blob/master/config/extrinsic/cgp.extrinsic.cfg" class="uri">https://github.com/nextgenusfs/augustus/blob/master/config/extrinsic/cgp.extrinsic.cfg</a></p>
+<p>Voorbeeld extrinsic.cfg:</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb106-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-1" tabindex="-1"></a><span class="co"># source of extrinsic information:</span></span>
+<span id="cb106-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-2" tabindex="-1"></a><span class="co"># M manual anchor (required)</span></span>
+<span id="cb106-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-3" tabindex="-1"></a><span class="co"># P protein database hit</span></span>
+<span id="cb106-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-4" tabindex="-1"></a><span class="co"># E EST/cDNA database hit</span></span>
+<span id="cb106-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-5" tabindex="-1"></a><span class="co"># C combined est/protein database hit</span></span>
+<span id="cb106-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-6" tabindex="-1"></a><span class="co"># D Dialign</span></span>
+<span id="cb106-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-7" tabindex="-1"></a><span class="co"># R retroposed genes</span></span>
+<span id="cb106-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-8" tabindex="-1"></a><span class="co"># T transMapped refSeqs</span></span>
+<span id="cb106-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-9" tabindex="-1"></a><span class="co"># W wiggle track coverage info from RNA-Seq</span></span>
+<span id="cb106-10"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-10" tabindex="-1"></a></span>
+<span id="cb106-11"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-11" tabindex="-1"></a><span class="ex">[SOURCES]</span></span>
+<span id="cb106-12"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-12" tabindex="-1"></a><span class="ex">M</span> RM E W P</span>
+<span id="cb106-13"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-13" tabindex="-1"></a></span>
+<span id="cb106-14"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-14" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb106-15"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-15" tabindex="-1"></a><span class="co"># individual_liability: Only unsatisfiable hints are disregarded. By default this flag is not set</span></span>
+<span id="cb106-16"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-16" tabindex="-1"></a><span class="co"># and the whole hint group is disregarded when one hint in it is unsatisfiable.</span></span>
+<span id="cb106-17"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-17" tabindex="-1"></a><span class="co"># 1group1gene: Try to predict a single gene that covers all hints of a given group. This is relevant for</span></span>
+<span id="cb106-18"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-18" tabindex="-1"></a><span class="co"># hint groups with gaps, e.g. when two ESTs, say 5&#39; and 3&#39;, from the same clone align nearby.</span></span>
+<span id="cb106-19"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-19" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb106-20"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-20" tabindex="-1"></a><span class="ex">[SOURCE-PARAMETERS]</span></span>
+<span id="cb106-21"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-21" tabindex="-1"></a></span>
+<span id="cb106-22"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-22" tabindex="-1"></a></span>
+<span id="cb106-23"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-23" tabindex="-1"></a><span class="co">#   feature        bonus         malus   gradelevelcolumns</span></span>
+<span id="cb106-24"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-24" tabindex="-1"></a><span class="co">#       r+/r-</span></span>
+<span id="cb106-25"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-25" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb106-26"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-26" tabindex="-1"></a><span class="co"># the gradelevel colums have the following format for each source</span></span>
+<span id="cb106-27"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-27" tabindex="-1"></a><span class="co"># sourcecharacter numscoreclasses boundary    ...  boundary    gradequot  ...  gradequot</span></span>
+<span id="cb106-28"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-28" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb106-29"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-29" tabindex="-1"></a></span>
+<span id="cb106-30"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-30" tabindex="-1"></a><span class="ex">[GENERAL]</span></span>
+<span id="cb106-31"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-31" tabindex="-1"></a>      <span class="ex">start</span>      1        0.8  M    1  1e+100  RM  1     1    E 1    1    W 1    1      P       1     1e3</span>
+<span id="cb106-32"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-32" tabindex="-1"></a>       <span class="ex">stop</span>      1        0.8  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1     1e3</span>
+<span id="cb106-33"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-33" tabindex="-1"></a>        <span class="ex">tss</span>      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1   1</span>
+<span id="cb106-34"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-34" tabindex="-1"></a>        <span class="ex">tts</span>      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1   1</span>
+<span id="cb106-35"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-35" tabindex="-1"></a>        <span class="ex">ass</span>      1   0.95 0.1  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1     100</span>
+<span id="cb106-36"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-36" tabindex="-1"></a>        <span class="ex">dss</span>      1   0.95 0.1  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1     100</span>
+<span id="cb106-37"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-37" tabindex="-1"></a>   <span class="ex">exonpart</span>      1  .992 .985  M    1  1e+100  RM  1     1    E 1    1    W 1    1.02   P   1   1</span>
+<span id="cb106-38"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-38" tabindex="-1"></a>       <span class="ex">exon</span>      1        0.9  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1     1e4</span>
+<span id="cb106-39"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-39" tabindex="-1"></a> <span class="ex">intronpart</span>      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1   1</span>
+<span id="cb106-40"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-40" tabindex="-1"></a>     <span class="ex">intron</span>      1        .34  M    1  1e+100  RM  1     1    E 1  1e6    W 1    1  P   1     100</span>
+<span id="cb106-41"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-41" tabindex="-1"></a>    <span class="ex">CDSpart</span>      1     1 .985  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1     1e5</span>
+<span id="cb106-42"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-42" tabindex="-1"></a>        <span class="ex">CDS</span>      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1   1</span>
+<span id="cb106-43"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-43" tabindex="-1"></a>    <span class="ex">UTRpart</span>      1     1    1  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1   1</span>
+<span id="cb106-44"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-44" tabindex="-1"></a>        <span class="ex">UTR</span>      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1   1</span>
+<span id="cb106-45"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-45" tabindex="-1"></a>     <span class="ex">irpart</span>      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1   1</span>
+<span id="cb106-46"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-46" tabindex="-1"></a><span class="ex">nonexonpart</span>      1          1  M    1  1e+100  RM  1     1.15 E 1    1    W 1    1  P   1   1</span>
+<span id="cb106-47"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb106-47" tabindex="-1"></a>  <span class="ex">genicpart</span>      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1  P   1   1</span></code></pre></div>
+<p>Tijdens deze stap wordt er een gff-annotatiebestand geproduceerd.
+Voorbeeld Augustus gff van protein Hints:</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb107-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-1" tabindex="-1"></a></span>
+<span id="cb107-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-2" tabindex="-1"></a><span class="co"># start gene g10</span></span>
+<span id="cb107-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-3" tabindex="-1"></a><span class="ex">OX457036.1</span>  AUGUSTUS    gene    2072765 2073299 0.59    +   .   g10</span>
+<span id="cb107-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-4" tabindex="-1"></a><span class="ex">OX457036.1</span>  AUGUSTUS    transcript  2072765 2073299 0.59    +   .   g10.t1</span>
+<span id="cb107-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-5" tabindex="-1"></a><span class="ex">OX457036.1</span>  AUGUSTUS    tss 2072765 2072765 .   +   .   transcript_id <span class="st">&quot;g10.t1&quot;</span><span class="kw">;</span> <span class="ex">gene_id</span> <span class="st">&quot;g10&quot;</span><span class="kw">;</span></span>
+<span id="cb107-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-6" tabindex="-1"></a><span class="ex">OX457036.1</span>  AUGUSTUS    5<span class="st">&#39;-UTR  2072765 2072799 0.99    +   .   transcript_id &quot;g10.t1&quot;; gene_id &quot;g10&quot;;</span></span>
+<span id="cb107-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-7" tabindex="-1"></a><span class="st">OX457036.1  AUGUSTUS    start_codon 2072800 2072802 .   +   0   transcript_id &quot;g10.t1&quot;; gene_id &quot;g10&quot;;</span></span>
+<span id="cb107-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-8" tabindex="-1"></a><span class="st">OX457036.1  AUGUSTUS    single  2072800 2073033 0.93    +   0   transcript_id &quot;g10.t1&quot;; gene_id &quot;g10&quot;;</span></span>
+<span id="cb107-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-9" tabindex="-1"></a><span class="st">OX457036.1  AUGUSTUS    CDS 2072800 2073033 0.93    +   0   transcript_id &quot;g10.t1&quot;; gene_id &quot;g10&quot;;</span></span>
+<span id="cb107-10"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-10" tabindex="-1"></a><span class="st">OX457036.1  AUGUSTUS    stop_codon  2073031 2073033 .   +   0   transcript_id &quot;g10.t1&quot;; gene_id &quot;g10&quot;;</span></span>
+<span id="cb107-11"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-11" tabindex="-1"></a><span class="st">OX457036.1  AUGUSTUS    3&#39;</span>-UTR  2073034 2073299 0.6 +   .   transcript_id <span class="st">&quot;g10.t1&quot;</span><span class="kw">;</span> <span class="ex">gene_id</span> <span class="st">&quot;g10&quot;</span><span class="kw">;</span></span>
+<span id="cb107-12"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-12" tabindex="-1"></a><span class="ex">OX457036.1</span>  AUGUSTUS    tts 2073299 2073299 .   +   .   transcript_id <span class="st">&quot;g10.t1&quot;</span><span class="kw">;</span> <span class="ex">gene_id</span> <span class="st">&quot;g10&quot;</span><span class="kw">;</span></span>
+<span id="cb107-13"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-13" tabindex="-1"></a><span class="co"># protein sequence = [MYKLVDETSKLAWLLCLMRMLSQKYYVSSMLMLANSRASLLPLLIAYNELISRDDELSCYRFLHSCDMFILTFFRRS]</span></span>
+<span id="cb107-14"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-14" tabindex="-1"></a><span class="co"># Evidence for and against this transcript:</span></span>
+<span id="cb107-15"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-15" tabindex="-1"></a><span class="co"># % of transcript supported by hints (any source): 0</span></span>
+<span id="cb107-16"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-16" tabindex="-1"></a><span class="co"># CDS exons: 0/1</span></span>
+<span id="cb107-17"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-17" tabindex="-1"></a><span class="co"># CDS introns: 0/0</span></span>
+<span id="cb107-18"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-18" tabindex="-1"></a><span class="co"># 5&#39;UTR exons and introns: 0/1</span></span>
+<span id="cb107-19"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-19" tabindex="-1"></a><span class="co"># 3&#39;UTR exons and introns: 0/1</span></span>
+<span id="cb107-20"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-20" tabindex="-1"></a><span class="co"># hint groups fully obeyed: 0</span></span>
+<span id="cb107-21"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-21" tabindex="-1"></a><span class="co"># incompatible hint groups: 0</span></span>
+<span id="cb107-22"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb107-22" tabindex="-1"></a><span class="co"># end gene g10</span></span></code></pre></div>
+<p>De gff die we van deze pipeline hebben ontvangen, is hier te vinden:
+lumbricus/protocol12/gff</p>
+</div>
+<div id="identificatie-en-visualisatie" class="section level2 hasAnchor" number="4.11">
+<h2><span class="header-section-number">4.11</span> Identificatie en visualisatie<a href="alignment.-ruwe-gegevens-inspecteren.html#identificatie-en-visualisatie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="gen-identificatie" class="section level2 hasAnchor" number="4.12">
+<h2><span class="header-section-number">4.12</span> Gen-identificatie<a href="alignment.-ruwe-gegevens-inspecteren.html#gen-identificatie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Alle voorspellingen zijn gebaseerd op een DNA-fragment van 1 mb, wat overeenkomt met 1% van chromosoom. De exacte locatie is aangeduid als 2000000-3000000. (2-3 mb) van chr1. De predictor is toegepast op het nieuwe lumtermodel (zie, protocol 1, model) dat in deel 1 is ontwikkeld. Alle stappen voor identificatie zijn vastgelegd in prediction.xlsx (map identification).</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb108-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb108-1" tabindex="-1"></a><span class="ex">augustus</span> <span class="at">--species</span><span class="op">=</span>lumter lumter.fasta <span class="at">--predictionStart</span><span class="op">=</span>2000000 <span class="at">--predictionEnd</span><span class="op">=</span>3000000 <span class="at">--gff3</span><span class="op">=</span>on</span></code></pre></div>
+<p>Voor het identificeren van genen hebben we de qblast() functie gebruikt uit de Bio.Blast.NCBIWWW module van Biopython. De qblast functie heeft verschillende opties die vergelijkbaar zijn met de parameters die je kunt instellen op de BLAST webpagina. Wij hebben nucleotide blast (“blastn”, “nt”) gebruikt. Deze functie is bedoeld om nucleotidesequenties te vinden die vergelijkbaar zijn met die van andere organismen, en deze gegevens zijn beschikbaar in de NCBI-database. Hulp voor de qblast functie:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb109-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb109-1" tabindex="-1"></a><span class="ex">from</span> Bio.Blast import NCBIWWW </span>
+<span id="cb109-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb109-2" tabindex="-1"></a><span class="bu">help</span><span class="er">(</span><span class="ex">NCBIWWW.qblast</span><span class="kw">)</span></span></code></pre></div>
+<p>Some useful parameters:</p>
+<pre><code> - program        blastn, blastp, blastx, tblastn, or tblastx (lower case)
+ - database       Which database to search against (e.g. &quot;nr&quot;).
+ - sequence       The sequence to search.
+ - ncbi_gi        TRUE/FALSE whether to give &#39;gi&#39; identifier.
+ - descriptions   Number of descriptions to show.  Def 500.
+ - alignments     Number of alignments to show.  Def 500.
+ - expect         An expect value cutoff.  Def 10.0.
+ - matrix_name    Specify an alt. matrix (PAM30, PAM70, BLOSUM80, BLOSUM45).
+ - filter         &quot;none&quot; turns off filtering.  Default no filtering
+ - format_type    &quot;HTML&quot;, &quot;Text&quot;, &quot;ASN.1&quot;, or &quot;XML&quot;.  Def. &quot;XML&quot;.
+ - entrez_query   Entrez query to limit Blast search
+ - hitlist_size   Number of hits to return. Default 50
+ - megablast      TRUE/FALSE whether to use MEga BLAST algorithm (blastn only)
+ - short_query    TRUE/FALSE whether to adjust the search parameters for a
+                  short query sequence. Note that this will override
+                  manually set parameters like word size and e value. Turns
+                  off when sequence length is &gt; 30 residues. Default: None.
+ - service        plain, psi, phi, rpsblast, megablast (lower case)
+
+This function does no checking of the validity of the parameters
+and passes the values to the server as is.  More help is available at:
+https://ncbi.github.io/blast-cloud/dev/api.html
+&lt;/p&gt;</code></pre>
+<p>Eerst hebben we het ruwe GFF-bestand voorbereid voor de Blast API door alle spaties en het ‘#’ symbool te verwijderen. Om de gencoördinaten te krijgen, maakten we gebruik van een regex-patroon.</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb111-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb111-1" tabindex="-1"></a><span class="ex">pattern_a</span> = r<span class="st">&#39;gene.*\s+(OX457036.*AUGUSTUS\sgene.*g\d+)&#39;</span>  </span></code></pre></div>
+<p>Voor het ophalen van de coderingssequentie uit het GFF-bestand maakten we gebruik van een andere regex.</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb112-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb112-1" tabindex="-1"></a><span class="ex">pattern_b</span> = r<span class="st">&quot;coding sequence =.*[actg\s\]]{1,}&quot;</span>.</span></code></pre></div>
+<p>Nadat je het GFF-bestand hebt geparsed, is het klaar voor gebruik met de Blast API. Elke coderingssequentie heeft een unieke identificatie die de start- en eindcoördinaten bevat:
+genomisch OX457036.1:2000789-2003917</p>
+<p>Voor meer details kun je de scripts bekijken, vooral parsegtf.py, deel identification.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb113-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb113-1" tabindex="-1"></a></span>
+<span id="cb113-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb113-2" tabindex="-1"></a><span class="fu">head</span> lumbricus/identification/prediciton/genome.fa.gff</span></code></pre></div>
+<pre><code>## &gt;genomic OX457036.1:2000789-2003917
+## atggaggagtctaggccagtcactcccgctcagccttctaggcccccttcttctatggagatattgctcgaggcaatac
+## aaactaatgctaggtccactcatgaagcaatacagactaacgctaagtcttcacaagaggctatgcaagcgcatgctaagtcaactcatgatgctatg
+## acttctatacagtcgtctttgcaactgaatgccagagagacgcaagaggcgattgccacggtggagtttaatgtcctggcagtgcaatcaaatgttag
+## cgaagctatttcctcagtgcaatcaaatgtaagagaggagataagagaagagatctcggctgtaagagataatgtcagggaagcgctgacggaaatgg
+## tatcacgattggaaaggctagaggcgtcgccggtacccaagcctgctgtggattcgaaccctggttacctcaccgctattacccctgcggacgcgcca
+## taccactcgaccatcggcctgggggaaactttgggtgctaggcctaaagatttcacgcaacctggtatattgcggagaagtgatagattggctggtag
+## gccgccaatttcatatagggagtacggtagtcgaaaagactggccgcctttcctgggttgggattcgaacccagaagtcacctcctcctgtcctccct
+## ctatctctagagctcgtccacagcagcacgcggtcccatcaggcgaggatccggaagtggcgactccggggatgccgataggggcgggcgttacaatt
+## ggtcccagccagtggggtcaaattagttctagagattttggtgatgataggttagaagaggaaactgactatgctagaacaggcgaaatggcaatttc</code></pre>
+<p>De blast-query’s via Bio.Blast.NCBIWWW.qblast zijn uitgevoerd en de resultaten zijn teruggegeven in XML-formaat (voor meer informatie, zie: blast.py).</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb115-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-1" tabindex="-1"></a><span class="im">from</span> Bio.Blast <span class="im">import</span> NCBIWWW</span>
+<span id="cb115-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-2" tabindex="-1"></a><span class="im">from</span> Bio.Blast <span class="im">import</span> NCBIXML</span>
+<span id="cb115-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-3" tabindex="-1"></a></span>
+<span id="cb115-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-4" tabindex="-1"></a></span>
+<span id="cb115-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-5" tabindex="-1"></a>genomic<span class="op">=</span><span class="st">&quot;genome.fa&quot;</span></span>
+<span id="cb115-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-6" tabindex="-1"></a></span>
+<span id="cb115-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-7" tabindex="-1"></a>sequence_data <span class="op">=</span> <span class="bu">open</span>(genomic).read()</span>
+<span id="cb115-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-8" tabindex="-1"></a> </span>
+<span id="cb115-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-9" tabindex="-1"></a>sequence_data</span>
+<span id="cb115-10"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-10" tabindex="-1"></a> </span>
+<span id="cb115-11"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-11" tabindex="-1"></a>result_handle <span class="op">=</span> NCBIWWW.qblast(<span class="st">&quot;blastn&quot;</span>, <span class="st">&quot;nt&quot;</span>, sequence_data, hitlist_size<span class="op">=</span><span class="dv">5</span>, alignments<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb115-12"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-12" tabindex="-1"></a></span>
+<span id="cb115-13"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-13" tabindex="-1"></a></span>
+<span id="cb115-14"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-14" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;reults.xml&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> save_file: </span>
+<span id="cb115-15"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-15" tabindex="-1"></a>   blast_results <span class="op">=</span> result_handle.read() </span>
+<span id="cb115-16"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-16" tabindex="-1"></a>   save_file.write(blast_results)</span>
+<span id="cb115-17"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb115-17" tabindex="-1"></a>   </span></code></pre></div>
+<p>Voor de blast-analyse is het bestand genome.fa opgedeeld in drie verschillende fracties, wat resulteerde in 3 xml-bestanden (identificatie-&gt;xml). Elke DNA-sequentie die je invoert in nucleotide BLAST krijgt een bepaald aantal hits, en het geeft ook wat statistieken over die hits.<br />
+Een voorbeeld van een hit: .</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb116-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-1" tabindex="-1"></a><span class="op">&lt;</span>Iteration_hits<span class="op">&gt;</span></span>
+<span id="cb116-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-2" tabindex="-1"></a><span class="op">&lt;</span>Hit<span class="op">&gt;</span></span>
+<span id="cb116-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-3" tabindex="-1"></a>  <span class="op">&lt;</span>Hit_num<span class="op">&gt;</span>1<span class="op">&lt;</span>/Hit_num<span class="op">&gt;</span></span>
+<span id="cb116-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-4" tabindex="-1"></a>  <span class="op">&lt;</span>Hit_id<span class="op">&gt;</span>gi<span class="kw">|</span><span class="ex">11071239</span><span class="kw">|</span><span class="ex">emb</span><span class="kw">|</span><span class="ex">AJ299434.1</span><span class="kw">|</span><span class="op">&lt;</span>/Hit_id<span class="op">&gt;</span></span>
+<span id="cb116-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-5" tabindex="-1"></a>  <span class="op">&lt;</span>Hit_def<span class="op">&gt;</span>Lumbricus <span class="ex">rubellus</span> mt2A gene for metallothionein 2A, exons 1-4<span class="op">&lt;</span>/Hit_def<span class="op">&gt;</span></span>
+<span id="cb116-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-6" tabindex="-1"></a>  <span class="op">&lt;</span>Hit_accession<span class="op">&gt;</span>AJ299434<span class="op">&lt;</span>/Hit_accession<span class="op">&gt;</span></span>
+<span id="cb116-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-7" tabindex="-1"></a>  <span class="op">&lt;</span>Hit_len<span class="op">&gt;</span>7302<span class="op">&lt;</span>/Hit_len<span class="op">&gt;</span></span>
+<span id="cb116-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-8" tabindex="-1"></a>  <span class="op">&lt;</span>Hit_hsps<span class="op">&gt;</span></span>
+<span id="cb116-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-9" tabindex="-1"></a>    <span class="op">&lt;</span>Hsp<span class="op">&gt;</span></span>
+<span id="cb116-10"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-10" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_num<span class="op">&gt;</span>1<span class="op">&lt;</span>/Hsp_num<span class="op">&gt;</span></span>
+<span id="cb116-11"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-11" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_bit-score<span class="op">&gt;</span>85.143<span class="op">&lt;</span>/Hsp_bit-score<span class="op">&gt;</span></span>
+<span id="cb116-12"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-12" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_score<span class="op">&gt;</span>93<span class="op">&lt;</span>/Hsp_score<span class="op">&gt;</span></span>
+<span id="cb116-13"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-13" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_evalue<span class="op">&gt;</span>7.19655e-12<span class="op">&lt;</span>/Hsp_evalue<span class="op">&gt;</span></span>
+<span id="cb116-14"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-14" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_query-from<span class="op">&gt;</span>70<span class="op">&lt;</span>/Hsp_query-from<span class="op">&gt;</span></span>
+<span id="cb116-15"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-15" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_query-to<span class="op">&gt;</span>246<span class="op">&lt;</span>/Hsp_query-to<span class="op">&gt;</span></span>
+<span id="cb116-16"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-16" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_hit-from<span class="op">&gt;</span>306<span class="op">&lt;</span>/Hsp_hit-from<span class="op">&gt;</span></span>
+<span id="cb116-17"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-17" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_hit-to<span class="op">&gt;</span>490<span class="op">&lt;</span>/Hsp_hit-to<span class="op">&gt;</span></span>
+<span id="cb116-18"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-18" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_query-frame<span class="op">&gt;</span>1<span class="op">&lt;</span>/Hsp_query-frame<span class="op">&gt;</span></span>
+<span id="cb116-19"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-19" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_hit-frame<span class="op">&gt;</span>1<span class="op">&lt;</span>/Hsp_hit-frame<span class="op">&gt;</span></span>
+<span id="cb116-20"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-20" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_identity<span class="op">&gt;</span>131<span class="op">&lt;</span>/Hsp_identity<span class="op">&gt;</span></span>
+<span id="cb116-21"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-21" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_positive<span class="op">&gt;</span>131<span class="op">&lt;</span>/Hsp_positive<span class="op">&gt;</span></span>
+<span id="cb116-22"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-22" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_gaps<span class="op">&gt;</span>8<span class="op">&lt;</span>/Hsp_gaps<span class="op">&gt;</span></span>
+<span id="cb116-23"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-23" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_align-len<span class="op">&gt;</span>185<span class="op">&lt;</span>/Hsp_align-len<span class="op">&gt;</span></span>
+<span id="cb116-24"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-24" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_qseq<span class="op">&gt;</span>AGATTGAACATCAAACAGGATATAGTTGACAAAGTGCGGAATAGAAGAATGCGATACTTTGGACATGTGA------CAAGAATGGGGAACGAAATATATCCAAAGATAGGC-TCAACGGATATGTACATGGGAAAAGATCAAGGGGA-GACCAAAGAAAAGATGGATCGACACGATAAGAGATGA<span class="op">&lt;</span>/Hsp_qseq<span class="op">&gt;</span></span>
+<span id="cb116-25"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-25" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_hseq<span class="op">&gt;</span>AGACTGAATATTCAACATGATATAATACACAAGATCCAAAGTAAACGACTACGCTACTTTGGCCACGTATATATATCCAGAATGAGGGATGAGAGATACCCGAAGGTAGCTGTCAACGGATATGTGCATGGAAAAAGAAAAAAAGGAAGACCAAAGAAGAGATGGGTCGACATGATACGTGAGGA<span class="op">&lt;</span>/Hsp_hseq<span class="op">&gt;</span></span>
+<span id="cb116-26"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-26" tabindex="-1"></a>      <span class="op">&lt;</span>Hsp_midline<span class="op">&gt;|</span><span class="kw">||</span> <span class="kw">||||</span> <span class="kw">||</span>  <span class="kw">||||</span> <span class="kw">||||||</span> <span class="kw">|</span>  <span class="kw">||||</span>  <span class="kw">|</span> <span class="kw">|</span>  <span class="kw">|</span> <span class="kw">||</span> <span class="kw">|</span> <span class="kw">||</span> <span class="kw">|</span> <span class="kw">||</span> <span class="kw">||||||||</span> <span class="kw">||</span> <span class="kw">||</span>        <span class="kw">|</span> <span class="kw">||||||</span> <span class="kw">||</span> <span class="kw">|</span> <span class="kw">||</span> <span class="kw">|</span> <span class="kw">|||</span> <span class="kw">||</span> <span class="kw">|||</span> <span class="kw">|||</span>   <span class="kw">|||||||||||||</span> <span class="kw">|||||</span> <span class="kw">||||||</span>  <span class="kw">||</span>  <span class="kw">|||</span> <span class="kw">||||||||||</span> <span class="kw">||||||</span> <span class="kw">||||||</span> <span class="kw">||||</span> <span class="kw">|</span> <span class="kw">||</span> <span class="kw">||</span><span class="op">&lt;</span>/Hsp_midline<span class="op">&gt;</span></span>
+<span id="cb116-27"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-27" tabindex="-1"></a>    <span class="op">&lt;</span>/Hsp<span class="op">&gt;</span></span>
+<span id="cb116-28"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-28" tabindex="-1"></a>  <span class="op">&lt;</span>/Hit_hsps<span class="op">&gt;</span></span>
+<span id="cb116-29"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb116-29" tabindex="-1"></a><span class="op">&lt;</span>/Hit<span class="op">&gt;</span></span></code></pre></div>
+<p>De XML-resultaten van de blast-uitvoer laten zien hoe goed de Alignment overeenkomt, samen met de eval-waarde. De gevonden Hits worden bewaard met het NCBI-referentienummer, zoals “ref XM_003731435.1”, of het Ensemble-referentienummer, zoals “emb OE003277.1”. Zodra je de XML-resultaten hebt, is de eerste stap om ze te parseren. De XML-resultaten zijn geparsed en gesorteerd op coördinaten en e-waarde (sort-blast-by-coords.py, sort-blast-by-pval.py).</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb117-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-1" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb117-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-2" tabindex="-1"></a>cwd <span class="op">=</span> os.getcwd()</span>
+<span id="cb117-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-3" tabindex="-1"></a><span class="bu">print</span>(cwd)</span>
+<span id="cb117-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-4" tabindex="-1"></a></span>
+<span id="cb117-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-5" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb117-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-6" tabindex="-1"></a><span class="im">from</span> Bio.Blast <span class="im">import</span> NCBIXML</span>
+<span id="cb117-7"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-7" tabindex="-1"></a>OUT <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;sorted_by_coordinates.fraction3.txt&quot;</span>, <span class="st">&#39;w&#39;</span>)</span>
+<span id="cb117-8"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-8" tabindex="-1"></a>OUT.write(<span class="st">&quot;Query Name</span><span class="ch">\t</span><span class="st">Query Length</span><span class="ch">\t</span><span class="st">Alignment ID NCBI</span><span class="ch">\t</span><span class="st">eValue</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb117-9"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-9" tabindex="-1"></a>result_handle <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;blast.results.fraction3.xml&quot;</span>)</span>
+<span id="cb117-10"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-10" tabindex="-1"></a>blast_records <span class="op">=</span> NCBIXML.parse(result_handle)</span>
+<span id="cb117-11"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-11" tabindex="-1"></a><span class="cf">for</span> rec <span class="kw">in</span> blast_records:</span>
+<span id="cb117-12"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-12" tabindex="-1"></a>        <span class="cf">for</span> alignment <span class="kw">in</span> rec.alignments:</span>
+<span id="cb117-13"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-13" tabindex="-1"></a>            <span class="cf">for</span> hsp <span class="kw">in</span> alignment.hsps:</span>
+<span id="cb117-14"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-14" tabindex="-1"></a>                fields <span class="op">=</span> [rec.query_id, rec.query[:<span class="dv">100</span>], <span class="bu">str</span>(rec.query_length), alignment.hit_id,</span>
+<span id="cb117-15"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-15" tabindex="-1"></a>                           alignment.accession, <span class="bu">str</span>(hsp.expect)]</span>
+<span id="cb117-16"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-16" tabindex="-1"></a>                OUT.write(<span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>.join(fields) <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb117-17"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-17" tabindex="-1"></a>OUT.close() </span>
+<span id="cb117-18"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb117-18" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Done&#39;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb118-1" tabindex="-1"></a>sorted_by_coordinate <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;lumbricus/identification/prediction.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="dv">6</span> )</span>
+<span id="cb118-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb118-2" tabindex="-1"></a></span>
+<span id="cb118-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb118-3" tabindex="-1"></a>sorted_by_p <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;lumbricus/identification/prediction.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="dv">5</span> ) </span>
+<span id="cb118-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb118-4" tabindex="-1"></a></span>
+<span id="cb118-5"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb118-5" tabindex="-1"></a><span class="co"># sorted by coordinates</span></span>
+<span id="cb118-6"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb118-6" tabindex="-1"></a><span class="fu">head</span>(sorted_by_coordinate )</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 6
+##   `Query Name`  `Query Length`        `Alignment ID NCBI` eValue Column1    `_1`
+##   &lt;chr&gt;         &lt;chr&gt;                               &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;
+## 1 Query_1234140 genomic OX457036.1:2…                 459 gi|26… XM_063… 6.18e-5
+## 2 Query_1234140 genomic OX457036.1:2…                 459 gi|26… XM_063… 3.20e-2
+## 3 Query_1234140 genomic OX457036.1:2…                 459 gi|26… XM_062… 4.75e-1
+## 4 Query_1234140 genomic OX457036.1:2…                 459 gi|26… XM_062… 4.75e-1
+## 5 Query_1234140 genomic OX457036.1:2…                 459 gi|26… XM_062… 4.75e-1
+## 6 Query_1234141 genomic OX457036.1:2…                 408 gi|28… OZ0783… 4.46e-6</code></pre>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb120-1" tabindex="-1"></a><span class="co"># sorted by p-val</span></span>
+<span id="cb120-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb120-2" tabindex="-1"></a><span class="fu">head</span>(sorted_by_p)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 2
+##   Column1 Column2                                                               
+##   &lt;chr&gt;   &lt;chr&gt;                                                                 
+## 1 &lt;NA&gt;    &lt;NA&gt;                                                                  
+## 2 query:  genomic OX457036.1:2108840-2109808                                    
+## 3 match:  gi|2739567124|gb|CP157508.1| Candidozyma auris strain BA03 chromosome…
+## 4 query:  genomic OX457036.1:2108840-2109808                                    
+## 5 match:  gi|2739567124|gb|CP157508.1| Candidozyma auris strain BA03 chromosome…
+## 6 query:  genomic OX457036.1:2108840-2109808</code></pre>
+<p>Eerst moeten we naar alle voorspellingen kijken, ook naar de voorspellingen met ongunstige eval-waarden (vergelijkbaar met p-waarden). Alle voorspellingen: .</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb122-1" tabindex="-1"></a>all_predictions <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;lumbricus/identification/prediction.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="dv">1</span> )</span>
+<span id="cb122-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb122-2" tabindex="-1"></a></span>
+<span id="cb122-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb122-3" tabindex="-1"></a>all_predictions </span></code></pre></div>
+<pre><code>## # A tibble: 89 × 5
+##    `OX457036.1:2000789-2003917` AUGUSTUS gene  predicted:not satisfac…¹ `185403`
+##    &lt;chr&gt;                        &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;                    &lt;chr&gt;   
+##  1 OX457036.1:2007959-2008723   AUGUSTUS gene  predicted:not satisfact… 1852    
+##  2 OX457036.1:2039309-2039692   AUGUSTUS gene  predicted:not satisfact… 881419  
+##  3 OX457036.1:2062296-2062562   AUGUSTUS gene  predicted:not satisfact… 0       
+##  4 OX457036.1:2087020-2087265   AUGUSTUS gene  predicted: Lumbricus ru… 7.38114…
+##  5 OX457036.1:2089471-2089899   AUGUSTUS gene  predicted:Lampetra plan… 8.69409…
+##  6 OX457036.1:2090721-2091137   AUGUSTUS gene  predicted:not satisfact… 965729  
+##  7 OX457036.1:2106048-210639    AUGUSTUS gene  predicted:Mus musculus … 6.12276…
+##  8 OX457036.1:2106538-2106948   AUGUSTUS gene  predicted:not satisfact… 640374  
+##  9 OX457036.1:2107471-2108487   AUGUSTUS gene  predicted:not satisfact… 3.24628…
+## 10 OX457036.1:2108840-2109808   AUGUSTUS gene  predicted: Candidozyma … 1.27857…
+## # ℹ 79 more rows
+## # ℹ abbreviated name: ¹​`predicted:not satisfactory p-value`</code></pre>
+<p>In deze fase hadden we voorspellingen( Hits) voor 92 genen op een 1mb chromosoom (tussen 2mb en 3mb), zelfs met enkele genen die niet zo’n goede eval-waarden hadden.</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb124-1" tabindex="-1"></a><span class="fu">colnames</span>(all_predictions ) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>,<span class="st">&quot;source&quot;</span>,<span class="st">&quot;feature&quot;</span>, <span class="st">&quot;predicted&quot;</span>, <span class="st">&quot;eval&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb125-1" tabindex="-1"></a>all_predictions <span class="sc">$</span>eval <span class="ot">&lt;-</span> <span class="fu">parse_number</span>(all_predictions <span class="sc">$</span>eval)</span>
+<span id="cb125-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb125-2" tabindex="-1"></a></span>
+<span id="cb125-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb125-3" tabindex="-1"></a>df.f.pavlue <span class="ot">&lt;-</span>  all_predictions <span class="sc">%&gt;%</span> <span class="fu">filter</span>(eval<span class="sc">&lt;=</span> <span class="fl">1e-4</span>) <span class="sc">%&gt;%</span>  <span class="fu">filter</span>(eval<span class="sc">!=</span><span class="dv">0</span>)</span>
+<span id="cb125-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb125-4" tabindex="-1"></a><span class="fu">head</span>(df.f.pavlue)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 5
+##   id                         source   feature predicted                     eval
+##   &lt;chr&gt;                      &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;                        &lt;dbl&gt;
+## 1 OX457036.1:2087020-2087265 AUGUSTUS gene    predicted: Lumbricus rub… 7.38e- 7
+## 2 OX457036.1:2089471-2089899 AUGUSTUS gene    predicted:Lampetra plane… 8.69e-99
+## 3 OX457036.1:2106048-210639  AUGUSTUS gene    predicted:Mus musculus c… 6.12e-10
+## 4 OX457036.1:2108840-2109808 AUGUSTUS gene    predicted: Candidozyma a… 1.28e-22
+## 5 OX457036.1:2108840-2109808 AUGUSTUS gene    predictied: Phaeodactylu… 2.82e-13
+## 6 OX457036.1:2112894-2113442 AUGUSTUS gene    predicted:  Ixodes scapu… 1.27e-14</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb127-1" tabindex="-1"></a><span class="fu">write.table</span>( df.f.pavlue, <span class="sc">+</span></span>
+<span id="cb127-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb127-2" tabindex="-1"></a>               <span class="st">&quot;lumbricus/identification/prediction/df.filtered.txt&quot;</span>,<span class="at">sep=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb128-1" tabindex="-1"></a>predictions <span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">&quot;lumbricus/identification/prediciton/df.filtered.txt&quot;</span>)</span></code></pre></div>
+<p>In de daaropvolgende fase hebben we een eval, evaluatiedrempel van 1e-4 ingesteld, wat redelijk mild is.Na het filteren van de voorspellingen met ongunstige eval-waarden, hebben we 32 voorspellingen gevonden die betrekking hebben op 32 genen voor een 1 Mb segment van het eerste chromosoom, wat 1% van het totale chromosoom is. De uiteindelijke voorspelling voor het fragment dat we onderzoeken, is als volgt.</p>
+<p>predicition:</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb129-1" tabindex="-1"></a>table7 <span class="ot">&lt;-</span>  predictions   <span class="sc">%&gt;%</span>  <span class="fu">select</span>(V7)</span>
+<span id="cb129-2"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb129-2" tabindex="-1"></a>table7 <span class="sc">%&gt;%</span></span>
+<span id="cb129-3"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb129-3" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="st">&quot;html&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb129-4"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb129-4" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">7</span>)</span></code></pre></div>
+<table class="table" style="font-size: 7px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+V7
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+predicted: Lumbricus rubellus mt2A gene for metallothionein 2A, exons 1-4;AJ299434.1;
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:Lampetra planeri genome assembly, chromosome: 62; emb OZ078387.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:Mus musculus chromosome 8, clone RP23-339I14, complete sequence;AC121136.11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted: Candidozyma auris strain BA03 chromosome; 1 eval; CP157508.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predictied: Phaeodactylum tricornutum CCAP 1055/1 predicted protein partial mRN;XM_002176960.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted: Ixodes scapularis G-protein coupled receptor dmsr; XM_029969893.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted :Melanogrammus aeglefinus genome assembly, chromosome: 10; emb OZ180142.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted : Earthworm (L.terrestris) extracellular globin chain c gene, complete cds; gb J05161.1 LUMHBC
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:Zymobacter palmae IAM14233 DNA, complete genome;dbj|AP018933.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted: Hylaeus volcanicus uncharacterized LOC128877144 (LOC128877144), transcript variant X5, mRNA;XM_054124195.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:Mus musculus BAC clone RP23-95F15 from chromosome 1, complete sequence;AC165443.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:4_Tte_b3v08;emb|OE003277.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:Earthworm (L.terrestris) extracellular globin chain c gene, complete cds;J05161.1 LUMHBC
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted: XM_009033761.1| Helobdella robusta hypothetical protein mRNA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:XM_069820523.1| PREDICTED: Periplaneta americana carbonic anhydrase beta (CAHbeta), transcript variant X3, mRNA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+preddicted:Loxodonta africana zinc finger protein 252-like (LOC100666328), transcript variant X4, mRNA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:gb|KX592814.1| Bos taurus isolate Dominette_000065F genomic sequence
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted: gb|J05161.1|LUMHBC Earthworm (L.terrestris) extracellular globin chain c gene, complete cds
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:ref|XM_637462.1| Dictyostelium discoideum AX4 hypothetical protein (DDB_G0277655) mRNA, complete cds
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:Rattus norvegicus uncharacterized LOC134482949 (LOC134482949), ncRNA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Melanogrammus aeglefinus genome assembly, chromosome: 13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:PREDICTED: Portunus trituberculatus putative uncharacterized protein DDB_G0271982 (LOC123514901), partial mRNA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:emb|LN021320.1| Spirometra erinaceieuropaei genome assembly S_erinaceieuropaei ,scaffold SPER_scaffold0020968
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted: gb|L12688.1|LUMBT Earthworm DNA sequence
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+prediction:emb|OZ078459.1| Lampetra fluviatilis genome assembly, chromosome: 56
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+emb|OZ180149.1| Melanogrammus aeglefinus genome assembly, chromosome: 17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted: ef|NC_043824.1|;Passiflora obovata chloroplast, complete genome;gb|MK694931.1|
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:ref|XM_005559078.4;Macaca fascicularis piggyBac transposable element derived 4 (PGBD4), mRNA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:emb|OE179951.1| 2_Tcm_b3v08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:emb;BX544872.8;Zebrafish DNA sequence from clone DKEY-58L12 in linkage group 3, complete sequence
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:XM_023356947.1;Centruroides sculpturatus uncharacterized LOC111615539 (LOC111615539), mRNA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+predicted:XM_066083420.1| PREDICTED: Magallana gigas retrovirus-related Pol polyprotein from transposon 412 (LOC105343682), mRNA
+</td>
+</tr>
+</tbody>
+</table>
+<p>For more details,see
+Voor meer informatie, kijk in de map identification, prediction.xlsx, sheet “df_fitlered”.</p>
+</div>
+<div id="visualisatie" class="section level2 hasAnchor" number="4.13">
+<h2><span class="header-section-number">4.13</span> Visualisatie<a href="alignment.-ruwe-gegevens-inspecteren.html#visualisatie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="genviz" class="section level2 hasAnchor" number="4.14">
+<h2><span class="header-section-number">4.14</span> GenViz<a href="alignment.-ruwe-gegevens-inspecteren.html#genviz" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Voor het voorbereiden van de data kun je de volgende bestanden bekijken: genviz-features.py, map visualisatie en GenomeViz. De genen die zijn gevonden, worden weergegeven in grafieken, met speciale aandacht voor de eerste 2-3 megabases van chromosoom 1 (coördinaten 2000000-3000000).</p>
+<p>
+Om te scrollen door de features, kun je de webversie gebruiken:
+</p>
+<p><a href="https://alenagrrr3.github.io/2-3mb-terrsetris/" class="uri">https://alenagrrr3.github.io/2-3mb-terrsetris/</a></p>
+<p>De totale representatie van het chromosoom /OX457036.1.</p>
+<p><a href="https://alenagrrr3.github.io/OX457036.1.html/" class="uri">https://alenagrrr3.github.io/OX457036.1.html/</a></p>
+</div>
+<div id="jbrowse" class="section level2 hasAnchor" number="4.15">
+<h2><span class="header-section-number">4.15</span> JBrowse<a href="alignment.-ruwe-gegevens-inspecteren.html#jbrowse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Het gen met de coördinaten OX457036.1:2,087,020 - 2,090,258 is geïdentificeerd als het mt2A-gen voor metallothioneïne 2A van Lumbricus rubellus, inclusief exons 1-4; AJ299434.1. is onderzocht in de in Jbrowser <span class="citation">(<em><span>JBrowse</span> | <span>JBrowse</span></em>, n.d.)</span></p>
+<p>Gene 5, with intron, Cds, and transctipt:</p>
+<p><img src="lumbricus/visualization/jbrowser/start_codon.png" style="width:97.0%" />
+<img src="lumbricus/visualization/jbrowser/2087020.png" style="width:97.0%" />
+To zoom in, you can ues the link:</p>
+<p><a href="https://raw.githubusercontent.com/alenagrrr3/OX457036.1.html/refs/heads/main/lumterAM182481.1-gene5.svg" class="uri">https://raw.githubusercontent.com/alenagrrr3/OX457036.1.html/refs/heads/main/lumterAM182481.1-gene5.svg</a></p>
+</div>
+<div id="artemis" class="section level2 hasAnchor" number="4.16">
+<h2><span class="header-section-number">4.16</span> Artemis<a href="alignment.-ruwe-gegevens-inspecteren.html#artemis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb130"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb130-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb130-1" tabindex="-1"></a><span class="ex">gen</span> <span class="st">&quot;g5&quot;</span> <span class="er">(</span><span class="ex">OX457036.1:2,087,020</span> <span class="at">-</span> 2,090,258 <span class="kw">)</span>   <span class="er">in</span> <span class="ex">Artemis</span> Browser  met startcodon en CDS <span class="er">(</span><span class="ex">minus</span> streng<span class="kw">)</span><span class="bu">:</span></span></code></pre></div>
+<p><img src="lumbricus/visualization/artemis/artemis-g5.png" style="width:97.0%" />
+To zoom in, you can ues the link:</p>
+<p><a href="https://raw.githubusercontent.com/alenagrrr3/OX457036.1.html/refs/heads/main/artemis-g5-startcodon.webp" class="uri">https://raw.githubusercontent.com/alenagrrr3/OX457036.1.html/refs/heads/main/artemis-g5-startcodon.webp</a></p>
+</div>
+<div id="bijlage" class="section level2 hasAnchor" number="4.17">
+<h2><span class="header-section-number">4.17</span> Bijlage<a href="alignment.-ruwe-gegevens-inspecteren.html#bijlage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Map struture:</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="alignment.-ruwe-gegevens-inspecteren.html#cb131-1" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(<span class="st">&quot;lumbricus&quot;</span>)</span></code></pre></div>
+<pre><code>## lumbricus
+## ├── bib
+## ├── DESCRIPTION
+## ├── docs
+## │   ├── docs.pdf
+## │   ├── pva_feedback.v.1.0_lajsa_alena_merged.docx
+## │   ├── PVA_Regenwormproject.html
+## │   └── PVA_regenwormproject.Rmd
+## ├── identification
+## │   ├── gff
+## │   │   └── lumter2-3mb.gff3
+## │   ├── prediciton
+## │   │   ├── df.filtered.txt
+## │   │   └── genome.fa.gff
+## │   ├── prediction.xlsx
+## │   ├── scripts
+## │   │   ├── blast.py
+## │   │   ├── parsegtf.py
+## │   │   ├── soort-blast-by-coords.py
+## │   │   └── sort-blast-by-pval.py
+## │   └── xml
+## │       ├── blast.results.fraction2.xml
+## │       ├── blast.results.fraction3.xml
+## │       └── results.fraction1.xml
+## ├── lumbricus.Rproj
+## ├── NAMESPACE
+## ├── protocol1
+## │   ├── data_processing
+## │   │   ├── bonafide
+## │   │   │   ├── bonafide.gb
+## │   │   │   ├── bonafide.gb.test
+## │   │   │   ├── bonafide.gb.train
+## │   │   │   ├── bonafide.unique.gb
+## │   │   │   ├── etrain.out
+## │   │   │   └── test.out
+## │   │   ├── GeneMarkES
+## │   │   │   ├── genemark.average_gene_length.out
+## │   │   │   ├── genemark.f.good.gtf
+## │   │   │   ├── genemark.gtf
+## │   │   │   └── hmm.model
+## │   │   │       └── gmhmm.mod
+## │   │   └── TOPHAT
+## │   │       ├── accepted_hits.bam
+## │   │       ├── align_summary.txt
+## │   │       ├── igv
+## │   │       │   ├── exon-intron.png
+## │   │       │   ├── exon-introns.svg
+## │   │       │   ├── exontranscripts.png
+## │   │       │   ├── exon_ids.bed
+## │   │       │   ├── igv_snapshot.svg
+## │   │       │   ├── igv_snapshot_bed_vs_juncions.png
+## │   │       │   ├── junction_vs_bam_10kb.png
+## │   │       │   ├── junction_vs_bam_11kb.png
+## │   │       │   ├── junction_vs_bam_11kb2.png
+## │   │       │   ├── junction_vs_bam_2.8.bp.png
+## │   │       │   └── transctipts_ids.bed
+## │   │       ├── introns.gff
+## │   │       ├── introns_by_gmh_with_gtf.gff
+## │   │       ├── junctions.bed
+## │   │       └── transcripts.gtf
+## │   ├── model
+## │   │   └── wormET0
+## │   │       ├── wormET0_exon_probs.pbl
+## │   │       ├── wormET0_igenic_probs.pbl
+## │   │       ├── wormET0_intron_probs.pbl
+## │   │       ├── wormET0_metapars.cfg
+## │   │       ├── wormET0_metapars.cgp.cfg
+## │   │       ├── wormET0_metapars.utr.cfg
+## │   │       ├── wormET0_parameters.cfg
+## │   │       └── wormET0_weightmatrix.txt
+## │   ├── refs
+## │   │   ├── README.GeneMark-ET
+## │   │   └── refs
+## │   ├── scrips
+## │   │   ├── bed_to_gff.pl
+## │   │   ├── filterGenemark.pl
+## │   │   ├── step1.sh
+## │   │   ├── step2.sh
+## │   │   ├── step3.sh
+## │   │   ├── step4.sh
+## │   │   └── step5.sh
+## │   └── test
+## │       └── eval.png
+## ├── protocol2
+## │   ├── data_processing
+## │   │   ├── bad-list
+## │   │   │   ├── bad.list
+## │   │   │   ├── bad.pre.list
+## │   │   │   ├── bonafide.f.nonred.gb
+## │   │   │   └── inseq
+## │   │   ├── Bonafid
+## │   │   │   ├── bonafide.gb
+## │   │   │   ├── bonafide.gtf
+## │   │   │   └── etrain.out
+## │   │   ├── ProtHints
+## │   │   │   ├── augustus.hints.prots.orthodb.arthropoda.2-3mb.gff
+## │   │   │   ├── extrinsic.cfg
+## │   │   │   ├── gth.concat.aln
+## │   │   │   ├── prothint.gff
+## │   │   │   ├── prothint_augustus.gff
+## │   │   │   ├── run.cfg
+## │   │   │   └── seed_proteins.faa
+## │   │   └── Redundancy
+## │   │       ├── bonafide.f.gb
+## │   │       ├── bonafide.f.gtf
+## │   │       ├── bonafide.f.nonred.gb
+## │   │       ├── loci.lst
+## │   │       ├── nonred.loci.lst
+## │   │       ├── nonred.lst
+## │   │       ├── prot.aa
+## │   │       ├── prot.nr.aa
+## │   │       └── traingenes.lst
+## │   ├── data_raw
+## │   │   └── transcriptome.refs
+## │   ├── filter
+## │   │   ├── before.png
+## │   │   ├── bonafide.filtered.nonred.gb
+## │   │   ├── export.hist.on.wormEP
+## │   │   ├── filtered.gb
+## │   │   ├── filterGenes.pl
+## │   │   ├── prot.out.png
+## │   │   └── test.out
+## │   ├── model
+## │   │   └── wormNonredEP
+## │   │       ├── wormNonredEP_exon_probs.pbl
+## │   │       ├── wormNonredEP_igenic_probs.pbl
+## │   │       ├── wormNonredEP_intron_probs.pbl
+## │   │       ├── wormNonredEP_metapars.cfg
+## │   │       ├── wormNonredEP_metapars.cgp.cfg
+## │   │       ├── wormNonredEP_metapars.utr.cfg
+## │   │       ├── wormNonredEP_parameters.cfg
+## │   │       └── wormNonredEP_weightmatrix.txt
+## │   ├── refs
+## │   │   └── refs
+## │   ├── resources
+## │   │   └── ncbi-blast-2.16.0+
+## │   │       ├── bin
+## │   │       │   ├── blastn_vdb
+## │   │       │   ├── blastp
+## │   │       │   ├── blast_vdb_cmd
+## │   │       │   ├── makeprofiledb
+## │   │       │   └── rpsblast
+## │   │       └── ChangeLog
+## │   └── scripts
+## │       ├── bonafide.nonred.f.py
+## │       ├── createbonafidef.py
+## │       ├── create_train_list.py
+## │       ├── locilst.py
+## │       ├── nonred.loci.py
+## │       ├── step1.sh
+## │       ├── step2.sh
+## │       └── step3.sh
+## └── visualization
+##     ├── artemis
+##     │   ├── artemis-g5.png
+##     │   └── lumter.artemis.track.gff3
+##     ├── GenomeViz
+##     │   ├── custom_bopython-feature.png
+##     │   ├── genviz-features.py
+##     │   ├── index.html
+##     │   └── terr.png
+##     └── jbrowser
+##         ├── 2087020.png
+##         ├── cds.png
+##         ├── intron.png
+##         ├── start_codon.png
+##         └── transcript1.png</code></pre>
+</div>
+<div id="references" class="section level2 hasAnchor" number="4.18">
+<h2><span class="header-section-number">4.18</span> References<a href="alignment.-ruwe-gegevens-inspecteren.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+<div id="footer">Copyright &copy;  Hogeschool Utrecht   DSFB2  <i class="fa-solid fa-webhook"></i> 2024  		</footer>
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="samenvatting.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="differential-gene-expression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+# Read in 373 genbank sequences.
+Quantiles of the GC contents in the training set:
+0%	0.351
+5%	0.385	10%	0.388
+15%	0.393	20%	0.397
+25%	0.4	30%	0.403
+35%	0.405	40%	0.407
+45%	0.412	50%	0.415
+55%	0.417	60%	0.419
+65%	0.425	70%	0.429
+75%	0.432	80%	0.438
+85%	0.446	90%	0.456
+95%	0.478	100%	0.596
+HMM-training the parameters...
+i= 0 bc= (0.237, 0.263, 0.263, 0.237)
+ ** building model for exons *EXON*
+gene OX457036.1_t_gene1093_mRNA1640 transcr. 1 in sequence OX457036.1_98424851-98432363: Initial exon does not begin with start codon but with ttc
+start codon frequencies: ATG(372)
+# admissible start codons and their probabilities: ATG(1), CTG(0), TTG(0)
+ number of bases in the reading frames: 160917 161284 161285
+--- frame = 0 ---    minPatSum = 233
+--- frame = 1 ---    minPatSum = 233
+--- frame = 2 ---    minPatSum = 233
+--- initial frame = 0 ---    minPatSum = 233
+--- initial frame = 1 ---    minPatSum = 233
+--- initial frame = 2 ---    minPatSum = 233
+--- internal exon terminal frame = 0 ---    minPatSum = 233
+--- internal exon terminal frame = 1 ---    minPatSum = 233
+--- internal exon terminal frame = 2 ---    minPatSum = 233
+single, initial, internal, terminal mean exon lengths :
+934	275	199	246
+single exon : 66
+initial exon 0 : 134
+initial exon 1 : 79
+initial exon 2 : 93
+internal exon 0 : 511
+internal exon 1 : 196
+internal exon 2 : 193
+terminal exon : 307
+Frequency of stop codons:
+tag:   97 (0.26)
+taa:  102 (0.273)
+tga:  174 (0.466)
+end *EXON*
+Storing parameters to file...
+Writing exon model parameters [1] to file /home/alena/anaconda3/envs/c/config/species/wormNonredEP/wormNonredEP_exon_probs.pbl.

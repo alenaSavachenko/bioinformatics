@@ -1,0 +1,32 @@
+"1" "OX457036.1" "2087020" "2087265" "AUGUSTUS" "gene" "predicted: Lumbricus rubellus mt2A gene for metallothionein 2A, exons 1-4;AJ299434.1;" 7.38000000000001e-05
+"2" " OX457036.1" "2089471" "2089899" "AUGUSTUS" "gene" "predicted:Lampetra planeri genome assembly, chromosome: 62; emb OZ078387.2" 8.69000000000009e-97
+"3" "OX457036.1" "2106048" "210639" "AUGUSTUS" "gene" "predicted:Mus musculus chromosome 8, clone RP23-339I14, complete sequence;AC121136.11" 6.12000000000001e-08
+"4" "OX457036.1" "2108840" "2109808" "AUGUSTUS" "gene" "predicted: Candidozyma auris strain BA03 chromosome; 1 eval;  CP157508.1" 1.27857e-22
+"5" " OX457036.1" "2108840" "2109808" "AUGUSTUS" "gene" "predictied: Phaeodactylum tricornutum CCAP 1055/1 predicted protein partial mRN;XM_002176960.1" 2.82e-11
+"6" "OX457036.1" "2112894" "2113442" "AUGUSTUS" "gene" "predicted:  Ixodes scapularis G-protein coupled receptor dmsr; XM_029969893.4" 1.27e-12
+"7" "OX457036.1" "2121930" "2122163" "AUGUSTUS" "gene" "predicted :Melanogrammus aeglefinus genome assembly, chromosome: 10;  emb OZ180142.1" 6.78000000000002e-24
+"8" "OX457036.1" "2267178" "2267675" "AUGUSTUS" "gene" "predicted : Earthworm (L.terrestris) extracellular globin chain c gene, complete cds; gb J05161.1 LUMHBC	" 2.06000000000001e-28
+"9" "OX457036.1" "2310931" "2315817" "AUGUSTUS" "gene" "predicted:Zymobacter palmae IAM14233 DNA, complete genome;dbj|AP018933.1	" 1.79e-10
+"10" "OX457036.1" "2417427" "2418269" "AUGUSTUS" "gene" "predicted: Hylaeus volcanicus uncharacterized LOC128877144 (LOC128877144), transcript variant X5, mRNA;XM_054124195.1" 5.01000000000003e-58
+"11" "OX457036.1" "2435738" "2435962" "AUGUSTUS" "gene" "predicted:Mus musculus BAC clone RP23-95F15 from chromosome 1, complete sequence;AC165443.5" 2.75000000000001e-41
+"12" "OX457036.1" "2438078" "2438413" "AUGUSTUS" "gene" "predicted:4_Tte_b3v08;emb|OE003277.1	" 4.09000000000001e-16
+"13" "OX457036.1" "2527938" "2528267" "AUGUSTUS" "gene" "predicted:Earthworm (L.terrestris) extracellular globin chain c gene, complete cds;J05161.1 LUMHBC	" 2.88e-05
+"14" "OX457036.1" "2577242" "2577547" "AUGUSTUS" "gene" "predicted: XM_009033761.1|	Helobdella robusta hypothetical protein mRNA	" 2.83e-11
+"15" "OX457036.1" "2596779" "2597162" "AUGUSTUS" "gene" "predicted:XM_069820523.1|	PREDICTED: Periplaneta americana carbonic anhydrase beta (CAHbeta), transcript variant X3, mRNA" 2.62884e-07
+"16" "OX457036.1" "2597827" "2599035" "AUGUSTUS" "gene" "preddicted:Loxodonta africana zinc finger protein 252-like (LOC100666328), transcript variant X4, mRNA	" 1.72e-22
+"17" "OX457036.1" "2600509" "2600898" "AUGUSTUS" "gene" "predicted:gb|KX592814.1|	Bos taurus isolate Dominette_000065F genomic sequence" 2.67456e-07
+"18" "OX457036.1" "2625618" "2625986" "AUGUSTUS" "gene" "predicted: gb|J05161.1|LUMHBC	Earthworm (L.terrestris) extracellular globin chain c gene, complete cds	" 3.49000000000000e-11
+"19" " OX457036.1" "2650957" "2651178" "AUGUSTUS" "gene" "predicted:ref|XM_637462.1|	Dictyostelium discoideum AX4 hypothetical protein (DDB_G0277655) mRNA, complete cds" 3.29194000000002e-47
+"20" "OX457036.1" "2654466" "2654759" "AUGUSTUS" "gene" "predicted:Rattus norvegicus uncharacterized LOC134482949 (LOC134482949), ncRNA	" 9.42000000000001e-11
+"21" "OX457036.1" "2674660" "2675025" "AUGUSTUS" "gene" "Melanogrammus aeglefinus genome assembly, chromosome: 13" 1.67444000000001e-66
+"22" "OX457036.1" "2678908" "2679186" "AUGUSTUS" "gene" "predicted:PREDICTED: Portunus trituberculatus putative uncharacterized protein DDB_G0271982 (LOC123514901), partial mRNA	" 5.99000000000004e-52
+"23" "OX457036.1" "2686635" "2686898" "AUGUSTUS" "gene" "predicted:emb|LN021320.1|	Spirometra erinaceieuropaei genome assembly S_erinaceieuropaei ,scaffold SPER_scaffold0020968" 1.84e-06
+"24" "OX457036.1" "2767384" "2768025" "AUGUSTUS" "gene" "predicted: gb|L12688.1|LUMBT	Earthworm DNA sequence	" 4.29000000000001e-13
+"25" "OX457036.1" "2784545" "2784997" "AUGUSTUS" "gene" "prediction:emb|OZ078459.1|	Lampetra fluviatilis genome assembly, chromosome: 56" 2.12000000000001e-21
+"26" "OX457036.1" "2786942" "2787238" "AUGUSTUS" "gene" "emb|OZ180149.1|	Melanogrammus aeglefinus genome assembly, chromosome: 17" 9.52000000000003e-30
+"27" "OX457036.1" "2825999" "2831191" "AUGUSTUS" "gene" "predicted: ef|NC_043824.1|;Passiflora obovata chloroplast, complete genome;gb|MK694931.1|	" 8.08000000000003e-27
+"28" "OX457036.1" "2845298" "2847028" "AUGUSTUS" "gene" "predicted:ref|XM_005559078.4;Macaca fascicularis piggyBac transposable element derived 4 (PGBD4), mRNA	" 1.79000000000001e-29
+"29" "OX457036.1" "2860105" "2860968" "AUGUSTUS" "gene" "predicted:emb|OE179951.1|	2_Tcm_b3v08	" 5.13000000000006e-115
+"30" "OX457036.1" "2882239" "2882535" "AUGUSTUS" "gene" "predicted:emb;BX544872.8;Zebrafish DNA sequence from clone DKEY-58L12 in linkage group 3, complete sequence" 2.55000000000001e-24
+"31" "OX457036.1" "2961015" "2962235" "AUGUSTUS" "gene" "predicted:XM_023356947.1;Centruroides sculpturatus uncharacterized LOC111615539 (LOC111615539), mRNA	" 7.38000000000002e-20
+"32" "OX457036.1" "2979135" "2981480" "AUGUSTUS" "gene" "predicted:XM_066083420.1|	PREDICTED: Magallana gigas retrovirus-related Pol polyprotein from transposon 412 (LOC105343682), mRNA	" 7.38000000000002e-20

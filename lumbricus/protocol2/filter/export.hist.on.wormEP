@@ -1,0 +1,1000 @@
+ 1015  conda activate c
+ 1016  msa2prfl.pl
+ 1017  msa2prfl.pl Artropoda.part1.fa  
+ 1018  history
+ 1019  msa2prfl.pl Artropoda.part1.fa > Artropoda.profil.part1
+ 1020  codna install bioconda ::clustalo
+ 1021  conda install bioconda::clustalo
+ 1022  ls
+ 1023  cd ..
+ 1024  ls
+ 1025  cd ..
+ 1026  ls
+ 1027  cd proteins/
+ 1028  ls
+ 1029  clutsalo -h
+ 1030  clustalo -h
+ 1031  ls
+ 1032  history
+ 1033  clustalo -h
+ 1034  ls
+ 1035  history
+ 1036  $ wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
+ 1037  --2024-12-13 08:03:37--  ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
+ 1038  conda activate c
+ 1039  startAlign.pl
+ 1040  startAlign.pl  --genome OX457036.1.fasta  -prot proteina.fa  --prg gth 
+ 1041  ls
+ 1042  cd sli
+ 1043  tar xvzf ncbi-blast-2.16.0+-x64-linux.tar.gz 
+ 1044  conda activate c
+ 1045  gth2gtf.pl
+ 1046  gth2gtf.pl gth.concat.proteina.aln  bonafide.a.gtf
+ 1047  computerFlankingRegion.pl bonafide.gtf 
+ 1048  computeFlankingRegion.pl
+ 1049  computeFlankingRegion.pl bonafide.a.gtf  
+ 1050  gff2gbSmallDNA.pl
+ 1051  bonafide.a.gtf  OX457036.1.fasta.masked  1722 bonafide.gb
+ 1052  gff2gbSmallDNA.pl
+ 1053  gff2gbSmallDNA.pl  bonafide.a.gtf OX457036.1.fasta.masked bonafide.a.gb
+ 1054  $ gff2gbSmallDNA.pl  bonafide.a.gtf OX457036.1.fasta.masked 1722  bonafide.a.gb
+ 1055  gff2gbSmallDNA.pl  bonafide.a.gtf OX457036.1.fasta.masked 1722  bonafide.a.gb
+ 1056  head bonafide.a.g 
+ 1057  head bonafide.a.gb 
+ 1058  history > ~/data/algn/hist.on.protein.alg
+ 1059  wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.16.0%2B-x64-linux.tar.gz
+ 1060  touch wgetBlast
+ 1061  ls
+ 1062  cd cytochrome\ oxidase\ MSA/
+ 1063  ls
+ 1064  cd ..
+ 1065  codna activate c
+ 1066  conda activate c
+ 1067  msa2prfl.pl --prefix_from_seqnames --max_entropy=0.75  --blockscorefile=cytochrome/blocksPF00116.alignment.full cytochrome/PF00116.alignment.seed  > PF00116_seed.prfl
+ 1068  msa2prfl.pl --prefix_from_seqnames 
+ 1069  conda activate c
+ 1070  msa2prfl.pl --prefix_from_seqnames   --blockscorefile=PF00116.alignment.seed   > PF116seed.prfl
+ 1071  conda activate c
+ 1072  codna install bioconda::seqfu
+ 1073  conda install bioconda::seqfu
+ 1074  ilv
+ 1075  seqfu
+ 1076  seqfu interleave
+ 1077  ls
+ 1078  seqfu interleave -1 ERR10851547_1.fastq  -2 ERR10851547_2.fastq  
+ 1079  history
+ 1080  seqfu interleave -1 ERR10851547_1.fastq  -2 ERR10851547_2.fastq  -o interlieve 
+ 1081  fu-split
+ 1082  ls
+ 1083  fu-split -i interlieve.fq  -n 30
+ 1084  mkdir out
+ 1085  cd out
+ 1086  fastqsplitter -i  ~/ERR/interlieve.fq   -o 1.fq -o 2.fq  -o  3.fq -o  4.fq -o   5.fq -o   6.fq -o   7.fq -o  8.fq -o  9.fq  
+ 1087  ls
+ 1088  cd split10.split10/
+ 1089  ls
+ 1090  fastqsplitter -i  ~/ERR/out/split10.split10/1.fq    -o 1.fq -o 2.fq  -o  3.fq -o  4.fq -o   5.fq -o   6.fq -o   7.fq -o  8.fq -o  9.fq  -o 10.fq 
+ 1091  conda activate c
+ 1092  ls
+ 1093  fastqsplitter -i  part2.fq  -o 1.fq -o 2.fq  -o  3.fq -o  4.fq -o   5.fq -o   6.fq -o   7.fq -o  8.fq -o  9.fq  -o 10.fq 
+ 1094  conda actiavte c
+ 1095  'conda activate c
+ 1096  conda activate c
+ 1097  conda install bioconda::bowtie
+ 1098  bowtie
+ 1099  cd data
+ 1100  ls
+ 1101  cd masked
+ 1102  ls
+ 1103  bowtie-build  OX457036.1.fasta.masked  index_ox457036
+ 1104  conda activate c
+ 1105  bowtie
+ 1106  conda install bioinfo::tophat2
+ 1107  tophat2
+ 1108  conda activate perl
+ 1109  conda install bioinfo::tophat2
+ 1110  conda activate c
+ 1111  conda install bioconda::tophat
+ 1112  conda activate py27
+ 1113  conda install bioconda::tophat
+ 1114  pip install top-hat
+ 1115  git clone git@github.com:gilt/tophat.git
+ 1116  git init
+ 1117  git clone git@github.com:gilt/tophat.git
+ 1118  sudo git clone git@github.com:gilt/tophat.git
+ 1119  git config --global user.name "alenagrr3" 
+ 1120  git config --global user.email "asava388@gmail.com" 
+ 1121  git clone git@github.com:gilt/tophat.git
+ 1122  sudo git clone git@github.com:gilt/tophat.git
+ 1123  conda activate masker
+ 1124  cd home
+ 1125  cd ~
+ 1126  ls
+ 1127  cd anaconda3/
+ 1128  ls
+ 1129  cd envs/ 
+ 1130  ls
+ 1131  cd masker
+ 1132  ls
+ 1133  cd li
+ 1134  cd lin
+ 1135  cd lib
+ 1136  ls
+ 1137  cd ..
+ 1138  ls
+ 1139  conda create -n "py28"  python="2.8"
+ 1140  conda activate py28
+ 1141  conda install -c bioconda tophat
+ 1142  conda  create -n "py28"  python ="2.7.8"
+ 1143  conda create -n "py28" python="2.7.0"
+ 1144  conda  create -n "py28"  python ="2.7.18"
+ 1145  conda create -y -n python=2.7
+ 1146  conda activate python=2.7
+ 1147  conda -install -c bioconda
+ 1148  conda install -c bioconda tophat
+ 1149  tophat
+ 1150  wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR108/049/ERR10851549/ERR10851549_1.fastq.gz
+ 1151  wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR108/049/ERR10851549/ERR10851549_2.fastq.gz
+ 1152  touch testDB
+ 1153  conda activate c
+ 1154  head gth.aln
+ 1155  less gth.aln
+ 1156  codna activate c
+ 1157  startAlign.pl  --genome 2mb_3b.fasta  --prot Artropoda.part1.fa  --prg gth
+ 1158  conda activate c
+ 1159  startAlign.pl  --genome 2mb_3b.fasta  --prot Artropoda.part1.fa  --prg gth
+ 1160  startAlign.pl --genome 2mb_3b.fasta  --prot testDB  --prg gth
+ 1161  startAlign.pl --genome 2mb_3b.fasta  --prot rattusProteinsChr1to3.fa  --prg gth 
+ 1162  startAlign.pl --genome 2mb_3b.fasta  --prot testDB  
+ 1163  startAlign.pl --genome 2mb_3b.fasta  --prot testDB  --prg gth  
+ 1164  startAlign.pl --genome 2mb_3b.fasta  --prot testDB  --prg gth 
+ 1165  startAlign.pl --genome 2mb_3b.fasta  --prot test.fa  --prg gth 
+ 1166  codna activate c
+ 1167  conda activate c
+ 1168  startAlign.pl --genome OX457036.1.fasta.masked  --prot Arthropoda.fa  --prg gth 
+ 1169  codna activate c
+ 1170  conda activate c
+ 1171  sefqu
+ 1172  seqfu
+ 1173  seqfu ERR10851549_1.fastq.gz  ERR10851549_2.fastq.gz  
+ 1174  seqfu -1 ERR10851549_1.fastq.gz  -2 ERR10851549_2.fastq.gz  
+ 1175  seqfu interleave  -1 ERR10851549_1.fastq.gz  -2 ERR10851549_2.fastq.gz 
+ 1176  history
+ 1177  seqfu interleave  -1 ERR10851549_1.fastq.gz  -2 ERR10851549_2.fastq.gz  > interleave.fq
+ 1178  fastqsplitter -i  ~/ERR/interlieve.fq   -o part1.fq -o  part2.fq  -o  part3.fq -o  part4.fq -o   part5.fq -o   part6.fq -o   part7.fq -o  part8.fq -o  part9.fq  -o  part10.fq  
+ 1179  ls
+ 1180  fastqsplitter -i  interlieve.fq   -o part1.fq -o  part2.fq  -o  part3.fq -o  part4.fq -o   part5.fq -o   part6.fq -o   part7.fq -o  part8.fq -o  part9.fq  -o  part10.fq    
+ 1181  ls
+ 1182  fastqsplitter -i  interleave.fq   -o part1.fq -o  part2.fq  -o  part3.fq -o  part4.fq -o   part5.fq -o   part6.fq -o   part7.fq -o  part8.fq -o  part9.fq  -o  part10.fq  
+ 1183  history > export.hist.on.prepocess
+ 1184  virtualenv py
+ 1185  source py/bin/activate
+ 1186  python
+ 1187  touch script.py
+ 1188  cd ..
+ 1189  source py/bin/activate
+ 1190  python py/script.py  
+ 1191  conda activate c
+ 1192  etraining --species=bug bonafide.gb &> bonafide.out
+ 1193  etraining --species=worm  bonafide.gb &> bonafide.out
+ 1194  randomSplit.pl bonafide.gb 200
+ 1195  mv bonafide.gb.test test.gb
+ 1196  mv bonafide.gb.train train.gb
+ 1197  etraining --species=worm  train.gb &> etrain.out
+ 1198  tail -6 etrain.out | head -3
+ 1199  etraining --species=worm   train.gb &> etrain.out
+ 1200  head etrain.out
+ 1201  new_species.pl --species=worm
+ 1202  etraining --species=worm  bonafide.gb &> bonafide.out
+ 1203  randomSplit.pl bonafide.gb 200
+ 1204  mv bonafide.gb.test test.gb
+ 1205  mv bonafide.gb.train train.gb
+ 1206  etraining --species=worm  train.gb &> etrain.out
+ 1207  head etrain.out 
+ 1208  augustus --species=worm test.gb > test.out
+ 1209  head genome.fa 
+ 1210  conda activate c
+ 1211  augustus
+ 1212  augustus --species worm  2mb_3b.fasta  
+ 1213  augustus  --species=worm   2mb_3b.fasta  > output.gff
+ 1214  source testenv/bin/activate
+ 1215  conda activate py27
+ 1216  ls
+ 1217  perl check_install.bash 
+ 1218  gmes_petap.pl
+ 1219  perl gmes_petpap.pl
+ 1220  perl gmes_petap.pl
+ 1221  ls
+ 1222  gmes_petap.pl --verbose --sequence=genome.fa --ET=introns.f.gff
+ 1223  perl gmes_petap.pl --verbose --sequence=genome.fa --ET=introns.f.gff
+ 1224  cd ..
+ 1225  perl gmes_linux_64/gmes_petap.pl --verbose --sequence gmes_linux_64/genome.fa  --ET  gmes_linux_64/introns.f.gff  
+ 1226  perl gmes_linux_64/gmes_petap.pl --verbose --sequence gmes_linux_64/genome.fa  --ET  gmes_linux_64/introns.f.gff
+ 1227  perl gmes_linux_64/gmes_petap.pl --verbose --sequence genome.fa  --ET  gmes_linux_64/introns.f.gff
+ 1228  ls
+ 1229  conda activate c
+ 1230  STAR
+ 1231    605  STAR --genomeDir ~/anaconda3/envs/c/min.v1/OX457036.1-index	--readFilesIn  ~/data/split3/1.1.1.fq  --alignIntronMax 1 --outSAMunmapped Within --outSAMtype BAM SortedByCoordinate
+ 1232  STAR --genomeDir ~/anaconda3/envs/c/min.v1/OX457036.1-index --readFilesIn  ~/ERR/interleave/part1.fq    --outSAMtype BAM SortedByCoordinate
+ 1233  history > export.hist.on.star.algn
+ 1234  ls
+ 1235  cd ..
+ 1236  ls
+ 1237  cd gmes_linux_64/
+ 1238  ls
+ 1239  perl gmes_petap.pl  
+ 1240  cd ..
+ 1241  perl gmes_linux_64/gmes_petap.pl --verbose --sequence genome.fa  --ET  gmes_linux_64/introns.f.gff  
+ 1242  perl gmes_linux_64/gmes_petap.pl --verbose --sequence genome.fa  --ET  gmes_linux_64/introns.f.gff 
+ 1243  cd ..
+ 1244  ls
+ 1245  cd gmes
+ 1246  conda activate py27 
+ 1247  ls
+ 1248  cd Downloads/
+ 1249  ls
+ 1250  cd gmes_linux_64/
+ 1251  ls
+ 1252  source testenv/bin/activate
+ 1253  cd ..
+ 1254  cd gmes
+ 1255  ls
+ 1256  cd gems
+ 1257  codna activate py27
+ 1258  conda activate py27
+ 1259  conda list
+ 1260  conda activate py27
+ 1261  conda list
+ 1262  conda remove braker
+ 1263  conda list py27
+ 1264  perl startAlign.pl  --genome OX457036.1.fasta  --prot Arthropoda.fa --prg gth
+ 1265  conda activate masker
+ 1266  ../bin/prothint.py 
+ 1267  ls
+ 1268  cd bin
+ 1269  ls
+ 1270  python prothint.py
+ 1271  python prothint.py input/genome.fasta input/proteins.fasta --geneSeeds input/genemark.gtf --workdir test
+ 1272  cd ..
+ 1273  virtualenv py
+ 1274  source py/bin/activate
+ 1275  python bin/prothint.py input/genome.fasta input/proteins.fasta --geneSeeds input/genemark.gtf --workdir test
+ 1276  ls
+ 1277  cd example/
+ 1278  history
+ 1279  python bin/prothint.py input/OX457036.1.fasta  input/Arthropoda.fa  
+ 1280  ../bin/prothint.py  input/OX457036.1.fasta  input/Arthropoda.fa  
+ 1281  ../bin/prothint.py  input/OX457036.1.fasta  input/Arthropoda.fa
+ 1282  conda activate mmasker
+ 1283  conda activate masker
+ 1284  ls
+ 1285  cd ProtHint-master/
+ 1286  ls
+ 1287  touch hist
+ 1288  head Aligned.out.sam 
+ 1289  conda activate c
+ 1290  samtools view -Sb Aligned.out.sam  > Aligned.out.bam 
+ 1291  samtools sort -n Aligned.out.bam > Aligned.out.s.bam
+ 1292  samtools sort Aligned.out.s.bam > Aligned.out.ss.bam
+ 1293  bam2hints
+ 1294  bam2hints Aligned.out.ss.bam  --out introns.gff --intronsonly
+ 1295  bam2hints --intronsonly --in=Aligned.out.ss.bam --out=introns.gff
+ 1296  filterBam --uniq --in Aligned.out.ss.bam --out Aligned.out.ssf.bam
+ 1297  samtools sort Aligned.out.ssf.bam -o Aligned.out.ss.bam
+ 1298  conda activate c
+ 1299  samtools
+ 1300  samtools view -Sb Aligned.out.sam  > Aligned.out.bam
+ 1301  samtools sort -n Aligned.out.bam  >Aligned.out.s.bam
+ 1302  samtools sort Aligned.out.s.bam > Aligned.out.ss.bam
+ 1303  filterBam --uniq --in Aligned.out.ss.bam --out Aligned.out.ssf.bam
+ 1304  head Aligned.out.
+ 1305  head Aligned.out.s head Aligned.out.sam  
+ 1306  conda activate python=2.7
+ 1307  tophat
+ 1308  tophat index part1
+ 1309  ls
+ 1310  bowtie2-build -f sm-Lumbricus_terrestris-GCA_949752735.1-softmasked.fa  lumbrucus   --large-index 
+ 1311  ls
+ 1312  diamond
+ 1313  conda activate python=2.7
+ 1314  sudo apt install diamond-aligner 
+ 1315  ./ diamond
+ 1316  ./diamond
+ 1317  ./diamond help
+ 1318  conda create -n trimmo
+ 1319  conda activate trimmo
+ 1320  conda install -c bioconda trimmomatic 
+ 1321  conda install trimmo
+ 1322  conda activate trimmo
+ 1323  trimmotatic -v
+ 1324  conda ls
+ 1325   trimmomatic-0.39.jar PE  ERR10851549_1.fastq.gz  ERR10851549_2.fastq.gz  output_forward_paired.fq.gz output_forward_unpaired.fq.gz output_reverse_paired.fq.gz output_reverse_unpaired.fq.gz ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:3 TRAILING:3 MINLEN:36
+ 1326  trimmomatic 
+ 1327  trimmomatic PE ERR10851549_1.fastq.gz  ERR10851549_2.fastq.gz   paired1  unpaired1  paired2 unpaired2 
+ 1328  PE ERR10851549_2.fastq.gz   paired1  unpaired1  paired2 unpaired2 
+ 1329  java -jar trimmomatic-0.39.jar PE  ERR10851549_1.fastq.gz  ERR10851549_2.fastq.gz  output_forward_paired.fq.gz output_forward_unpaired.fq.gz output_reverse_paired.fq.gz output_reverse_unpaired.fq.gz ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:3 TRAILING:3 MINLEN:36
+ 1330  trimmomatic  PE  ERR10851549_1.fastq.gz  ERR10851549_2.fastq.gz  output_forward_paired.fq.gz output_forward_unpaired.fq.gz output_reverse_paired.fq.gz output_reverse_unpaired.fq.gz ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:3 TRAILING:3 MINLEN:36
+ 1331  conda activate python=2.7
+ 1332  bowtie2
+ 1333  bowtie2-build -f input OX457036.1.fasta    lumbrucus
+ 1334  bowtie2-build -f OX457036.1.fasta  index_prefix
+ 1335  tophat2 lumter part1.fq  
+ 1336  history > export.hist.on.tophat
+ 1337  history > ~/export.hist.on.tophat
+ 1338  conda activate python=2.7
+ 1339  ls
+ 1340  ../gmes_petap.pl  --verbose --sequence sequence_chr1_lu.fasta  --ET introns.gff 
+ 1341  cd ..
+ 1342  ls
+ 1343  cd ..
+ 1344  ls
+ 1345  cd GeneMarkES/
+ 1346  ls
+ 1347  source testenv/bin/actiavte
+ 1348  source testenv/bin/activate 
+ 1349  ls
+ 1350  cd input/
+ 1351  ls
+ 1352  conda activate py27
+ 1353  ../gmes_petap.pl  --verbose --sequence sequence_chr1_lu.fasta  --ET introns.gff
+ 1354  history > export.hist.on.genmark
+ 1355  history > ~/export/hist.on.genemark
+ 1356  codna activate py27
+ 1357  source testenv/bin/activate
+ 1358  cd ..
+ 1359  ls
+ 1360  cd example/
+ 1361  ls
+ 1362  ../bin/prothint.py input/genome.fasta input/proteins.fasta --geneSeeds input/genemark.gtf --workdir test
+ 1363  cd ..
+ 1364  ls
+ 1365  cd GeneMark_ES/
+ 1366  ls
+ 1367  cd ..
+ 1368  ls
+ 1369  cd dependencies/
+ 1370  ls
+ 1371  cd GeneMarkES/
+ 1372  ls
+ 1373  perl gmhmme3  2mb_3b.fasta 
+ 1374  $ perl gmhmme3 
+ 1375  perl gmhmme3 
+ 1376  ./gmhmme3   -o 23mb.gff3 -m input/c_elegans.mod   -f gff3 2mb_3b.fasta  
+ 1377  ls
+ 1378  head 23mb.gff3 
+ 1379  ls
+ 1380  cd ..
+ 1381  ls
+ 1382  cd ..
+ 1383  ls
+ 1384  cd example/
+ 1385  ls
+ 1386  ../bin.prothint.py input/2mb_3b.fasta  input/Arthropoda.fa  --geneSeeds input/23mb.gff3  
+ 1387  ../bin/prothint.py  input/2mb_3b.fasta  input/Arthropoda.fa  --geneSeeds input/23mb.gff3
+ 1388  cd ..
+ 1389  ls
+ 1390  cd dependencies/
+ 1391  ls
+ 1392  cd GeneMarkES/
+ 1393  ./gmhmme3   -o 23mb.gtf  -m input/c_elegans.mod   2mb_3b.fasta  
+ 1394  cd ..
+ 1395  cd example/
+ 1396  ../bin/prothint.py  input/2mb_3b.fasta  input/Arthropoda.fa  --geneSeeds input/23mb.gff3
+ 1397  ../bin/prothint.py  input/2mb_3b.fasta  input/Arthropoda.fa 
+ 1398  history > export.hist.on.prothint
+ 1399  histoyr >~/export/hist.on.prothints
+ 1400  history > ~/export/hist.on.prothints
+ 1401  spit -n 20 OX457036.1.fasta 
+ 1402  split -n 20 OX457036.1.fasta 
+ 1403  conda activate py27
+ 1404  ls ../../
+ 1405  ls ../../..
+ 1406  conda activate python=2.7
+ 1407  ls
+ 1408  cd ..
+ 1409  ls
+ 1410  source testenv/bin/activate
+ 1411  cd input/
+ 1412  ls
+ 1413  cd filter/
+ 1414  ls
+ 1415  conda activate py27
+ 1416  filterGenemark.pl -h
+ 1417  ls
+ 1418  filterGeneMark.pl --genemark genemark.gtf  --introns introns.gff  
+ 1419  filterGenemark.pl -h
+ 1420  filterGenemark.pl   --genemark genemark.gtf  --introns introns.gff 
+ 1421  filterGenemark.pl --genemark=genemark.gtf --introns=introns.gff  
+ 1422  ln -s genemark.gtf  bonafideB.gtf
+ 1423  computeFlankingRegion.pl bonafideB.gtf
+ 1424  ggf2gbSmallDNA.pl genemark.gtf  sequence_chr1_lu.fasta  145 tmp.gb
+ 1425  gff2gbSmallDNA.pl 
+ 1426  gff2gbSmallDNA.pl  genemark.gtf  sequence_chr1_lu.fasta  145 tmp.gb
+ 1427  less tmp.gb 
+ 1428  filterGenemark.pl
+ 1429  filterGenesIn_mRNAname.pl bonafideB.gtf tmp.gb > bonafideB.gb
+ 1430  less bonafideB.gb
+ 1431  grep -C LOCUS bonafideB.gb 
+ 1432  grep -c LOCUS bonafideB.gb
+ 1433  conda activate c
+ 1434  new_species.pl --species=wormET2
+ 1435  etraining --species=wormET2  bonafide.gb &> bonafide.out
+ 1436  randomSplit.pl bonafide.gb 200
+ 1437  mv bonafide.gb.test test.gb
+ 1438  mv bonafide.gb.train train.gb
+ 1439  etraining --species=wormET  train.gb &> etrain.out
+ 1440  [200~tail -6 etrain.out | head -3
+ 1441  tail -6 etrain.out | head -3
+ 1442  augustus --species=wormET2 test.gb > test.out 
+ 1443  history > export.hist.on.etrain
+ 1444  history > ~/export.hist.on.etraining
+ 1445  conda activate c
+ 1446  perl braker.pl
+ 1447  braker.pl
+ 1448  braker --species wormET2 --genome OX457036.1.fasta  --hints prothint_augustus.gff  --epmode
+ 1449  braker.pl --species wormET2 --genome OX457036.1.fasta  --hints prothint_augustus.gff  --epmode
+ 1450  conda ativate c
+ 1451  conda activate c
+ 1452  new_species.pl --species = wormB
+ 1453  etraining --species=wormB bonafideB.gb  > bonafide.out
+ 1454  grep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+ 1455  grep -c LOCUS bonafide.gb
+ 1456  grep -c LOCUS bonafideB.gb 
+ 1457  randomSplit.pl bonafide.gb 200
+ 1458  mv bonafide.gb.test test.gb
+ 1459  mv bonafide.gb.train train.gb
+ 1460  randomSplit.pl bonafideB.gb 200
+ 1461  etraining --species=wormB  bonafide1.gb &> bonafide.out
+ 1462  new_species.pl --species=worm2
+ 1463  ls $AUGUSTUS_CONFIG_PATH/species/worm2
+ 1464  etraining --species=wormB  bonafide1.gb &> bonafide.out
+ 1465  grep -c LOCUS bonafide1.gb  
+ 1466  randomSplit.pl bonafide1.gb  200
+ 1467  ls
+ 1468  new_species.pl --species=wormET
+ 1469  ls $AUGUSTUS_CONFIG_PATH/species/wormET
+ 1470  etraining --species=wormET  bonafide.gb &> bonafide.out 
+ 1471  grep -c LOCUS bonafide.gb
+ 1472  randomSplit.pl bonafide.gb 200
+ 1473  mv bonafide.gb.test test.gb
+ 1474  mv bonafide.gb.train train.gb
+ 1475  etraining --species=wormET  train.gb &> etrain.out
+ 1476  tail -6 etrain.out | head -3
+ 1477  augustus --species=wormET  test.gb > test.out
+ 1478  history > export.on.etrain.wormET
+ 1479  history > ~export.on.etrain.wormET
+ 1480  cd /tmp
+ 1481  ls
+ 1482  conda activate py27
+ 1483  source py/bin/activate
+ 1484  cd ..
+ 1485  ls
+ 1486  cd Helixer/
+ 1487  ls
+ 1488  git init
+ 1489  git clone https://github.com/TonyBolger/HelixerPost.git
+ 1490  cd HelixerPost
+ 1491  cargo build --release
+ 1492  ls -a
+ 1493  cd targe
+ 1494  cd target/
+ 1495  ls
+ 1496  cd release/
+ 1497  ls -a
+ 1498  cd ..
+ 1499  cargo build --release
+ 1500  cd ..
+ 1501  ls
+ 1502  cd HelixerPost0old/ 
+ 1503  cargo build --release
+ 1504  ls
+ 1505  cd target/
+ 1506  ls
+ 1507  cd release/
+ 1508  ls
+ 1509  ./helixer_post_bin 
+ 1510  cd ..
+ 1511  ls
+ 1512  cd ..
+ 1513  ls
+ 1514  cd HelixerPost
+ 1515  cargo build --release
+ 1516  sudo apt-get install libhdf5-serial-dev hdf5-tools
+ 1517  git clone https://github.com/deepmind/torch-hdf5
+ 1518  cd torch-hdf5
+ 1519  luarocks make hdf5-0-0.rockspec
+ 1520  sudo apt install luarocks
+ 1521  luarocks make hdf5-0-0.rockspec LIBHDF5_LIBDIR="/usr/lib/x86_64-linux-gnu/"
+ 1522  sudo luarocks make hdf5-0-0.rockspec LIBHDF5_LIBDIR="/usr/lib/x86_64-linux-gnu/"
+ 1523  pip install h5py
+ 1524  cd ..
+ 1525  ls
+ 1526  cd helixer_post_bin/
+ 1527  ls
+ 1528  cd ..
+ 1529  ls
+ 1530  pip install h5py-3.12.1-cp313-cp313-win_amd64.whl
+ 1531  conda deactivate
+ 1532  pip install h5py-3.12.1-cp313-cp313-win_amd64.whl
+ 1533  tar xzf h5py-3.12.1.tar.gz 
+ 1534  conda activate py27
+ 1535  conda install anaconda::h5py
+ 1536  conda install anaconda::pip
+ 1537  pip install h5py
+ 1538  cargo build --release
+ 1539  cd target/
+ 1540  ls
+ 1541  cd release/
+ 1542  ls
+ 1543  ./helixer_post_bin 
+ 1544  cd ..
+ 1545  sudo apt install python3-dev
+ 1546  pip install tensorflow[and-cuda]  # inside a virtual environment, otherwise use: python3 -m pip install tensorflow[and-cuda]
+ 1547  # Verify the installation:
+ 1548  python -c 'import tensorflow as tf; print(tf.__version__)'
+ 1549  python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+ 1550  pip install -r requirements.3.10.txt
+ 1551  pip install .  # or `pip install -e .`, if you will be changing the code
+ 1552  cd Helixer/helixer
+ 1553  cd helixer
+ 1554  pytest --verbose tests/test_helixer.py
+ 1555  cd ..
+ 1556  python Helixer.py
+ 1557  Helixer.py  --lineage ivertebrate --fasta-path input/2mb_3b.fasta  -gff-output-path output/out.gff 
+ 1558  Helixer.py  --lineage invertebrate  --fasta-path input/2mb_3b.fasta  -gff-output-path output/out.gff 
+ 1559  Helixer.py  --lineage invertebrate  --fasta-path input/2mb_3b.fasta   --gff-output-path  lumter.gff
+ 1560  python scripts/fetch_helixer_models.py
+ 1561  Helixer.py  --lineage invertebrate  --fasta-path input/2mb_3b.fasta   --gff-output-path  lumter.gff
+ 1562  python
+ 1563  docker ps
+ 1564  sudo snap install docker
+ 1565  sudo apt-get remove docker 
+ 1566  sudo apt install docker.io
+ 1567  docker --version
+ 1568  sudo docker pull tensorflow/tensorflow
+ 1569  docker run  tensorflow/tensorflow
+ 1570  sudo docker run  tensorflow/tensorflow
+ 1571  docker run -it tensorflow/tensorflow bash
+ 1572  sudo docker run -it tensorflow/tensorflow bash
+ 1573  split -n 3 bonafideB.gb 
+ 1574  conda activate py27
+ 1575  cd ..
+ 1576  ls
+ 1577  cd ProtHint-master/
+ 1578  ls
+ 1579  cd dependencies/
+ 1580  ls
+ 1581  cd GeneMarkES/
+ 1582  ls
+ 1583  source testenv/bin/activate
+ 1584  cd ..
+ 1585  ls
+ 1586  cd  Helixer/
+ 1587  ls
+ 1588  sudo focker ps
+ 1589  sudo docker ps
+ 1590  docker run -dit --memory="10000m" nginx
+ 1591  sudo docker run -dit --memory="10000m" nginx
+ 1592  sudo docker run -dit --memory="10000m" tensorflow 
+ 1593  sudo docker  run -dit --memory="10000m" tensorflow/tensorflow
+ 1594  Helixer  --lineage invertebrate  --fasta-path input/2mb_3b.fasta   --gff-output-path  lumter.gff
+ 1595  python Helixer.py  --lineage invertebrate  --fasta-path input/2mb_3b.fasta   --gff-output-path  lumter.gff
+ 1596  python Helixer.py  --lineage invertebrate  --fasta-path OX457036.1.fasta.masked    --gff-output-path  OX.gff 
+ 1597  source testenv/bin/activate
+ 1598  conda activate py27
+ 1599  cd ..
+ 1600  ls
+ 1601  cd ..
+ 1602  ;s
+ 1603  ls
+ 1604  cd example/
+ 1605  ls
+ 1606  cd input/
+ 1607  ls
+ 1608  ../bin/prothint.py  1-20.fasta  Arthropoda.fa  
+ 1609  cd ..
+ 1610  ls
+ 1611  ../bin/prothint.py input/1-20.fasta  input/Arthropoda.fa  
+ 1612  conda activate c
+ 1613  export GENEMARK_PATH=/home/alena/Downloads/ProtHint-master/dependencies/GeneMarkES/
+ 1614  less  ~/.gm_key
+ 1615  split -n 5 OX457036.1.nematode.fasta.masked 
+ 1616  ls
+ 1617  split -n 2 genome.1.5.fasta 
+ 1618  conda activate c
+ 1619  export GENEMARK_PATH=/home/alena/Downloads/ProtHint-master/dependencies/GeneMarkES/
+ 1620  braker.pl --species wormET2 --genome OX457036.1.fasta  --hints prothint_augustus.gff  --epmode
+ 1621  augsutus species=help
+ 1622  augustus species=help
+ 1623  augustus --species=help
+ 1624  braker.pl --species caenorhabditis  --genome OX457036.1.fasta  --hints prothint_augustus.gff  --epmode
+ 1625  braker.pl --species wormEPmode  --genome OX457036.1.fasta  --hints prothint_augustus.gff  --epmode
+ 1626  export GENEMARK_PATH =/home/alena/Downloads/ProtHint-master/dependencies/GeneMarkES
+ 1627  export GENEMARK_PATH =/home/alena/Downloads/ProtHint-master/dependencies/GeneMarkES/
+ 1628  export GENEMARK_PATH=/home/alena/Downloads/ProtHint-master/dependencies/GeneMarkES
+ 1629  braker.pl --species wormEPmode  --genome OX457036.1.fasta  --hints prothint_augustus.gff  --epmode
+ 1630  cd /
+ 1631  ;s
+ 1632  ls
+ 1633  cd /
+ 1634  cd home
+ 1635  ls
+ 1636  ls -a
+ 1637  sudo nano .bashrc
+ 1638  sudo source .bashrc 
+ 1639  source ~/.bashrc
+ 1640  sudo apt upadte
+ 1641  sudo apt update
+ 1642  sudo apt install apt-transport-https ca-certificates curl software-properties-common
+ 1643  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+ 1644  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+ 1645  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+ 1646  sudo apt update
+ 1647  apt-cache policy docker-ce
+ 1648  sudo apt install docker-ce
+ 1649  sudo systemctl status docker
+ 1650  journalctl -eu docker
+ 1651  sudo systemctl status docker 
+ 1652  killall dockerd
+ 1653  sudo killall dockerd
+ 1654  sudo rm/var/run/docker.pid
+ 1655  sudo rm /var/run/docker.pid
+ 1656  cd /var
+ 1657  ls -a
+ 1658  cd run
+ 1659  ls
+ 1660  cd docker
+ 1661  sudo cd docker 
+ 1662  ls docker
+ 1663  sudo ls docker
+ 1664  cd continerd
+ 1665  cd containerd/
+ 1666  ls
+ 1667  sudo ls
+ 1668  cd ..
+ 1669  cd ,,
+ 1670  cd /
+ 1671  sudo  curl -fsSL https://get.docker.com -o get-docker.sh
+ 1672  sudo sh test-docker.sh
+ 1673  sudo systemctl status docker
+ 1674  perl change_path_in_perl_scripts.pl "/usr/bin/env perl"
+ 1675  conda activate c
+ 1676  cd ..
+ 1677  ls
+ 1678  braker.pl
+ 1679  braker.pl  --genome=genome.1.5.fasta  --species=wormEPmode   --bam=accepted_hits.bam
+ 1680  braker.pl --genome OX457036.1.nematode.fasta.masked  species=womrBrakerMode --bam accepted_hits.bam  
+ 1681  docker run -it tensorflow/tensorflow bash
+ 1682  docker run --help
+ 1683  touch txt.txt
+ 1684  less bonafide.gb 
+ 1685  touch txt.txt
+ 1686  conda activate c
+ 1687  less bonafide.gb 
+ 1688  filterGenemark.pl
+ 1689  filterGenemark.pl --genemark=genemark.gtf --introns=introns.gff
+ 1690  filterGenemark.pl  --genemark=genemark.gtf  --hints=hints.gff  
+ 1691  ln -s genemark.f.good.gtf bonafide.gtf
+ 1692  less bonafide.gtf 
+ 1693  conda activate cx
+ 1694  conda activate c
+ 1695  less introns.gff 
+ 1696  less hints.gff 
+ 1697  less genemark.gtf 
+ 1698  filterGeneMark.pl
+ 1699  filterGenemark.pl
+ 1700  filterGenemark.pl --genemark genemark.gtf  --hints  hints.gff 
+ 1701  conda activate c
+ 1702  etraining --species=worm bonafide.gb &> bonafide.out 
+ 1703  grep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+ 1704  grep 'in sequence' bonafide.a.gb | sed -E 's/.*n sequence (\\S+):.*/\\1/' | sort -u > bad.lst
+ 1705  grep 'in sequence' bonafide.gb | sed -E 's/.*n sequence (\\S+):.*/\\1/' | sort -u > bad.lst
+ 1706  ls
+ 1707  cat bad.lst 
+ 1708  grep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+ 1709  etraining --species=bug bonafide.gb 2>&1 |  grep 'in sequence' bonafide.gb | sed -E 's/.*n sequence (\\S+):.*/\\1/' | sort -u > bad.lst
+ 1710  cat bad.lst 
+ 1711  etraining --species=worm bonafide.gb 2>&1 grep 'in sequence' bonafide.gb  |  sed -E 's/.*n sequence (\\S+):.*/\\1/' | sort -u > bad.lst  
+ 1712  cat bad.lst 
+ 1713  etraining --species=worm bonafide.gb 2>&1 |  grep 'in sequence' bonafide.gb | sed -E 's/.*n sequence (\\S+):.*/\\1/' | sort -u > bad.lst
+ 1714  cat bad.lst 
+ 1715  etraining --species=worm bonafide.gb 2>&1 |  grep 'in sequence' bonafide.gb | sed -E 's/.*n sequence (\\S+):.*/\\1/'
+ 1716  etraining --species=bug bonafide.gb 2>&1 | grep "in sequence" 
+ 1717  etraining --species=worm  bonafide.gb 2>&1 | grep "in sequence" 
+ 1718  etraining --species=worm  bonafide.gb 2>&1 | grep "in sequence"  | sed -E 's/.*n sequence (\\S+):.*/\\1/' 
+ 1719  cat bad.l
+ 1720  cat bad.list 
+ 1721  filterGenes.pl
+ 1722  filterGenes.pl bad.list  bonafide.gb >bonafide.f.gb
+ 1723  grep -c LOCUS bonafide.gb bonafide.f.gb
+ 1724  filterGenes.pl bad.list  bonafide.gb >bonafide.f.gb
+ 1725  filterGenes.pl bad.lst bonafide.gb > bonafide.f.gb
+ 1726  etraining --species=worm  bonafide.gb 2>&1 | grep "in sequence"  | sed -E 's/.*n sequence (\\S+):.*/\\1/'   | sort -u  > bad.list
+ 1727  filterGenes.pl bad.lst bonafide.gb > bonafide.f.gb
+ 1728  ls
+ 1729  head bad.list 
+ 1730  filterGenes.pl bad.list bonafide.gb > bonafide.f.gb
+ 1731  head bonafide.f.gb 
+ 1732  grep -c LOCUS bonafide.gb bonafide.f.gb
+ 1733  ls
+ 1734  conda activate c
+ 1735  cd sam
+ 1736  ls
+ 1737  samtools index accepted_hits.bam  
+ 1738  head bonafide.gb 
+ 1739  grep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+ 1740  conda activate py27
+ 1741  gth2gtf.pl gth.concatOrtho.aln  bonafide.gtf
+ 1742  computeFlankingRegion.pl bonafide.gtf  
+ 1743  gff2gbSmallDNA.pl bonafide.gtf  OX457036.1.nematode.fasta.masked 2482  bonafide.gb 
+ 1744  less bonafide.gb
+ 1745  conda activate c
+ 1746  new_species.pl = wormEP
+ 1747  new_species.pl --species=wormEP
+ 1748  etraining --species=wormEP bonafide.gb & > bonafide.out
+ 1749  grep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+ 1750  grep -c LOCUS bonafide.gb
+ 1751  randomSplit.pl bonafide.gb 200
+ 1752  mv bonafide.gb.test test.gb
+ 1753  mv bonafide.gb.train train.gb
+ 1754  etraining --species=wormEP  train.gb &> etrain.out
+ 1755  ls
+ 1756  randomSplit.pl bonafide.gb  200
+ 1757  mv bonafide.gb test.gb 
+ 1758  mv bonafide.gb.train train.gb
+ 1759  etraining --sepcies wormEP train.gb &> etrain.out
+ 1760  cat etrain.out 
+ 1761  rm etrain.out 
+ 1762  etraining --species=wormEP train.gb &> etrain.out
+ 1763  cat etrain.out 
+ 1764  tail -6 etrain.out  | head -3
+ 1765  augustus --species=wormEP test.gb > test.out
+ 1766  cat test.out
+ 1767  conda activate c
+ 1768  startAlign.pl
+ 1769  startAlign.pl  --genome OX457036.1.nematode.fasta.masked  --prot seed_proteins1_2.faa  --prg gth
+ 1770  conda activate c
+ 1771  ln -s genemark.c.gtf  bonafide.gtf
+ 1772  computeFlankingREgion.pl bonafide.gtf 
+ 1773  computeFlankingRegion.pl bonafide.gtf
+ 1774  gff2gbSmallDNA.pl genemark.gtf  OX457036.1.fasta.masked  366 tmp.gb
+ 1775  gff2gbSmallDNA.pl genemark.gtf OX457036.1.fasta.masked  1094 tmp.gb
+ 1776  ls
+ 1777  head test.gb
+ 1778  head bonafide.gtf  
+ 1779  conda activate py27
+ 1780  ./install
+ 1781  head prot.nr.aa 
+ 1782  conda activate c
+ 1783  augustus
+ 1784  augustus --species=wormNonredEP  2mb_3b.fasta  > wormNonredEP.gff
+ 1785  ls
+ 1786  cat wormNonredEP.gff 
+ 1787  conda activate py27
+ 1788  ls
+ 1789  conda activate py27
+ 1790  bam2hints
+ 1791  bam2hints -h
+ 1792  bam2hints --intronsonly --in=junctions.bed  --out=introns.gff
+ 1793  bam2hints --intronsonly --in accepted_hits.bam  --out intronstophat.gff
+ 1794  filterIntronsFindStrand.pl genome.fa introns.gff --score > introns.f.gff
+ 1795  ls
+ 1796  conda activate c
+ 1797  ln -s lumter.fasta  lumter.fasta
+ 1798  ln -s ~/ERR/lumter.fasta  lumter.fasta
+ 1799  conda activate c
+ 1800  conda activate py27
+ 1801  ls
+ 1802  ls ../
+ 1803  ../GeneMarkES/gmes_petap.pl  --verbose --sequence genome.fa  --ET introns.gff  
+ 1804  conda activate py27
+ 1805  bed_to_gff.pl
+ 1806  sudo bed_to_gff.pl
+ 1807  sudo perl bed_to_gff.pl
+ 1808  conda activate py27
+ 1809  computeFlankingREgion.pl transcripts.gtf  
+ 1810  conda activate c
+ 1811  computeFlankingRegion.pl transcripts.gtf 
+ 1812  ln -s ERR10851549_1.fastq 1.fastq 
+ 1813  ls -s ERR10851549_2.fastq 2.fastq
+ 1814  ln -s ERR10851549_2.fastq 
+ 1815  ln -s ERR10851549_2.fastq 2.fastq
+ 1816  cd
+ 1817  ls
+ 1818  cd Downloads/
+ 1819  ls
+ 1820  cd ProtHint-master/
+ 1821  ls
+ 1822  cd dependencies/
+ 1823  ls
+ 1824  cd TopHAT/
+ 1825  ls
+ 1826  conda activate python=2.7
+ 1827  tophat
+ 1828  cd home
+ 1829  cd /
+ 1830  ls
+ 1831  cd ~
+ 1832  ls
+ 1833  cd ERR/
+ 1834  ls
+ 1835  cd TopHAT/
+ 1836  ls
+ 1837  tophat
+ 1838  ls ../
+ 1839  tophat ../lumter ../1.fastq  ../2.fastq  --GTF genemark.gtf  
+ 1840  tophat ../lumter ../1.fastq  ../2.fastq  --GTF genemark.gtf 
+ 1841  history > export.histt.on.gtf.with.tophat.algn
+ 1842  conda install conda-forge::cufflinks-py
+ 1843  cufflinks
+ 1844  cufflinks-py
+ 1845  conda list
+ 1846  cufflinks-py
+ 1847  cufflinks
+ 1848  cd ..
+ 1849  virtualenv py 
+ 1850  source py/bin/activate
+ 1851  sudo apt install cufflinks
+ 1852  cufflinks
+ 1853  cd TopHAT/
+ 1854  ls
+ 1855  cd tophat_out/
+ 1856  ls
+ 1857  cufflinks accepted_hits.bam  
+ 1858  source testenv/bin/activate
+ 1859  conda activate py27
+ 1860  perl bed_to_gff.pl 
+ 1861  perl bed_to_gff.pl  --bed /home/alena/Downloads/ProtHint-master/dependencies/TopHAT/junctions.bed   --gff introns-gmes.gff  --label TopHat2
+ 1862  history > export.hist.on.TopHAT
+ 1863  ls
+ 1864  cd input/
+ 1865  perl ../bed_to_gff.pl  --bed /home/alena/ERR/TopHAT/tophat_out/junctions.bed  --gff introns_by_gmh_with_gtf.gff --label TopHat2
+ 1866  cd gmes
+ 1867  ls ../../
+ 1868  ../../gmes_petap.pl  --verbose --sequence OX457036.1.fasta.masked  --ET introns_by_gmh_with_gtf.gff  
+ 1869  history >export.hist.on.genemark
+ 1870  filterGenemark.pl
+ 1871  filterGenemark.pl   --genemark genemark.gtf  --hints introns_by_gmh_with_gtf.gff 
+ 1872  perl filterGenemark.pl 
+ 1873  ln -s introns_by_gmh_with_gtf.gff  introns.gff
+ 1874  perl filterGenemark.pl  --genemark genemark.gtf  --introns introns.gff 
+ 1875  ls
+ 1876  ln -s genemark.f.good.gtf  bonafide.gtf
+ 1877  computeFlankingRegion.pl bonafide.gtf
+ 1878  conda activate c
+ 1879  computeFlankingRegion.pl bonafide.gtf
+ 1880  ln -s OX457036.1.fasta.masked  genome.fa
+ 1881  gff2gbSmallDNA.pl bonafide.gtf genome.fa 450 tmp.gb
+ 1882  filterGenesIn_mRNAname.pl bonafide.gtf tmp.gb > bonafide.gb
+ 1883  cd bonafide.uniq/
+ 1884  ls
+ 1885  new_species.pl --species=wormET0 
+ 1886  etraining --species=wormET0 bonafide.unique.gb  &> bonafide.out
+ 1887  grep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+ 1888  grep -c LOCUS  bonafide.unique.gb 
+ 1889  ln -s bonafide.unique.gb  bonafide.gb
+ 1890  randomSplit.pl bonafide.gb 200
+ 1891  mv bonafide.gb.test test.gb
+ 1892  mv bonafide.gb.train train.gb
+ 1893  etraining --species=wormET0  train.gb &> etrain.out
+ 1894  tail -6 etrain.out | head -3
+ 1895  augustus --species=wormET0 test.gb > test.out
+ 1896  randomSplit.pl bonafide.gb 200
+ 1897  ls
+ 1898  head bonafide.gb.test 
+ 1899  head bonafide.gb.train 
+ 1900  grep -c LOCUS bonafide.gb.train 
+ 1901  less bonafide.gb.train 
+ 1902  ls
+ 1903  less bonafide.gb.test 
+ 1904  mv bonafide.gb.test test.gb
+ 1905  mv bonafide.gb.train train.gb
+ 1906  etraining --species=wormET0  train.gb &> etrain.out
+ 1907  tail -6 etrain.out | head -3
+ 1908  augustus --species=bug wormET0 test.gb > test.out
+ 1909  augustus --species=wormET0  test.gb > test.out
+ 1910  history > export.hist.on.ET
+ 1911  grep "intron" introns_by_gmh_with_gtf.gff 
+ 1912  grep "intron"  introns_by_gmh_with_gtf.gff  | wc -l
+ 1913  grep "exon" transcripts.gtf  | wc -l
+ 1914  grep "introns" introns.gff  | wc -l
+ 1915  grep "intron" introns.gff  | wc -l
+ 1916  conda actiavte -c 
+ 1917  conda activate -c 
+ 1918  conda activate c
+ 1919  augustus --species=lumter  2mb_3b.fasta  > lumter-Et-mrna.gff
+ 1920  conda activate c
+ 1921  new_species.pl --species=lumter
+ 1922  etraining --species=lumter bonafide.gb  > bonafide.out 
+ 1923  rep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+ 1924  grep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+ 1925  randomSplit.pl bonafide.gb 200
+ 1926  mv bonafide.gb.test test.gb
+ 1927  mv bonafide.gb.train train.gb
+ 1928  etraining --species=lumter  train.gb &> etrain.out
+ 1929  tail -6 etrain.out | head -3
+ 1930  augustus --species=lumter  test.gb > test.out
+ 1931  less test.less test.gb  
+ 1932  less bonafide.gb 
+ 1933  augustus --species=lumbricus  test.gb > test.out
+ 1934  augustus --species=lumter  test.gb > test.out
+ 1935  split --help
+ 1936  split -n 10 seed_proteins.faa  --numeric-suffixes 
+ 1937  conda activate c
+ 1938  grep -c LOCUS bonafide.gb
+ 1939  tail -6 etrain.out  | head -3
+ 1940  grep ">" nuc.fasta  | wc -l
+ 1941  head seed_proteins.faa  
+ 1942  less bonafide.f.gb 
+ 1943  grep -c LOCUS bonafide.f.gb  
+ 1944  conda activate c
+ 1945  gth2gtf.pl align_gth/gth.concat.aln bonafide.gtf
+ 1946  gth.concat.aln
+ 1947  gth2gtf.pl align_gth/gth.concat.aln bonafide.gtf
+ 1948  less genemark.gtf 
+ 1949  grep "gene" genemark.gtf  | wc -l 
+ 1950  conda activate c
+ 1951  conda activate c
+ 1952  startAlign.pl seed_proteins.faa  ../OX457036.1.fasta 
+ 1953  startAlign.pl seed_proteins.faa  ../OX457036.1.fasta  --prg  gth
+ 1954  startAlign.pl --help
+ 1955  startAlign.pl --genome ../OX457036.1.fasta  --prot seed_proteins.faa  --prg gth
+ 1956  ls
+ 1957  ls -l /var/log
+ 1958  cd  var/log
+ 1959  cd /var/log
+ 1960  ls
+ 1961  less syslog
+ 1962  tail -n 200 syslog
+ 1963  tail -n 1000 syslog
+ 1964  less bonafide.gb
+ 1965  perl filterGenes.pl bad.lst bonafide.gb > bonafide.f.gb
+ 1966  perl filterGenesIn.pl  bad.list  bonafide.gb > test.filter.gb
+ 1967  ls
+ 1968  less test.filter.gb 
+ 1969  filterGenes.pl bad.lst bonafide.gb > bonafide.f.gb
+ 1970  perl filterGenes.pl bad.lst bonafide.gb > bonafide.f.gb
+ 1971  perl filterGenesIn.pl  bad.lst bonafide.gb > bonafide.f.gb
+ 1972  grep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+ 1973  conda activate c
+ 1974  etraining --species=lumterFProteins    bonafide.gb 2>&1 | grep "in sequence" |  sed -E 's/.*n sequence (\\S+):.*/\\1/'  | sort -u   > bad.pre.list
+ 1975  grep -oE  "in sequence.*(OX457036.[1-9A-Za-z_0-]{1,})\w+"  bad.pre.list | grep -oE  "(OX457036.[1-9A-Za-z_0-]{1,})\w+"> bad.list
+ 1976  grep -oE  "in sequence.*(OX457036.[1-9A-Za-z_0-]{1,})\w+"  bad.pre.list | grep -oE  "(OX457036.[1-9A-Za-z_0-]{1,})\w+"> bad.lst
+ 1977  etraining --species=lumterFProteins    bonafide.gb 2>&1 | grep "in sequence" 
+ 1978  ls
+ 1979  grep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+ 1980  etraining --species=lumterFProteins  bonafide.gb 2>&1 | grep "in sequence"
+ 1981  etraining --species=lumterFProteins  bonafide.gb 2>&1 | grep "in sequence" |  sed -E 's/.*n sequence (\\S+):.*/\\1/'
+ 1982  etraining --species=lumterFProteins  bonafide.gb 2>&1 | grep "in sequence" |  sed -E 's/.*n sequence (\\S+):.*/\\1/'  | sort -u   > bad.pre.list
+ 1983  grep -oE  "in sequence.*(OX457036.[1-9A-Za-z_0-]{1,})\w+"  bad.pre.list | grep -oE  "(OX457036.[1-9A-Za-z_0-]{1,})\w+"> bad.list
+ 1984  perl filterGenesIn.pl  bad.list bonafide.gb > bonafide.filtered.gb
+ 1985  grep -c LOCUS bonafide.gb bonafide.filtered.gb
+ 1986  history > export.hist.on.bad.list
+ 1987  conda activate c
+ 1988  grep -c LOCUS bonafide.f.gb 
+ 1989  grep -c LOCUS bonafide.f.nonred.gb 
+ 1990  ln -s  bonafide.f.nonred.gb  bonafide.gb
+ 1991  etraining --species=wormNonredEP  bonafide.gb &> bonafide.out
+ 1992  grep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+ 1993  etraining --species=wormNonredEP    bonafide.gb 2>&1 | grep "in sequence" |  sed -E 's/.*n sequence (\\S+):.*/\\1/'  | sort -u   > bad.pre.list
+ 1994  tail bad.pre.list 
+ 1995  grep -oE  "in sequence.*(OX457036.[1-9A-Za-z_0-]{1,})\w+"  bad.pre.list | grep -oE  "(OX457036.[1-9A-Za-z_0-]{1,})\w+"> bad.list
+ 1996  tail bad.list
+ 1997  filterGenes.pl bad.lst bonafide.gb > bonafide.f.gb
+ 1998  perl filterGenesIn.pl  bad.lst bonafide.gb > bonafide.f.gb
+ 1999  perl filterGenes.pl  bad.list  bonafide.filtered.nonred.gb  > bonafide.filtered.gb
+ 2000  ln -s bonafide.filtered.nonred.gb  bonafide.gb
+ 2001  grep -c LOCUS bonafide.gb  filtered.gb
+ 2002  cd filtered/
+ 2003  ln -s filtered.gb  bonafide.gb
+ 2004  randomSplit.pl bonafide.gb 200
+ 2005  conda activate c
+ 2006  randomSplit.pl bonafide.gb 200
+ 2007  mv bonafide.gb.test test.gb
+ 2008  mv bonafide.gb.train train.gb
+ 2009  etraining --species=wormNonredEP  train.gb &> etrain.out
+ 2010  tail -6 etrain.out | head -3
+ 2011  augustus --species=wormNonerdEP test.gb > test.out
+ 2012  augustus --species wormNonredEP test.gb > test.out
+ 2013  augustus --species=wormNonredEP test.gb > test.out
+ 2014  history > export.hist.on.wormEP

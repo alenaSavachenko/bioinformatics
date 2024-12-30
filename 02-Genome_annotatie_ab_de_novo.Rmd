@@ -1,0 +1,1319 @@
+# Genome annotatie ab de novo.Inleiding
+
+
+
+
+```{r, warning=FALSE, error=FALSE, echo=FALSE, message=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+```
+
+
+Dit onderwerp van onderzoek is heel belangrijk, omdat er in de experimentele wetenschap momenteel gezocht wordt naar alternatieven voor het gebruik van dieren in verschillende laboratoriumexperimenten. Aangezien verschillende wormsoorten een belangrijke rol spelen als modellen in medisch en biologisch onderzoek, is het cruciaal om hun genetisch materiaal te onderzoeken. Dit project richt zich specifiek op de analyse van het genoom van de soort Lumbricida.De soort Lumbricus Terresteris hoort tot de fylogenetische  familie Annelida,  Clitellata, Oligochaeta, Crassiclitellata,  Lumbricina,  Lumbricidae [@erxlebenGenomeAnnotation0000]. De soort ringwormen (Annelida) zijn de oudste evolutionaire groep. De musculatuur lijkt hier sterk op de dwarsgestreptte musculatuur van dieren.[@giovannipilatoSignificanceMusculatureOrigin]. Daarom is deze soort een van de mensrelevante modellen voor laboratoriumonderzoek.
+
+Genoomannotatie is het proces dat gericht is op het identificeren van functionele componenten binnen een DNA-sequentie. Dit proces van annotatie biedt inzicht in het genoom door de plaats en functie van genen te specificeren, waaronder genen die eiwitten coderen of andere functies vervullen, evenals de bijbehorende regulerende elementen. De assemblage is altijd gebaseerd op de reads die zijn gegenereerd tijdens het sequentieproces. Het proces van genoomassemblage houdt in dat het originele genoom wordt gereconstrueerd uit kleine stukjes DNA, verkregen door middel van sequenting[@NovoAssemblyTutorial]. Deze reads zorgen ervoor dat het oorspronkelijke genoom meestal meerdere keren wordt gedekt. Bij het analyseren van genomische en metagenomische gegevens, is de gebruikelijke oplossing een verzameling contigs. Een contig is een aaneengeschakelde nucleotidesequentie. Deze contigs kunnen worden samengevoegd tot scaffolds, waarbij scaffolds bestaan uit een reeks contigs met een schatting van de afstanden tussen deze sequenties[@NCBIEukaryoticGenome]  processen van genomassemblage en annotatie  zijn geïntegreerd in een groter geheel dat zich richt op de identificatie van het genoom.
+Het annoteren van genoom is nog steeds een proces dat veel tijd kost en verschillende soorten sequentieanalyses samenbrengt. Gezien de grootte en complexiteit van genomen,  is de eerste stap naar volledige genoomassemblage meestal het verkrijgen van sequencinggegevens  om ruwe assemblage en voorspelling  van genmodellen  te verkrijgen.
+
+
+
+Het hele annotatieproces bestaat over het algemeen uit de volgende stappen   :
+1) Het maskeren van sterk repetitieve elementen in de genoomsequentie 
+2) het gebruik van transcripten en eiwitten van dezelfde of verwante soorten om ab initio te voorspellen . De bekende transcripten en eiwitten zijn opgeslagen in genetische databases zoals NCBI en BLAST. 
+3) gebruik van  genzoekalgoritmen om mogelijke genstructuren te identificeren;
+4) het combineren van deze gegevens om een eerste reeks genmodellen te creëren;
+5) filteren van de resultaten op kwaliteit  om de meest waarschijnlijke genmodellen te identificeren die volledige eiwitcoderende regio's.[@ncbi.nlm.nih.govNCBIEukaryoticGenome] . In eerste instantie wordt de kwaliteitsselectie uitgevoerd met behulp van een set positieve controles voor het programma. Na het voltooien van deze controles wordt het  percentage  fout-positieven resuultaten duidelijk zichtbaar.
+
+Een overzicht van publiek beschikbare genomen en annotaties in de  soort Lumbricus terrestris.
+
+Hoewel er in de bestaande literatuur slechts een beperkt aantal studies is dat de assemblage en annotatie van het genoom van Lumbricus terrestris behandelt, zijn er wel talrijke beschrijvingen van de genoomannotatie van andere organismen. Voor de soorten C.Elegans en Lubricus Rubellis  is er bijvoorbeeld een volledige annotatie. Voor het eerst wordt een gedetailleerde genoomassemblage van de genen van een soort  Lumbricus terrestris gepubliceerd op 30 oktober [@blaxterGenomeSequenceCommon2023]. Door de innovatieve long-read sequencing methoden van Pacific Biosciences hebben de wetenschappers het genoom  gesequenced en gepubliceerd. Hoewel het gepubliceerde genoom compleet is op sequentieniveau, is de analyse van de annotaties erg fragmentarisch. Deze genoomassemblage is de eerste die voor het publiek beschikbaar is. Het project legt de focus op het verder onderzoeken van de metadata van genoomassemblages. Tot nu toe zijn er in de literatuur geen uitgebreide en systematische studies gedaan over de annotatie van het Lumbricus terrestris genoom.
+
+#   Samenvatting  
+## 1.Training van het AUGUSTUS-programma voor het ontdekken van nieuwe genmodellen en hun patronen.
+
+ De training van AUGUSTUS vond plaats in verschillende stappen. In het begin werd de predictor uitgevoerd met de standaardinstellingen voor caenorhabditis, wat leidde tot 11.000 voorlopige genmodellen voor één chromosoom, maar met een vrij lage nauwkeurigheid in de voorspellingen. Voor het opstellen van een eerste trainingsset van genen werden RNA-sequencingdata gebruikt. De transcriptomereads werden met TopHat op het genoom gemapt (zie documentatie protocol1, data_processing). Dit resulteerde in 9.953 voorspelde genmodellen per chromosoom op basis van het transcriptoom. Gemiddeld waren de genen ongeveer 5.146 baseparen lang, en elk gen had meestal rond de 3,2 exons (zie protocol1, data_processing, genemarkES, genemark.average_gene_length.out). De exons waren gemiddeld 1.719 baseparen, terwijl de introns gemiddeld 4.760 baseparen lang waren. 
+ 
+ Daarna werden de genensets gefilterd met het Augustus-programma filterGenemark.pl. Na de filtratie bleven er 1.975 genen over op één chromosoom. Etrain werd uitgevoerd met genen die uit het transcriptoom kwamen. De uiteindelijke parameters werden gebruikt om de gff-annotatie te genereren. Een de novo-model met hoge specificiteit en sensitiviteitsscores van 8-9 voor de Lumbricus Terresstris werd verkregen via de mRna-pijplijn.
+ 
+
+## 2.. De training van het AUGUSTUS-programma met proteïne  van langere evolutionaire afstand 
+
+Het AUGUSTUS-programma is getraind met proteïne  die een langere evolutionaire afstand hebben. Hiervoor is een database uit Ortho DB, Arthropoda [@BioinformaticsWebServer] gebruikt. Deze database is voorbereid met "ProtHints", wat een onderdeel is van de Braker-pipline[@GaiusAugustusBRAKER2024a]. Voor de BLAST-analyse werd de versie ncbi-blast-2.16.0+ toegepast (zie protocol 2 documentatie). De OrthoDB-database diende als referentie. Om redundantie te verminderen, zijn alle trainingsgen aminozuursequenties met elkaar vergeleken en zijn alleen die eiwitsequenties behouden die minder dan 80% redundant zijn met andere sequenties in de set (zie protocol 2, scripts en documenten). Hieruit is een model (species) afgeleid dat de annotatie heeft opgeleverd.
+
+Na het verwijderen van redundante genstructuren in de proteïne-pijplijn, zijn de specificiteit en gevoeligheid gestegen van 0,01 naar 0,4-0,5 punten voor het de novo-model van de eiwitpijplijn.
+
+#    Alignment. Ruwe gegevens inspecteren
+
+Voor de Alignment  zijn Bowtie en Tophat gebruikt. Het transcriptome ID49 is afkomstig van Project: PRJEB59399[@ENABrowser], dat een verzameling genomische en transcriptomische data bevat voor Lumbricus terrestris, ook wel de gewone regenworm genoemd. Dit project is opgezet om de assemblage en annotatie van het genoom te ondersteunen. Je kunt de ruwe gegevens hier bekijken: https://www.ebi.ac.uk/ena/browser/view/PRJEB59399.
+Reference genoom: https://ftp.ensembl.org/pub/rapid-release/species/Lumbricus_terrestris/GCA_949752735.1/ensembl/genome/
+
+
+Eerst wordt de index opgebouwd met bowtie2. Daarna vindt de Alignmenet  plaats met Tophat. Cufflinks voegt alle reads samen tot transcripties met: cufflinks accepted_hits.bam.
+
+
+```{bash, eval=FALSE}
+bowtie2-build -f  Lumbricus_terrestris-GCA_949752735.1-softmasked.fa  lumter  --large-index 
+```
+
+
+```{bash, eval=FALSE}
+tophat lumter     sample_1.fastq  sample_2.fastq \                           
+ --output-dir TopHAT \ 
+ 
+```
+
+
+```{bash, eval=FALSE}
+
+ cufflinks  accepted_hits.bam
+ 
+```
+
+
+Cufflink zal transcripts.gtf genereren, terwijl TopHat accepted_hits.bam aanmaakt met de resultaten van de uitlijning en een lijst van uitlijningen in jucntions.bed. Elke junction bestaat uit twee verbonden BED-blokken, waarbij elk blok zo lang is als de maximale overhang van een lees die de junction overspant. De score is het aantal uitlijningen dat de junction overspant. 
+Het uitvoerbestand introns.gff bevat informatie over de strengen die gebruikt kan worden voor ET-training.
+<p> OX457036.1	TopHat2	intron	253060	254504	12	+	.	. </p>
+
+ Ten eerste moeten we de ruwe gegevens bekijken die we hebben van de genoom-Alignment . Elke junction bestaat uit twee verbonden BED-blokken, waarbij elk blok zo lang is als de maximale overhang van een lees die de junction overspant. De score is het aantal uitlijningen dat de junction overspant. Junctions.bed (TopHat, protocol1, script2):
+
+```{r, echo=FALSE}
+
+  junctions<- read.table("lumbricus/protocol1/data_processing/TOPHAT/junctions.bed", sep="\t", skip=1)        
+
+```
+
+```{r}
+head(junctions)
+```
+
+
+
+Cufflink verwerkt de uitgelijnde RNA-Seq-reads die van Tophat komen en bouwt ze op in de transcripten en exonen.
+
+```{r}
+
+
+transcripts <- read.table("lumbricus/protocol1/data_processing/TOPHAT/transcripts.gtf", sep="\t") 
+
+colnames(transcripts) <-  c("chr", "versie", "feature", "start", "end", "score", "strain", "v8")
+
+transcripts  %>%  select(1:5)  %>% head()
+
+
+```
+
+1. We gaan de outputbestanden van Tophat+Cufflink, namelijk accepted_hits.bam en junctions.bed, in IGV zetten, samen met het transcriptbestand van Cufflinks. Eerst hebben we een bed-bestand nodig.
+
+
+```{bash, engine.opts='-i',, eval=FALSE}
+
+awk '{if($3=="exon" ) {print $1,$4,$5, $7, $3 }}'  transcripts.gtf  > exon_ids.bed
+
+awk '{if($3=="transcript" ) {print $1,$4,$5, $7, $3 }}'  transcripts.gtf  > tranasctips_ids.b
+```
+1. Bekijk de bed-bestanden voor de genoombrowser:
+
+```{r}
+exons_ids <- read.table("lumbricus/protocol1/data_processing/TOPHAT/igv/exon_ids.bed", sep="\t") 
+
+transcript_ids <- read.table("lumbricus/protocol1/data_processing/TOPHAT/igv/transctipts_ids.bed", sep="\t") 
+
+head(exons_ids)
+head(transcript_ids)
+```
+
+Bekijk de exonen (diepblauw) en transcripties (lichtblauw) in IGV:
+
+
+
+```{r junctions1, echo=FALSE, fig.cap="exon-transcripts structure chr1:23kb", out.width = '100%'}
+knitr::include_graphics("lumbricus/protocol1/data_processing/TOPHAT/igv/exontranscripts.png")
+```
+
+ Vervolgens plaatsen we junctions.bed (rood) en geaccepteerde hits of reads (grijs) op dezelfde track om de exon-intronstructuur te visualiseren.
+
+
+```{r junctions2, echo=FALSE, fig.cap="exon-intron structure chr1:23kb, reads in grey", out.width = '100%'}
+knitr::include_graphics("lumbricus/protocol1/data_processing/TOPHAT/igv/igv_snapshot_bed_vs_juncions.png")
+```
+
+
+
+Voordat we GeneMarkET uitvoeren, verzamelen we enkele statistieken uit de primaire analyse. 
+Eerst bekijken we de gemiddelde introns, exonen en lengtes.
+
+
+```{r, warning=FALSE, error=FALSE}
+
+introns  <- read.table("lumbricus/protocol1/data_processing/TOPHAT/introns.gff", sep="\t")
+
+colnames(introns) <- c("chr","aligner","structure", "start", "end", "score", "strand", "v8", "v9")
+
+head(introns)
+
+introns_length <- introns %>%   mutate(ilength=end-start)
+
+max_intron <-  max(introns_length$ilength)  %>%  round(digits = 1)
+
+ avr_intron <-  mean(introns_length$ilength)  %>%  round(digits = 1)
+
+```
+
+
+```{r}
+exons  <- read.table("lumbricus/protocol1/data_processing/TOPHAT/transcripts.gtf", sep="\t")
+
+exons  <- exons %>%  select(1:5)
+colnames(exons) <- c("chr","aligner","structure", "start", "end")
+exons_length <- exons %>%   mutate(elength=end-start)
+
+max_exon <-  max(exons_length$elength)  %>%  round(digits = 1)
+max_exon
+avr_exon <-  mean(exons_length$elength) %>%  round(digits = 1)
+```
+
+<p> maximale lengte van intron : `r max_intron` </p>
+<p> gemiddelde intronlengte `r avr_intron` </p>
+
+<p> maximale lengte van exon : `r max_exon` </p>
+<p> gemiddelde lengte exon `r avr_exon` </p>
+
+
+```{r, warning=FALSE,message=FALSE, echo=F}
+data <- data.frame(
+  name=c("exon","intron") ,  
+  value=c(avr_exon, avr_intron)
+)
+plot <-  ggplot(data, aes(x=name, y=value)) + 
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = round(value,1), vjust = -0.2)) +
+  ggtitle ("average length introns/exons, bp")+
+  labs(y="length, bp")+
+  labs(x="average length bp")
+```
+
+
+
+```{r, figures-side, fig.show="hold", out.width="50%"}
+plot
+```
+
+
+## GenemarkET. Model opbouwen (protocol 1). mRna pijplijnne 
+## Deel 1. Model opbouwen
+
+Het script bed_to_gff.pl van GeneMarkES maakt introns.gff aan vanuit de TopHat junctions.bed. Dit bestand bevat informatie over de strengen en kan direct gebruikt worden met GeneMarkET (protocol 1, script 2).
+
+
+
+```{r}
+
+introns  <- read.table("lumbricus/protocol1/data_processing/TOPHAT/introns.gff", sep="\t")
+
+colnames(introns) <- c("chr","aligner","structure", "start", "end", "score", "strand", "v8", "v9")
+
+head(introns)
+```
+
+Om genemark met introns.gff uit te voeren:
+
+
+```{bash, eval=FALSE}
+ 
+ ../../gmes_petap.pl     --verbose --sequence   genome.fa   --ET  introns.gff
+```
+
+
+2. GeneMarkET gaat een ghmm-model en genemark.gtf produceren.  Dit bestand(gtf)  bevat informatie over de start- en eindcoördinaten van genen, die in de daaropvolgende stap gebruikt zal worden.
+
+```{bash, engine.opts='-i', echo=TRUE, eval=TRUE}
+ cut -f 2,3,4,5  lumbricus/protocol1\
+ /data_processing/GeneMarkES/genemark.gtf  | head
+```
+
+1. Genemark maakt gebruik van filterGenemark.pl voor kwaliteitscontrole. Dit zorgt ervoor dat alleen de genmodellen die geregistreerd zijn in de exon-intronstructuur behouden blijven. (protocol1, script3) Na het filteren van de primaire resultaten wordt er een set van 1.975 genmodellen voor één chromosoom opgeslagen in genemark.f.good.gtf.
+
+
+
+```{bash, engine.opts='-i', echo=TRUE, eval=TRUE}
+ cut -f 2,3,4,5  lumbricus/protocol1/data_processing/GeneMarkES/genemark.f.good.gtf   | head
+```
+
+1. Genemark.f.good.gtf is nu klaar om een trainingsset te maken van (protocol1, stap 4 en 5). Eerst wordt gtf omgezet naar gb. Zie protocol1, data_processing, Bonafide.
+
+
+```{bash, eval=F}
+
+gff2gbSmallDNA.pl bonafide.gtf genome.fa 450 tmp.gb
+filterGenesIn_mRNAname.pl bonafide.gtf tmp.gb > bonafide.gb
+
+```
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=TRUE}
+
+cat lumbricus/protocol1/data_processing/bonafide/bonafide.gb | head 
+
+```
+
+
+## Etrain (protocol7)
+
+Op basis van de genen die we hebben verkregen via mRNA-alignment, gaan we een trainingsset opstellen om een nieuw model te trainen. In de vorige sectie hebben we bonafide.gb aangemaakt, waarin 1.975 geverifieerde genen voor een specifiek chromosoom zijn opgenomen. We zijn nu klaar om de ontwikkeling van een nieuwe species  te starten.
+
+ 
+```{bash,  engine.opts='-i', echo=TRUE, eval=FALSE}
+
+conda activate c 
+new_species.pl --species=lumter
+```
+ 
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=FALSE}
+
+etraining --species=lumter bonafide.gb &> bonafide.out
+
+```
+
+Check for Stop Codonds:
+
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=FALSE}
+
+grep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+
+```
+0
+
+We hoeven geen bad  lijst op te stellen, omdat er geen stopcodons in de CDS aanwezig zijn.
+
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=FALSE}
+
+grep -c LOCUS bonafide.gb
+
+```
+
+1975
+
+Het randomSplit.pl-script splitst de data op in twee segmenten: een kleinere sectie genaamd test.gb voor trainingsdoeleinden, en een grotere sectie die train.gb wordt genoemd voor de evaluatie van het trainingsproces.
+
+
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=FALSE}
+
+
+randomSplit.pl bonafide.gb 200
+mv bonafide.gb.test test.gb
+mv bonafide.gb.train train.gb
+
+
+```
+
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=FALSE}
+
+etraining --species=lumter train.gb &> etrain.out
+```
+
+Deze configuratie kan worden aangepast in het configuratiebestand (map config, species, lumter_parameters.cfg).
+
+tag: 511 (0.259)
+taa: 700 (0.354)
+tga: 764 (0.387)
+
+
+Evaluatie van de voorspelling:
+
+```{bash, eval=FALSE}
+augustus --species=lumter test.gb > test.out
+```
+
+*******      Evaluation of gene prediction     *******
+
+```{bash, eval=FALSE}
+---------------------------------------------\
+                 | sensitivity | specificity |
+---------------------------------------------|
+nucleotide level |       0.963 |       0.972 |
+---------------------------------------------/
+
+----------------------------------------------------------------------------------------------------------\
+           |  #pred |  #anno |      |    FP = false pos. |    FN = false neg. |             |             |
+           | total/ | total/ |   TP |--------------------|--------------------| sensitivity | specificity |
+           | unique | unique |      | part | ovlp | wrng | part | ovlp | wrng |             |             |
+----------------------------------------------------------------------------------------------------------|
+           |        |        |      |                 78 |                 87 |             |             |
+exon level |    389 |    398 |  311 | ------------------ | ------------------ |       0.781 |       0.799 |
+           |    389 |    398 |      |   56 |    6 |   16 |   56 |    6 |   25 |             |             |
+----------------------------------------------------------------------------------------------------------/
+
+----------------------------------------------------------------------------\
+transcript | #pred | #anno |   TP |   FP |   FN | sensitivity | specificity |
+----------------------------------------------------------------------------|
+gene level |   389 |   398 |  311 |   78 |   87 |       0.781 |       0.799 |
+----------------------------------------------------------------------------/
+# total time: 31.2
+# command line:
+# augustus --species=wormET0 test.gb
+
+```
+
+See also: lumbricus/protocol1/test/test.out
+
+Hier eindigt onze mRNA-pijplijn, waarbij we een hoge specificiteitsscore hebben bereikt voor het model dat we hebben gemaakt voor Lumbricus Terrestris. Dit model zal dienen voor visualisatie.
+ 
+## ProtHints en de eiwitpijplijn  
+## ProtHints  
+
+Er zijn veel genen in verschillende genoom die door hun evolutionaire oorsprong met elkaar verbonden zijn. De gelijkenis tussen eiwitsequenties is goed zichtbaar. OrthoDB is een belangrijke bron voor eiwitten en dient als een database die eiwitten met een uitgebreider evolutionair verleden omvat. Zie protocol 2.
+
+```{bash, eval=F}
+../bin/prothint.py  ../OX457036.1.fasta  ../Arthropoda.fa
+```
+
+```{bash, eval=F}
+grep ">" seed_proteins.faa  | wc -l
+```
+
+14733
+
+Prothint heeft een database met eiwitten voorbereid voor startAlign.pl. Het resultaat was 14.733 eiwitten in het bestand seed_proteins.faa. Dit seed-bestand kan worden gebruikt met startAlign.pl om een gth.concat.alg-object te verkrijgen, dat vervolgens wordt gebruikt om bonafide.gb te genereren.
+
+
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=TRUE}
+head lumbricus/protocol2/data_processing/ProtHints/seed_proteins.faa
+```
+
+
+Naast het seed_proteins.faa  genereert protHints een prothint_augustus.gff hintsbestand dat je direct kunt gebruiken met augustus.
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=TRUE}
+head lumbricus/protocol2/data_processing/\
+ProtHints/prothint_augustus.gff
+```
+
+
+
+2. We kunnen augustus meteen draaien met de  prothint_augustus.gff   die door de eiwitten zijn gemaakt, voordat we de trainingsset aanpakken.
+
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=FALSE}
+
+ augustus --species=lumter\
+ --predictionStart=2000000 --predictionEnd=3000000\
+ OX457036.1.fasta\
+ --extrinsicCfgFile=extrinsic.cfg\
+ --hintsfile=prothint_augustus.gff \
+ > augustus.hints.prots.orthodb.arthropoda.2-3mb.gff
+```
+
+ Hierdoor ontstaat een annotatie voor 2mb-3mb van het chromosoom, gebaseerd op de eiwitindicaties van eiwitten die een lange evolutionaire afstand hebben.
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=TRUE, out.width = '100%'}
+cat   lumbricus/protocol2/data_processing\
+/ProtHints/augustus.hints.prots.orthodb.arthropoda.2-3mb.gff | \
+tail -n 50
+```
+
+##  Protocol 2. Het creëren van genstructuren voor training op basis van eiwitten.
+## GenomeThreader
+
+We hebben 14.733 eiwitten verzameld uit de eerdere secties. Nu gaan we een trainingsset opzetten met deze eiwitten. Uit de oorspronkelijke 14.733 eiwitten hebben we een klein deel gekozen om de trainingsset te vormen.
+ 
+```{bash, eval=FALSE}
+
+startAlign.pl  --genome OX457036.1.fasta  \
+--prot seed_proteins.faa  \
+--pos OX457036.1:1-10000000 \
+--prg gth
+
+```
+
+2. Hierdoor ontstaat het object gth.concat.aln, dat vervolgens kan worden geconverteerd naar het gtf-formaat (protocol2 ,data_processing, protHints).
+
+```{bash, eval=F}
+ gth.concat.aln bonafide.gtf
+```
+
+
+Controleer het gtf-bestand :
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=TRUE, out.width = '100%'}
+head lumbricus/protocol2/data_processing/Bonafid/bonafide.gtf 
+
+```
+
+
+
+```{bash, eval=F}
+computeFlankingRegion.pl bonafide.gtf
+```
+
+Output van  computeFlankingRegion.pl:
+
+Total length gene length (including introns): 5412279. Number of genes: 1090. Average Length: 4965.39357798165
+The flanking_DNA value is: 2482 (the Minimum of 10 000 and 2482)
+
+
+```{bash, eval=F}
+gff2gbSmallDNA.pl bonafide.gtf genome.fa 2482 bonafide.gb
+```
+
+ Bonafide.gb wordt in de volgende pipeline gebruikt om redundantie te verwijderen.
+
+## Protocol 6.Verwijderen van Redundant Genstructuren (protocol 6)
+
+Voor NCBI Blast, controleer de link en stel het Path  in naar de Blast uitvoerbare bestanden.
+
+```{bash, eval=F}
+wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
+```
+
+export PATH=$PATH:$HOME/ncbi-blast-2.16.0+
+
+Maak gebruik van de opgegeven commandoregel om het GTF-bestand van de trainingsgenstructuur te transformeren naar een FASTA-bestand dat de eiwitsequentie omvat.
+
+```{bash, eval=F}
+gtf2aa.pl genome.fa bonafide.f.gtf prot.aa
+```
+
+
+Inspecteer  prot.aa :
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=TRUE, out.width = '100%'}
+head lumbricus/protocol2/data_processing/Redundancy/prot.aa
+```
+
+Voer een Blast  uit van alle eiwitsequenties uit de vorige stap met elkaar en toon alleen de eiwitsequenties die minder dan 80% identiek zijn aan een andere sequentie in de groep.
+
+```{bash, eval=F}
+
+aa2nonred.pl prot.aa prot.nr.aa
+
+
+```
+
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=TRUE, out.width = '100%'}
+head lumbricus/protocol2/data_processing/Redundancy/prot.nr.aa
+
+grep ">"  lumbricus/protocol2/data_processing/Redundancy/prot.nr.aa | wc -l
+```
+
+Daarna hebben we 602 niet-redudante eiwitten om mee verder te gaan:
+
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=TRUE, out.width = '100%'}
+
+grep ">"  lumbricus/protocol2/data_processing/Redundancy/prot.nr.aa | wc -l
+```
+
+
+
+```{bash, eval=FALSE}
+cat bonafide.gb | perl -ne ’if(m/\/gene=\"(\S+)\"/){ \
+print "\"".$1."\"\n";}’ | sort -u > traingenes.lst
+```
+
+>> regel 1: syntaxisfout bij onverwacht token `('
+
+Dit leverde een syntaxisfout op, waarna alle perl -ne regex werden vervangen door Python regex, die werden uitgevoerd in de IDE.
+
+
+```{python, eval=FALSE, python.reticulate = FALSE}
+import re
+import subprocess
+
+# Read from the file 'bonafide.gb'
+with open('bonafide.gb', 'r') as file:
+	content = file.read()
+
+# Find all unique gene names
+gene_names = set(re.findall(r'/gene="(\S+)"', content))
+        
+# Writing unique gene names to a file
+with open('traingenes.lst', 'w') as f:
+    for gene in sorted(gene_names):
+        f.write(f'"{gene}"\n')
+```
+
+
+De uitvoer bevat de strings die als transcriptnamen worden gebruikt in het bonafide.gtf-bestand, waaruit bonafide.gb oorspronkelijk is gemaakt, met aanhalingstekens.
+
+
+
+```{bash, eval=TRUE}
+
+head lumbricus/protocol2/data_processing/Redundancy/traingenes.lst 
+
+```
+
+Hierna volgt een reeks scripts/opdrachten die alleen bedoeld zijn om een lijst te verkrijgen van niet-redudante genen en hun bijbehorende loci in GeneBank.Dit is voornamelijk een bewerking voor tekstbestanden 
+
+```{bash, eval=FALSE}
+
+grep -oE '(OX457036[A-Za-z1-9._]{1,})\w+'  prot.nr.aa > nonred.lst
+
+```
+
+
+```{bash, eval=TRUE}
+
+head lumbricus/protocol2/data_processing/Redundancy/nonred.lst 
+
+```
+
+
+Isoleer de genen in traingenes.lst van bonafide.gtf:
+
+```{bash, eval=FALSE}
+grep -f traingenes.lst -F bonafide.gtf > bonafide.f.gtf
+```
+
+```{bash, eval=TRUE}
+head lumbricus/protocol2/data_processing/Redundancy/bonafide.f.gtf
+
+```
+
+
+```{bash, eval=FALSE}
+grep -oE '(OX457036[A-Za-z1-9._]{1,})\w+'  prot.nr.aa > nonred.lst
+```
+
+```{bash, eval=TRUE}
+
+head lumbricus/protocol2/data_processing/Redundancy/nonred.lst
+
+```
+
+ In nonred.lst gaan we nu een niet-redundante subset van genen vinden.
+
+Voor het filteren van het bestand bonafide.gb hebben we een lijst met loci-namen nodig in plaats van genenamen.
+
+```{bash, eval=FALSE}
+cat bonafide.gb | perl -ne ’
+if ( $_ =~ m/LOCUS\s+(\S+)\s/ ) {
+$txLocus = $1;
+} elsif ( $_ =~ m/\/gene=\"(\S+)\"/ ) {
+$txInGb3{$1} = $txLocus
+}
+if( eof() ) {
+foreach ( keys %txInGb3 ) {
+print "$_\t$txInGb3{$_}\n";
+}
+}’ > loci.lst
+```
+
+
+
+```{bash, eval=FALSE}
+
+Unrecognized character \xE2; marked by <-- HERE after <-- HERE near column 1 at -e line 1.
+cat: write error: Broken pipe
+./test.sh: line 2: syntax error near unexpected token `('
+./test.sh: line 2: `if ( $_ =~ m/LOCUS\s+(\S+)\s/ ) {'
+
+```
+
+
+ Deze commando van het protocol veroorzaakte een fout en is vervangen. Het is nu locilist.py (scripts, protocol2).
+
+```{python, eval=FALSE, python.reticulate = FALSE}
+import re
+
+txInGb3 = {}
+txLocus = ""
+
+with open("bonafideOrtho.gb.db") as file:
+    for line in file:
+        if re.search(r'LOCUS\s+(\S+)\s', line):
+            txLocus = re.search(r'LOCUS\s+(\S+)\s', line).group(1)
+        elif re.search(r'/gene="(\S+)"', line):
+            gene = re.search(r'/gene="(\S+)"', line).group(1)
+            txInGb3[gene] = txLocus
+
+with open("loci.lst", "w") as output_file:
+    for key in txInGb3.keys():
+        output_file.write(f"{key}\t{txInGb3[key]}\n")
+
+```
+
+en nonred.loci.py (scripts, protocol2)):
+ 
+
+
+```{python, eval=FALSE, python.reticulate = FALSE}
+
+import subprocess
+
+with open('nonred.lst', 'r') as f:
+    patterns = f.read().splitlines()
+
+with open('loci.lst', 'r') as f:
+    loci = f.read().splitlines()
+
+matched_loci = [locus.split('\t')[1] for locus in loci if any(pattern in locus for pattern in patterns)]
+
+with open('nonred.loci.lst', 'w') as f:
+    f.write('\n'.join(matched_loci))
+```
+
+
+wat nonred.loci.lst en loci.lst (met 2 kolommen) produceert:
+
+
+```{bash, eval=TRUE}
+
+head lumbricus/protocol2/data_processing/Redundancy/nonred.loci.lst
+
+```
+
+```{bash, eval=TRUE}
+
+head lumbricus/protocol2/data_processing/Redundancy/loci.lst
+
+```
+
+```{bash, eval=FALSE}
+filterGenesIn.pl nonred.loci.lst bonafide.gb > bonafide.f.gb
+```
+
+ Deze commando haalt enkel de laatste locus uit de bonafide.gb. Het doel is om alle unieke loci uit de bonafide.gb te verzamelen, niet alleen de laatste.
+
+Om alle unieke loci te krijgen, moeten we dit in een loop zetten (protocol2, scripts, bonafide.nonred.f.py).
+
+```{python, eval=FALSE, python.reticulate = FALSE}
+
+import re
+origfilename ="bonafideRED.gb"
+goodfilename ="nonred.loci.lst"
+
+goodlist = {}
+with open(goodfilename, 'r') as goodfile:
+     for line in goodfile:             
+         goodlist[line.strip()] = 1
+         
+
+with open(origfilename, 'r') as origfile:
+    content = origfile.read().split('\n//\n')             
+    for gendaten in content:
+         match = re.match(r'^LOCUS +(\S+) .*', gendaten)
+         if match:
+             genname = match.group(1)
+             if genname in goodlist:                
+                 with open('bonafide.filtered.nonred.gb', 'a') as f2:
+                     f2.write( gendaten+ '\n'+'//'+'\n')
+                     f2.close()
+           
+           
+```
+
+```{bash, eval=TRUE}
+
+grep -c LOCUS lumbricus/protocol2/data_processing/Redundancy/bonafide.f.nonred.gb
+
+```
+
+ Na deze fase zijn er 602 verschillende loci in Bonafide.
+
+## Trainingsset van Proteins.Etrain
+
+We hebben in de vorige sectie 602 niet-redundante genstructuren ontdekt die kunnen dienen om een nieuwe soort te ontwikkelen. Creëer een nieuwe species
+
+
+
+```{bash, eval=FALSE}
+
+new_species.pl --species=wormNonredEP
+
+```
+
+
+```{bash,eval=FALSE}
+etraining --species=wormNonredEP bonafide.gb &> bonafide.out
+```
+
+Check for stop-codons:
+
+
+```{bash, eval=FALSE}
+
+grep -c "Variable stopCodonExcludedFromCDS set right" bonafide.out
+
+```
+49
+
+We moeten 49 stopcodons uitfilteren.Bad List:
+
+```{bash, eval=FALSE}
+
+etraining --species=wormNonredEP    bonafide.gb 2>&1\
+| grep "in sequence" \
+|  sed -E 's/.*n sequence (\\S+):.*/\\1/' \
+| sort -u   > bad.pre.list
+
+grep -oE  "in sequence.*(OX457036.[1-9A-Za-z_0-]{1,})\w+" \
+bad.pre.list\
+| grep -oE  "(OX457036.[1-9A-Za-z_0-]{1,})\w+"> bad.list
+
+
+```
+
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=TRUE, out.width = '100%'}
+head  lumbricus/protocol2/data_processing/bad-list/bad.list 
+```
+
+Vervolgens fitler bad.list uit bonafide.gb:
+
+
+```{bash, eval=FALSE}
+perl filterGenes.pl  bad.list  bonafide.filtered.nonred.gb  \
+> bonafide.filtered.gb
+```
+
+
+```{bash, eval=FALSE}
+
+grep -c LOCUS bonafide.gb  bonafide.filtered.gb
+
+```
+
+
+bonafide.gb:602
+bonafide.filtered.gb:373
+
+
+```{bash, eval=FALSE}
+
+ln -s bonafide.filtered.gb  bonafide.gb 
+
+```
+ 
+test.gb is een klein bestand dat dient voor training. Train.gb is een groot bestand dat gebruikt wordt om de training te evalueren.
+
+
+```{bash, eval=FALSE}
+
+
+randomSplit.pl bonafide.gb 200
+mv bonafide.gb.test test.gb
+mv bonafide.gb.train train.gb
+
+
+```
+
+
+```{bash, eval=FALSE}
+
+etraining --species=wormNonredEP  train.gb &> etrain.out
+
+```
+
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=TRUE, out.width = '100%'}
+
+cat  lumbricus/protocol2/data_processing/Bonafid/etrain.out
+```
+
+
+```{bash, eval=FALSE}
+
+
+tail -6 etrain.out | head -3
+
+```
+
+tag:   97 (0.26)
+taa:  102 (0.273)
+tga:  174 (0.466)
+
+
+Je moet deze waarden corrigeren in je wormNonredEP_parameters.cfg in config map
+
+
+```{bash, eval=FALSE}
+
+
+augustus --species=wormNonredEP test.gb > test.out
+
+```
+
+ Eerst werd er een test gedaan op het model voordat het geoptimaliseerd werd, waarbij redudante  structuren werden verwijderd. Deze test gaf een gevoeligheid en specificiteit van 0.01.
+
+Na het toepassen van het protocol voor het verwijderen van redundante genstructuren, nam de specificiteit toe met 0,3 tot 0,5 punten.
+
+
+```{bash, eval=FALSE}
+*******      Evaluation of gene prediction     *******
+
+---------------------------------------------\
+                 | sensitivity | specificity |
+---------------------------------------------|
+nucleotide level |       0.942 |       0.762 |
+---------------------------------------------/
+
+----------------------------------------------------------------------------------------------------------\
+           |  #pred |  #anno |      |    FP = false pos. |    FN = false neg. |             |             |
+           | total/ | total/ |   TP |--------------------|--------------------| sensitivity | specificity |
+           | unique | unique |      | part | ovlp | wrng | part | ovlp | wrng |             |             |
+----------------------------------------------------------------------------------------------------------|
+           |        |        |      |               1071 |                767 |             |             |
+exon level |   1884 |   1580 |  813 | ------------------ | ------------------ |       0.515 |       0.432 |
+           |   1884 |   1580 |      |  436 |  104 |  531 |  456 |  145 |  166 |             |             |
+----------------------------------------------------------------------------------------------------------/
+
+----------------------------------------------------------------------------\
+transcript | #pred | #anno |   TP |   FP |   FN | sensitivity | specificity |
+----------------------------------------------------------------------------|
+gene level |   454 |   373 |   88 |  366 |  285 |       0.236 |       0.194 |
+----------------------------------------------------------------------------/
+```
+ 
+
+
+
+Zie lumbricus/protocol2/test/test.out voor meer informatie.
+
+## Prediction met behulp van extrinsiek bewijs (Protocol 11-12) 
+
+ Voor de extrinistiek  Hints  is proteoom van wormen  geselecteerd. Het proteoom komt van UniProt, dat zowel het proteoom van Lumbricus Terrestris als dat van Eisenia Fetida omvat. Twee van de Fasta-bestanden die we van UniProt hebben gekregen, zijn in één bestand samengevoegd.
+ 
+Proteome Lumbcricus Terrestris:
+https://www.uniprot.org/uniprotkb?query=%28taxonomy_id%3A6397%29
+
+Proteome Eisenia Fetida:
+https://www.uniprot.org/uniprotkb?query=%28taxonomy_id%3A6393%29
+
+Samengevat Lumbricus en Eisenia:
+
+lumbcricus -> protocl12 -> data_processing ->  merged_6393_and_6397.fa
+
+Fasta files, afkomstig van Uniprot:
+Eisienia: lumbricus -> protocl12 -> data_raw-> uniprotkb_taxonomy_id_6393_2024_12_29.fasta
+Lumbricus : lumbricus -> protocl12 -> data_raw-> uniprotkb_taxonomy_id_6397_2024_12_29.fasta.
+
+Eerste step is de ProtHints:
+
+```{bash, eval=FALSE}
+
+../bin/prothint.py ../OX457036.1.fasta ../merged_6393_and_6397.fa
+```
+
+Het programma ProtHints wordt gebruikt om hints voor te bereiden (ProtHints installatie vond plaats in protocol 2). In deze fase wordt het bestand prothint_augustus.gff aangemaakt.
+Voorbeeld prothint_augustus.gff :
+
+
+
+```{bash, eval=FALSE}
+OX457036.1	ProtHint	start	33409650	33409652	2	-	0	src=P;mult=2;pri=4;al_score=0.433058;
+OX457036.1	ProtHint	intron	34198705	34199175	2	+	.	src=P;mult=2;pri=4;al_score=0.38446;
+OX457036.1	ProtHint	intron	34199278	34199565	2	+	.	src=P;mult=2;pri=4;al_score=0.26901;
+OX457036.1	ProtHint	intron	37878497	37880236	2	+	.	src=P;mult=1;pri=4;al_score=0.488541;
+OX457036.1	ProtHint	intron	37880480	37881139	2	+	.	src=P;mult=1;pri=4;al_score=0.474112;
+OX457036.1	ProtHint	stop	37881166	37881168	2	+	0	src=P;mult=1;pri=4;al_score=0.429752;
+```
+
+Je kunt hints  gelijk toepassen in augustus.
+
+
+```{bash, eval=FALSE}
+
+augustus --species=caenorhabditis 
+--predictionStart=2000000 --predictionEnd=3000000\
+OX457036.1.fasta 
+--extrinsicCfgFile=extrinsic.cfg
+--hintsfile=prothint_augustus.gff 
+> augustus.extrinistics.hints.gff
+
+```
+
+
+For de extrinsic.cfg zee:
+
+https://github.com/nextgenusfs/augustus/blob/master/config/extrinsic/cgp.extrinsic.cfg
+
+Voorbeeld extrinsic.cfg:
+
+```{bash, eval=FALSE}
+# source of extrinsic information:
+# M manual anchor (required)
+# P protein database hit
+# E EST/cDNA database hit
+# C combined est/protein database hit
+# D Dialign
+# R retroposed genes
+# T transMapped refSeqs
+# W wiggle track coverage info from RNA-Seq
+
+[SOURCES]
+M RM E W P
+
+#
+# individual_liability: Only unsatisfiable hints are disregarded. By default this flag is not set
+# and the whole hint group is disregarded when one hint in it is unsatisfiable.
+# 1group1gene: Try to predict a single gene that covers all hints of a given group. This is relevant for
+# hint groups with gaps, e.g. when two ESTs, say 5' and 3', from the same clone align nearby.
+#
+[SOURCE-PARAMETERS]
+
+
+#   feature        bonus         malus   gradelevelcolumns
+#		r+/r-
+#
+# the gradelevel colums have the following format for each source
+# sourcecharacter numscoreclasses boundary    ...  boundary    gradequot  ...  gradequot
+# 
+
+[GENERAL]
+      start      1        0.8  M    1  1e+100  RM  1     1    E 1    1    W 1    1      P       1     1e3
+       stop      1        0.8  M    1  1e+100  RM  1     1    E 1    1    W 1    1	P	1     1e3
+        tss      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1	P	1	1
+        tts      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1	P	1	1
+        ass      1   0.95 0.1  M    1  1e+100  RM  1     1    E 1    1    W 1    1	P	1     100
+        dss      1   0.95 0.1  M    1  1e+100  RM  1     1    E 1    1    W 1    1	P	1     100
+   exonpart      1  .992 .985  M    1  1e+100  RM  1     1    E 1    1    W 1    1.02	P	1	1
+       exon      1        0.9  M    1  1e+100  RM  1     1    E 1    1    W 1    1	P	1     1e4
+ intronpart      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1	P	1	1
+     intron      1        .34  M    1  1e+100  RM  1     1    E 1  1e6    W 1    1	P	1     100
+    CDSpart      1     1 .985  M    1  1e+100  RM  1     1    E 1    1	  W 1    1	P	1     1e5
+        CDS      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1	P	1	1
+    UTRpart      1     1    1  M    1  1e+100  RM  1     1    E 1    1    W 1    1	P	1	1
+        UTR      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1	P	1	1
+     irpart      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1	P	1	1
+nonexonpart      1          1  M    1  1e+100  RM  1     1.15 E 1    1    W 1    1	P	1	1
+  genicpart      1          1  M    1  1e+100  RM  1     1    E 1    1    W 1    1	P	1	1
+
+```
+
+
+
+Tijdens deze stap wordt er een gff-annotatiebestand geproduceerd.
+Voorbeeld Augustus  gff van protein Hints:
+
+
+```{bash, eval=F}
+
+# start gene g10
+OX457036.1	AUGUSTUS	gene	2072765	2073299	0.59	+	.	g10
+OX457036.1	AUGUSTUS	transcript	2072765	2073299	0.59	+	.	g10.t1
+OX457036.1	AUGUSTUS	tss	2072765	2072765	.	+	.	transcript_id "g10.t1"; gene_id "g10";
+OX457036.1	AUGUSTUS	5'-UTR	2072765	2072799	0.99	+	.	transcript_id "g10.t1"; gene_id "g10";
+OX457036.1	AUGUSTUS	start_codon	2072800	2072802	.	+	0	transcript_id "g10.t1"; gene_id "g10";
+OX457036.1	AUGUSTUS	single	2072800	2073033	0.93	+	0	transcript_id "g10.t1"; gene_id "g10";
+OX457036.1	AUGUSTUS	CDS	2072800	2073033	0.93	+	0	transcript_id "g10.t1"; gene_id "g10";
+OX457036.1	AUGUSTUS	stop_codon	2073031	2073033	.	+	0	transcript_id "g10.t1"; gene_id "g10";
+OX457036.1	AUGUSTUS	3'-UTR	2073034	2073299	0.6	+	.	transcript_id "g10.t1"; gene_id "g10";
+OX457036.1	AUGUSTUS	tts	2073299	2073299	.	+	.	transcript_id "g10.t1"; gene_id "g10";
+# protein sequence = [MYKLVDETSKLAWLLCLMRMLSQKYYVSSMLMLANSRASLLPLLIAYNELISRDDELSCYRFLHSCDMFILTFFRRS]
+# Evidence for and against this transcript:
+# % of transcript supported by hints (any source): 0
+# CDS exons: 0/1
+# CDS introns: 0/0
+# 5'UTR exons and introns: 0/1
+# 3'UTR exons and introns: 0/1
+# hint groups fully obeyed: 0
+# incompatible hint groups: 0
+# end gene g10
+
+```
+
+
+De gff die we van deze pipeline hebben ontvangen, is hier te vinden:
+lumbricus/protocol12/gff
+
+## Identificatie en visualisatie 
+## Gen-identificatie
+ Alle voorspellingen zijn gebaseerd op een DNA-fragment van 1 mb, wat overeenkomt met 1% van chromosoom. De exacte locatie is aangeduid als 2000000-3000000. (2-3 mb) van chr1.  De predictor is toegepast op het nieuwe lumtermodel (zie, protocol 1, model) dat in deel 1 is ontwikkeld. Alle stappen voor identificatie zijn vastgelegd in prediction.xlsx (map identification).
+
+```{bash, eval=FALSE}
+augustus --species=lumter lumter.fasta --predictionStart=2000000 --predictionEnd=3000000 --gff3=on
+```
+
+
+
+Voor het identificeren van genen hebben we de qblast() functie gebruikt uit  de Bio.Blast.NCBIWWW module van Biopython. De qblast functie heeft  verschillende  opties die vergelijkbaar zijn met de parameters die je kunt instellen op de BLAST webpagina. Wij hebben nucleotide blast ("blastn", "nt") gebruikt. Deze functie is bedoeld om nucleotidesequenties te vinden die vergelijkbaar zijn met die van andere organismen, en deze gegevens zijn beschikbaar in de NCBI-database. Hulp voor de qblast functie:
+
+
+```{bash, eval= FALSE}
+from Bio.Blast import NCBIWWW 
+help(NCBIWWW.qblast)
+```
+
+  Some useful parameters:
+
+     - program        blastn, blastp, blastx, tblastn, or tblastx (lower case)
+     - database       Which database to search against (e.g. "nr").
+     - sequence       The sequence to search.
+     - ncbi_gi        TRUE/FALSE whether to give 'gi' identifier.
+     - descriptions   Number of descriptions to show.  Def 500.
+     - alignments     Number of alignments to show.  Def 500.
+     - expect         An expect value cutoff.  Def 10.0.
+     - matrix_name    Specify an alt. matrix (PAM30, PAM70, BLOSUM80, BLOSUM45).
+     - filter         "none" turns off filtering.  Default no filtering
+     - format_type    "HTML", "Text", "ASN.1", or "XML".  Def. "XML".
+     - entrez_query   Entrez query to limit Blast search
+     - hitlist_size   Number of hits to return. Default 50
+     - megablast      TRUE/FALSE whether to use MEga BLAST algorithm (blastn only)
+     - short_query    TRUE/FALSE whether to adjust the search parameters for a
+                      short query sequence. Note that this will override
+                      manually set parameters like word size and e value. Turns
+                      off when sequence length is > 30 residues. Default: None.
+     - service        plain, psi, phi, rpsblast, megablast (lower case)
+
+    This function does no checking of the validity of the parameters
+    and passes the values to the server as is.  More help is available at:
+    https://ncbi.github.io/blast-cloud/dev/api.html
+    </p>
+    
+Eerst hebben we het ruwe GFF-bestand voorbereid voor de Blast API door alle spaties en het '#' symbool te verwijderen. Om de gencoördinaten te krijgen, maakten we gebruik van een regex-patroon.
+ 
+```{bash, eval=FALSE}
+pattern_a = r'gene.*\s+(OX457036.*AUGUSTUS\sgene.*g\d+)'  
+```
+ 
+
+ Voor het ophalen van de coderingssequentie uit het GFF-bestand maakten we gebruik van een andere regex.
+
+```{bash, eval=FALSE}
+pattern_b = r"coding sequence =.*[actg\s\]]{1,}".
+```
+ 
+
+ Nadat je het GFF-bestand hebt geparsed, is het klaar voor gebruik met de Blast API. Elke coderingssequentie heeft een unieke identificatie die de start- en eindcoördinaten bevat:
+genomisch OX457036.1:2000789-2003917
+
+Voor meer details kun je de scripts bekijken, vooral parsegtf.py, deel  identification.
+
+```{bash,  engine.opts='-i', echo=TRUE, eval=TRUE, out.width = '100%'}
+
+head lumbricus/identification/prediciton/genome.fa.gff
+```
+
+ De blast-query's via Bio.Blast.NCBIWWW.qblast zijn uitgevoerd en de resultaten zijn teruggegeven in XML-formaat (voor meer informatie, zie: blast.py).
+
+```{python, eval=FALSE, python.reticulate = FALSE}
+from Bio.Blast import NCBIWWW
+from Bio.Blast import NCBIXML
+
+
+genomic="genome.fa"
+
+sequence_data = open(genomic).read()
+ 
+sequence_data
+ 
+result_handle = NCBIWWW.qblast("blastn", "nt", sequence_data, hitlist_size=5, alignments=50)
+
+
+with open('reults.xml', 'w') as save_file: 
+   blast_results = result_handle.read() 
+   save_file.write(blast_results)
+   
+
+
+```
+
+Voor de blast-analyse is het bestand genome.fa opgedeeld in drie verschillende fracties, wat resulteerde in 3 xml-bestanden (identificatie->xml). Elke DNA-sequentie die je invoert in nucleotide BLAST krijgt een bepaald aantal hits, en het geeft ook wat statistieken over die hits.  
+Een voorbeeld van een hit: .
+ 
+
+```{bash, eval=FALSE}
+<Iteration_hits>
+<Hit>
+  <Hit_num>1</Hit_num>
+  <Hit_id>gi|11071239|emb|AJ299434.1|</Hit_id>
+  <Hit_def>Lumbricus rubellus mt2A gene for metallothionein 2A, exons 1-4</Hit_def>
+  <Hit_accession>AJ299434</Hit_accession>
+  <Hit_len>7302</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>85.143</Hsp_bit-score>
+      <Hsp_score>93</Hsp_score>
+      <Hsp_evalue>7.19655e-12</Hsp_evalue>
+      <Hsp_query-from>70</Hsp_query-from>
+      <Hsp_query-to>246</Hsp_query-to>
+      <Hsp_hit-from>306</Hsp_hit-from>
+      <Hsp_hit-to>490</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>131</Hsp_identity>
+      <Hsp_positive>131</Hsp_positive>
+      <Hsp_gaps>8</Hsp_gaps>
+      <Hsp_align-len>185</Hsp_align-len>
+      <Hsp_qseq>AGATTGAACATCAAACAGGATATAGTTGACAAAGTGCGGAATAGAAGAATGCGATACTTTGGACATGTGA------CAAGAATGGGGAACGAAATATATCCAAAGATAGGC-TCAACGGATATGTACATGGGAAAAGATCAAGGGGA-GACCAAAGAAAAGATGGATCGACACGATAAGAGATGA</Hsp_qseq>
+      <Hsp_hseq>AGACTGAATATTCAACATGATATAATACACAAGATCCAAAGTAAACGACTACGCTACTTTGGCCACGTATATATATCCAGAATGAGGGATGAGAGATACCCGAAGGTAGCTGTCAACGGATATGTGCATGGAAAAAGAAAAAAAGGAAGACCAAAGAAGAGATGGGTCGACATGATACGTGAGGA</Hsp_hseq>
+      <Hsp_midline>||| |||| ||  |||| |||||| |  ||||  | |  | || | || | || |||||||| || ||        | |||||| || | || | ||| || ||| |||   ||||||||||||| ||||| ||||||  ||  ||| |||||||||| |||||| |||||| |||| | || ||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+
+```
+
+De XML-resultaten van de blast-uitvoer laten zien hoe goed de Alignment  overeenkomt, samen met de eval-waarde.  De gevonden Hits  worden bewaard met het NCBI-referentienummer, zoals "ref XM_003731435.1", of het Ensemble-referentienummer, zoals "emb OE003277.1". Zodra je de XML-resultaten hebt, is de eerste stap om ze te parseren. De XML-resultaten zijn geparsed en gesorteerd op coördinaten en e-waarde (sort-blast-by-coords.py, sort-blast-by-pval.py).
+
+
+```{python, eval=FALSE, python.reticulate = FALSE}
+import os
+cwd = os.getcwd()
+print(cwd)
+
+import sys
+from Bio.Blast import NCBIXML
+OUT = open("sorted_by_coordinates.fraction3.txt", 'w')
+OUT.write("Query Name\tQuery Length\tAlignment ID NCBI\teValue\n")
+result_handle = open("blast.results.fraction3.xml")
+blast_records = NCBIXML.parse(result_handle)
+for rec in blast_records:
+        for alignment in rec.alignments:
+            for hsp in alignment.hsps:
+                fields = [rec.query_id, rec.query[:100], str(rec.query_length), alignment.hit_id,
+                           alignment.accession, str(hsp.expect)]
+                OUT.write("\t".join(fields) + "\n")
+OUT.close() 
+print('Done') 
+
+```
+
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library("readxl")
+```
+
+
+```{r}
+sorted_by_coordinate <- read_excel("lumbricus/identification/prediction.xlsx", sheet = 6 )
+
+sorted_by_p <- read_excel("lumbricus/identification/prediction.xlsx", sheet = 5 ) 
+
+# sorted by coordinates
+head(sorted_by_coordinate )
+
+# sorted by p-val
+head(sorted_by_p)
+```
+
+Eerst moeten we naar alle voorspellingen kijken, ook naar de voorspellingen  met ongunstige eval-waarden (vergelijkbaar met p-waarden). Alle voorspellingen: .
+
+```{r}
+all_predictions <- read_excel("lumbricus/identification/prediction.xlsx", sheet = 1 )
+
+all_predictions 
+```
+
+
+ In deze fase hadden we voorspellingen( Hits) voor 92 genen op een 1mb chromosoom (tussen 2mb en 3mb), zelfs met enkele genen die niet zo'n goede eval-waarden hadden.
+
+```{r}
+colnames(all_predictions ) <- c("id","source","feature", "predicted", "eval")
+
+```
+
+
+```{r}
+
+all_predictions $eval <- parse_number(all_predictions $eval)
+
+df.f.pavlue <-  all_predictions %>% filter(eval<= 1e-4) %>%  filter(eval!=0)
+head(df.f.pavlue)
+
+```
+
+
+```{r, eval=FALSE}
+
+write.table( df.f.pavlue, +
+               "lumbricus/identification/prediction/df.filtered.txt",sep="\t")
+
+```
+
+
+```{r}
+predictions <-read.table("lumbricus/identification/prediciton/df.filtered.txt")
+```
+
+ In de daaropvolgende fase hebben we een eval, evaluatiedrempel van 1e-4 ingesteld, wat redelijk mild is.Na het filteren van de voorspellingen met ongunstige  eval-waarden, hebben we 32 voorspellingen gevonden die betrekking hebben op 32 genen voor een 1 Mb segment van het eerste chromosoom, wat 1% van het totale chromosoom is. De uiteindelijke voorspelling voor het fragment dat we onderzoeken, is als volgt.
+ 
+
+
+predicition:
+
+
+```{r}
+table7 <-  predictions   %>%  select(V7)
+table7 %>%
+  kable("html") %>%
+  kable_styling(font_size = 7)
+
+```
+
+For more details,see
+Voor meer informatie, kijk in de map identification,  prediction.xlsx, sheet "df_fitlered".
+
+## Visualisatie
+## GenViz
+
+Voor het voorbereiden van de data kun je de volgende bestanden bekijken: genviz-features.py, map  visualisatie en GenomeViz. De genen die zijn gevonden, worden weergegeven in grafieken, met speciale aandacht voor de eerste 2-3 megabases van chromosoom 1 (coördinaten 2000000-3000000). 
+
+<p> Om te scrollen door de features, kun je de webversie gebruiken: </p>
+
+https://alenagrrr3.github.io/2-3mb-terrsetris/
+
+
+
+De totale representatie van het chromosoom /OX457036.1.
+
+https://alenagrrr3.github.io/OX457036.1.html/
+
+## JBrowse
+
+Het gen met de coördinaten OX457036.1:2,087,020 - 2,090,258 is geïdentificeerd als het mt2A-gen voor metallothioneïne 2A van Lumbricus rubellus, inclusief exons 1-4; AJ299434.1. is onderzocht in de in Jbrowser [@JBrowseJBrowse]
+
+Gene 5, with intron, Cds, and transctipt:
+
+
+![](lumbricus/visualization/jbrowser/start_codon.png){width="97%"}
+![](lumbricus/visualization/jbrowser/2087020.png){width="97%"}
+To zoom in, you can ues the link:
+
+https://raw.githubusercontent.com/alenagrrr3/OX457036.1.html/refs/heads/main/lumterAM182481.1-gene5.svg
+
+
+## Artemis
+
+
+
+```{bash eval=FALSE}
+gen "g5" (OX457036.1:2,087,020 - 2,090,258 )   in Artemis Browser  met startcodon en CDS (minus streng):
+```
+
+![](lumbricus/visualization/artemis/artemis-g5.png){width="97%"}
+To zoom in, you can ues the link:
+
+https://raw.githubusercontent.com/alenagrrr3/OX457036.1.html/refs/heads/main/artemis-g5-startcodon.webp
+
+
+## Bijlage
+
+Map struture:
+
+
+```{r}
+fs::dir_tree("lumbricus")
+```
+
+
+## References
+
+---
+nocite: '@*'
+...
+
+
+
+

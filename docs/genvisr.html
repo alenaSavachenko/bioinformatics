@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 GenVisR | Portfolio</title>
+  <meta name="description" content="Chapter 7 GenVisR | Portfolio" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 GenVisR | Portfolio" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 GenVisR | Portfolio" />
+  
+  
+  
+
+<meta name="author" content="alena savachenko" />
+
+
+<meta name="date" content="2024-12-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="creating-r-packages.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="./"><img src="assets/img/logo_toc.png"></a></li>
+<li><a href="./">Data science for biology </a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction. CV</a></li>
+<li class="chapter" data-level="2" data-path="genome-annotatie-ab-de-novo.html"><a href="genome-annotatie-ab-de-novo.html"><i class="fa fa-check"></i><b>2</b> Genome annotatie ab de novo.Inleiding</a></li>
+<li class="chapter" data-level="3" data-path="samenvatting.html"><a href="samenvatting.html"><i class="fa fa-check"></i><b>3</b> Samenvatting</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="samenvatting.html"><a href="samenvatting.html#training-van-het-augustus-programma-voor-het-ontdekken-van-nieuwe-genmodellen-en-hun-patronen."><i class="fa fa-check"></i><b>3.1</b> 1.Training van het AUGUSTUS-programma voor het ontdekken van nieuwe genmodellen en hun patronen.</a></li>
+<li class="chapter" data-level="3.2" data-path="samenvatting.html"><a href="samenvatting.html#de-training-van-het-augustus-programma-met-proteïne-van-langere-evolutionaire-afstand"><i class="fa fa-check"></i><b>3.2</b> 2.. De training van het AUGUSTUS-programma met proteïne van langere evolutionaire afstand</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html"><i class="fa fa-check"></i><b>4</b> Alignment. Ruwe gegevens inspecteren</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#genemarket.-model-opbouwen-protocol-1.-mrna-pijplijnne"><i class="fa fa-check"></i><b>4.1</b> GenemarkET. Model opbouwen (protocol 1). mRna pijplijnne</a></li>
+<li class="chapter" data-level="4.2" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#deel-1.-model-opbouwen"><i class="fa fa-check"></i><b>4.2</b> Deel 1. Model opbouwen</a></li>
+<li class="chapter" data-level="4.3" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#etrain-protocol7"><i class="fa fa-check"></i><b>4.3</b> Etrain (protocol7)</a></li>
+<li class="chapter" data-level="4.4" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#prothints-en-de-eiwitpijplijn"><i class="fa fa-check"></i><b>4.4</b> ProtHints en de eiwitpijplijn</a></li>
+<li class="chapter" data-level="4.5" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#prothints"><i class="fa fa-check"></i><b>4.5</b> ProtHints</a></li>
+<li class="chapter" data-level="4.6" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#protocol-2.-het-creëren-van-genstructuren-voor-training-op-basis-van-eiwitten."><i class="fa fa-check"></i><b>4.6</b> Protocol 2. Het creëren van genstructuren voor training op basis van eiwitten.</a></li>
+<li class="chapter" data-level="4.7" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#genomethreader"><i class="fa fa-check"></i><b>4.7</b> GenomeThreader</a></li>
+<li class="chapter" data-level="4.8" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#protocol-6.verwijderen-van-redundant-genstructuren-protocol-6"><i class="fa fa-check"></i><b>4.8</b> Protocol 6.Verwijderen van Redundant Genstructuren (protocol 6)</a></li>
+<li class="chapter" data-level="4.9" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#trainingsset-van-proteins.etrain"><i class="fa fa-check"></i><b>4.9</b> Trainingsset van Proteins.Etrain</a></li>
+<li class="chapter" data-level="4.10" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#prediction-met-behulp-van-extrinsiek-bewijs-protocol-11-12"><i class="fa fa-check"></i><b>4.10</b> Prediction met behulp van extrinsiek bewijs (Protocol 11-12)</a></li>
+<li class="chapter" data-level="4.11" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#identificatie-en-visualisatie"><i class="fa fa-check"></i><b>4.11</b> Identificatie en visualisatie</a></li>
+<li class="chapter" data-level="4.12" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#gen-identificatie"><i class="fa fa-check"></i><b>4.12</b> Gen-identificatie</a></li>
+<li class="chapter" data-level="4.13" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#visualisatie"><i class="fa fa-check"></i><b>4.13</b> Visualisatie</a></li>
+<li class="chapter" data-level="4.14" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#genviz"><i class="fa fa-check"></i><b>4.14</b> GenViz</a></li>
+<li class="chapter" data-level="4.15" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#jbrowse"><i class="fa fa-check"></i><b>4.15</b> JBrowse</a></li>
+<li class="chapter" data-level="4.16" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#artemis"><i class="fa fa-check"></i><b>4.16</b> Artemis</a></li>
+<li class="chapter" data-level="4.17" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#bijlage"><i class="fa fa-check"></i><b>4.17</b> Bijlage</a></li>
+<li class="chapter" data-level="4.18" data-path="alignment.-ruwe-gegevens-inspecteren.html"><a href="alignment.-ruwe-gegevens-inspecteren.html#references"><i class="fa fa-check"></i><b>4.18</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="differential-gene-expression.html"><a href="differential-gene-expression.html"><i class="fa fa-check"></i><b>5</b> Differential gene expression</a></li>
+<li class="chapter" data-level="6" data-path="creating-r-packages.html"><a href="creating-r-packages.html"><i class="fa fa-check"></i><b>6</b> Creating R packages</a></li>
+<li class="chapter" data-level="7" data-path="genvisr.html"><a href="genvisr.html"><i class="fa fa-check"></i><b>7</b> GenVisR</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="genvisr.html"><a href="genvisr.html#introduction-to-dataset"><i class="fa fa-check"></i><b>7.1</b> Introduction to dataset</a></li>
+<li class="chapter" data-level="7.2" data-path="genvisr.html"><a href="genvisr.html#implementation-genvizr"><i class="fa fa-check"></i><b>7.2</b> Implementation genVizR</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/alenagrrr3/portfolio_alena_savachenko" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Portfolio</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="genvisr" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> GenVisR<a href="genvisr.html#genvisr" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction-to-dataset" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Introduction to dataset<a href="genvisr.html#introduction-to-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The scientists conducted a genome-wide association study and found mutations in specific regions of the genome that correlate with educational attainment. Found mutations are responsible for only two percent of the variation in the level of education and cognitive ability, but include “promising” for further research single-nucleotide polymorphisms (single-nucleotide polymorphisms, SNPs). Specifically, three independent mutations (rs9320913, rs11584700, rs4851266) are responsible for approximately 1 additional month of learning each.<span class="citation">(Rietveld et al., 2013)</span>.</p>
+<p>Studies were performed on data from Utah residents with Northern and Western European ancestry (<span class="citation">(Rietveld et al., 2013)</span>).</p>
+<p>Daset comes form Supplementary Materials for
+GWAS of 126,559 Individuals Identifies Genetic Variants Associated
+with Educational Attainment <a href="https://www.science.org/doi/abs/10.1126/science.1235488" class="uri">https://www.science.org/doi/abs/10.1126/science.1235488</a>
+(Appendix)</p>
+<object data="genVizR/docs/appendix.pdf" type="application/pdf" width="100%" height="750px">
+<embed src="genVizR/docs/appendix.pdf">
+</object>
+<p>The normal functioning of each cell depends on thousands of proteins that need to be
+to be in the right place at the right time. Sometimes mutations in genes prevent one or
+one or more proteins from working properly. By making a change in a gene, the mutation thereby changes the instructions for synthesizing the protein so that the protein no longer functions properly or is not synthesized at all.The sequence of a gene in DNA can be altered in several ways. Mutations in genes have different effects on health and depend on which genes they occurred in and whether the function of these proteins is altered.
+This type of Missense mutation is caused by the replacement of one
+DNA base for another (e.g., replacing T for C, or G for A), resulting in the substitution of one amino
+acid for another in the protein encoded by the gene. Here is one example
+of missene mutation from the study by Flint and Munafò<span class="citation">(Rietveld et al., 2013)</span>.</p>
+<p>The mutation caused by the substitution of nucleotide A for G results in the substitution of amino acid Aspartic acid for Glutamic acid.This in turn changes the properties of the protein.
+As Whole-Genom scientists have shown the mutation rs1056667 is associated with cognitive performance
+<span class="citation">(Erikson et al., 2016)</span>
+Gene BTN1A1 is located on chromosome 6<span class="citation">(<em>Gene</em>, n.d.)</span>.Some studies have shown that this chromosome is important in the development of normal intelligence<span class="citation">(<em>Chromosome 6 <span>Ring</span> - <span>Symptoms</span>, <span>Causes</span>, <span>Treatment</span> | <span>NORD</span></em>, n.d.)</span>.</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="genvisr.html#cb189-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;genVizR/img/Human_BTN1A1.png&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-118"></span>
+<img src="genVizR/img/Human_BTN1A1.png" alt="Figure 2. Gene map BTN1A1" width="780px" />
+<p class="caption">
+Figure 7.1: Figure 2. Gene map BTN1A1
+</p>
+</div>
+</div>
+<div id="implementation-genvizr" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Implementation genVizR<a href="genvisr.html#implementation-genvizr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h3>
+Genomic Visualization and Interpretations Introduction to genVizR
+</h3>
+<p>genVizR is a package to interpret and visualize data received from NGS sequencing.There are many tools available for the analysis and visualization of these data. In this module we will focus on
+3 functions : waterfall, genCov, and cnSpec. For the last module another dataset is used.
+The dataset for the spectrum plot comes from the GDC data portal, <a href="https://portal.gdc.cancer.gov/analysis_page?app=Downloads" class="uri">https://portal.gdc.cancer.gov/analysis_page?app=Downloads</a>, file with name MATZO_p_TCGAb40_SNP_1N_GenomeWideSNP_6_E09_667812.grch38.seg.v2.txt.</p>
+<h4>
+Waterfall plots
+</h4>
+<p>The waterfall() function from the genVizR package displays mutation in a heatmap-like structure with rows and columns denotating genes and samples.The function creates a plot of the mutational landscape from original data. <span class="citation">(<em>Waterfall</em>, n.d.)</span></p>
+<p>First of all, we need to load the genVizR library from bioconductor. We also need to load the mutation data. In the original dataset, only the gene name, mutation and position are present. We need to
+add some additional information from the Ensemble database, such as chromosome coordinates and gene annotation and to join this information to dataset.Output of this function is a heatmap with number (%) of SNP mutations per genes. In this dataset we encure Missense, Silent, Deletion and 3’-UTR mutation</p>
+<p>Install required libraries</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="genvisr.html#cb190-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;BiocManager&quot;</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb190-2"><a href="genvisr.html#cb190-2" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
+<span id="cb190-3"><a href="genvisr.html#cb190-3" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">&quot;GenVisR&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="genvisr.html#cb191-1" tabindex="-1"></a><span class="fu">library</span>(GenVisR) </span>
+<span id="cb191-2"><a href="genvisr.html#cb191-2" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb191-3"><a href="genvisr.html#cb191-3" tabindex="-1"></a><span class="fu">library</span> (tidyverse)</span>
+<span id="cb191-4"><a href="genvisr.html#cb191-4" tabindex="-1"></a><span class="fu">library</span>(biomaRt)</span>
+<span id="cb191-5"><a href="genvisr.html#cb191-5" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>Data preproccesing. First we save all gene names from article to the list.</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="genvisr.html#cb192-1" tabindex="-1"></a>list_gen_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;AFF3&quot;</span>,<span class="st">&quot;BTN1A1&quot;</span>, <span class="st">&quot;H2AC6&quot;</span>, <span class="st">&quot;HMGN4&quot;</span>, <span class="st">&quot;MDM4&quot;</span>, <span class="st">&quot;LRRN2&quot;</span>, <span class="st">&quot;TANK&quot;</span> )</span>
+<span id="cb192-2"><a href="genvisr.html#cb192-2" tabindex="-1"></a>list_ensemble <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;ENSG00000144218&quot;</span>, <span class="st">&quot;ENSG00000124557&quot;</span>,<span class="st">&quot;ENSG00000180573&quot;</span>, <span class="st">&quot;ENSG00000182952&quot;</span>, <span class="st">&quot;ENSG00000198625&quot;</span>,<span class="st">&quot;ENSG00000170382&quot;</span>, <span class="st">&quot;ENSG00000136560&quot;</span>)</span></code></pre></div>
+<p>Then we need to retrieve genomic coordinates and annotations for the further analyses. This is possible with biomaRt Bioconductor library</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="genvisr.html#cb193-1" tabindex="-1"></a>ensembl <span class="ot">&lt;-</span> <span class="fu">useMart</span>(<span class="st">&quot;ensembl&quot;</span>)</span>
+<span id="cb193-2"><a href="genvisr.html#cb193-2" tabindex="-1"></a>ensembl <span class="ot">&lt;-</span> <span class="fu">useDataset</span>(<span class="st">&quot;hsapiens_gene_ensembl&quot;</span>,<span class="at">mart=</span>ensembl)</span>
+<span id="cb193-3"><a href="genvisr.html#cb193-3" tabindex="-1"></a>object_results2 <span class="ot">&lt;-</span>  <span class="fu">getBM</span>(<span class="at">attributes=</span><span class="fu">c</span>(<span class="st">&#39;ensembl_gene_id&#39;</span>,<span class="st">&#39;chromosome_name&#39;</span>, <span class="st">&#39;start_position&#39;</span>, <span class="st">&#39;end_position&#39;</span>,<span class="st">&#39;gene_biotype&#39;</span>,<span class="st">&#39;hgnc_symbol&#39;</span>),</span>
+<span id="cb193-4"><a href="genvisr.html#cb193-4" tabindex="-1"></a>      <span class="at">filters=</span><span class="st">&#39;hgnc_symbol&#39;</span>,</span>
+<span id="cb193-5"><a href="genvisr.html#cb193-5" tabindex="-1"></a>      <span class="at">values=</span>list_gen_names,</span>
+<span id="cb193-6"><a href="genvisr.html#cb193-6" tabindex="-1"></a>      <span class="at">mart=</span>ensembl)  </span></code></pre></div>
+<p>Export Ensemble results to csv file.</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="genvisr.html#cb194-1" tabindex="-1"></a>biomart_export <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;output/genViz/output_object_results_mart.csv&quot;</span>) </span></code></pre></div>
+<p>Join dataset export from biomart with list of genes/mutations.</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="genvisr.html#cb195-1" tabindex="-1"></a>biomart_export <span class="ot">&lt;-</span> biomart_export[,<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb195-2"><a href="genvisr.html#cb195-2" tabindex="-1"></a><span class="fu">head</span>( biomart_export)</span></code></pre></div>
+<pre><code>##   ensembl_gene_id chromosome_name start_position end_position   gene_biotype
+## 1 ENSG00000144218               2       99545419    100192428 protein_coding
+## 2 ENSG00000292177   HSCHR6_1_CTG1          46483        56605 protein_coding
+## 3 ENSG00000124557               6       26500303     26510425 protein_coding
+## 4 ENSG00000180573               6       26124145     26139116 protein_coding
+## 5 ENSG00000292175   HSCHR6_1_CTG1          84546        93113 protein_coding
+## 6 ENSG00000182952               6       26538366     26546933 protein_coding
+##   hgnc_symbol
+## 1        AFF3
+## 2      BTN1A1
+## 3      BTN1A1
+## 4       H2AC6
+## 5       HMGN4
+## 6       HMGN4</code></pre>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="genvisr.html#cb197-1" tabindex="-1"></a>data_set_appendix<span class="ot">&lt;-</span><span class="fu">read.csv2</span>(<span class="st">&quot;output/genViz/output_BTN1A2.csv&quot;</span>)</span></code></pre></div>
+<p>Make column names fit to join the ensemble dataset</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="genvisr.html#cb198-1" tabindex="-1"></a><span class="fu">names</span>(data_set_appendix)[<span class="fu">names</span>(data_set_appendix) <span class="sc">==</span> <span class="st">&#39;Hugo_Symbol&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&#39;hgnc_symbol&#39;</span></span>
+<span id="cb198-2"><a href="genvisr.html#cb198-2" tabindex="-1"></a><span class="fu">names</span>(data_set_appendix)[<span class="fu">names</span>(data_set_appendix) <span class="sc">==</span> <span class="st">&#39;X&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&#39;sample&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="genvisr.html#cb199-1" tabindex="-1"></a>full_join <span class="ot">&lt;-</span>  <span class="fu">merge</span>(data_set_appendix,biomart_export,  <span class="at">by =</span><span class="st">&quot;hgnc_symbol&quot;</span>) </span>
+<span id="cb199-2"><a href="genvisr.html#cb199-2" tabindex="-1"></a><span class="fu">head</span>(full_join)</span></code></pre></div>
+<pre><code>##   hgnc_symbol sample Variant_Classification Position ensembl_gene_id
+## 1        AFF3     18                  3UTR  99545644 ENSG00000144218
+## 2        AFF3     19      Missense_Mutation 99545817 ENSG00000144218
+## 3        AFF3     20      Missense_Mutation 99545812 ENSG00000144218
+## 4        AFF3     17      Missense_Mutation 99545531 ENSG00000144218
+## 5      BTN1A1      3      Missense_Mutation 26505362 ENSG00000292177
+## 6      BTN1A1      3      Missense_Mutation 26505362 ENSG00000124557
+##   chromosome_name start_position end_position   gene_biotype
+## 1               2       99545419    100192428 protein_coding
+## 2               2       99545419    100192428 protein_coding
+## 3               2       99545419    100192428 protein_coding
+## 4               2       99545419    100192428 protein_coding
+## 5   HSCHR6_1_CTG1          46483        56605 protein_coding
+## 6               6       26500303     26510425 protein_coding</code></pre>
+<p>SNP mutation in the genome, such as single nucleotide variants, insertions, or deletions, play a significant role in the development of genetic diseases. Identifying and summarizing these variants is frequently the initial stage in forming hypotheses about how these events contribute to the development and advancement of diseases. The purpose of the waterfall function is to effectively consolidate small variant (SNVs/indels) data at a cohort level. It is usefull for gaining a comprehensive understanding of the types of variations seen in a group. Additionally, waterfall plots provide insight into the burden of mutations, genes that are frequently mutated, the mutual exclusivity or co-occurrence of genes, and the correlation between variants and clinical information. <span class="citation">(<em>Waterfall</em>, n.d.)</span></p>
+<h6>
+waterfall: function implementation on the chosen dataset
+</h6>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="genvisr.html#cb201-1" tabindex="-1"></a>myHierarchy <span class="ot">&lt;-</span> <span class="fu">data.table</span>(<span class="st">&quot;mutation&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Missense_Mutation&quot;</span>, <span class="st">&quot;Silent&quot;</span>, <span class="st">&quot;3’UTR&quot;</span>, <span class="st">&quot;DEL&quot;</span>), <span class="at">color=</span><span class="fu">c</span>(<span class="st">&quot;#001ca4&quot;</span>, <span class="st">&quot;#A8F5C2&quot;</span>,</span>
+<span id="cb201-2"><a href="genvisr.html#cb201-2" tabindex="-1"></a>                                                                     <span class="st">&quot;#D69C4E&quot;</span>, <span class="st">&quot;#F4CCD0&quot;</span> ) )</span>
+<span id="cb201-3"><a href="genvisr.html#cb201-3" tabindex="-1"></a></span>
+<span id="cb201-4"><a href="genvisr.html#cb201-4" tabindex="-1"></a><span class="fu">colnames</span>(full_join)</span></code></pre></div>
+<pre><code>## [1] &quot;hgnc_symbol&quot;            &quot;sample&quot;                 &quot;Variant_Classification&quot;
+## [4] &quot;Position&quot;               &quot;ensembl_gene_id&quot;        &quot;chromosome_name&quot;       
+## [7] &quot;start_position&quot;         &quot;end_position&quot;           &quot;gene_biotype&quot;</code></pre>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="genvisr.html#cb203-1" tabindex="-1"></a><span class="fu">names</span>(full_join)[<span class="fu">names</span>(full_join) <span class="sc">==</span> <span class="st">&#39;hgnc_symbol&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&#39;gene&#39;</span></span>
+<span id="cb203-2"><a href="genvisr.html#cb203-2" tabindex="-1"></a><span class="fu">names</span>(full_join)[<span class="fu">names</span>(full_join) <span class="sc">==</span> <span class="st">&#39;Variant_Classification&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&#39;mutation&#39;</span></span>
+<span id="cb203-3"><a href="genvisr.html#cb203-3" tabindex="-1"></a><span class="fu">names</span>(full_join)[<span class="fu">names</span>(full_join) <span class="sc">==</span> <span class="st">&#39;X&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&#39;sample&#39;</span></span>
+<span id="cb203-4"><a href="genvisr.html#cb203-4" tabindex="-1"></a></span>
+<span id="cb203-5"><a href="genvisr.html#cb203-5" tabindex="-1"></a>full_join <span class="ot">&lt;-</span>  full_join  <span class="sc">%&gt;%</span>  janitor <span class="sc">::</span> <span class="fu">clean_names</span>()</span>
+<span id="cb203-6"><a href="genvisr.html#cb203-6" tabindex="-1"></a></span>
+<span id="cb203-7"><a href="genvisr.html#cb203-7" tabindex="-1"></a></span>
+<span id="cb203-8"><a href="genvisr.html#cb203-8" tabindex="-1"></a>plotGenes<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;PIK3CA&quot;</span>, <span class="st">&quot;TP53&quot;</span>, <span class="st">&quot;USH2A&quot;</span>, <span class="st">&quot;MLL3&quot;</span>, <span class="st">&quot;BRCA1&quot;</span>)</span>
+<span id="cb203-9"><a href="genvisr.html#cb203-9" tabindex="-1"></a></span>
+<span id="cb203-10"><a href="genvisr.html#cb203-10" tabindex="-1"></a>plotData2 <span class="ot">&lt;-</span> <span class="fu">Waterfall</span>(full_join, <span class="at">mutationHierarchy =</span> myHierarchy)</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="genvisr.html#cb204-1" tabindex="-1"></a><span class="fu">drawPlot</span>(plotData2)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/draw_plot-1.png" width="672" /></p>
+<h3>
+cnSpec
+</h3>
+<p>Copy number spectrum plots generates sequencing data is the the determination of copy number gains and losses. The cnSpec() function, short for “copy number spectrum”, from the GenVisR package provides a view of copy number calls for a cohort of cases.
+Function cnSpec() requires parameters are a data frame with column names “chromosome”, “start”, “end”, “segmean”, “sample” and a reference assembly to the parameter genome.The data we will be working is gedownload from GDC database <a href="https://portal.gdc.cancer.gov/analysis_page?app=Downloads" class="uri">https://portal.gdc.cancer.gov/analysis_page?app=Downloads</a>
+The output of this program consists of a file containing segmented copy number calls.
+The function gives a visualization of the sequencing dataset by sample by chromosome. Chromosomes are indicated in columns, samples in rows. Red color means too many copies of this gene, which means that these genes are carcinogenic.</p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="genvisr.html#cb205-1" tabindex="-1"></a><span class="fu">library</span>(GenVisR)</span>
+<span id="cb205-2"><a href="genvisr.html#cb205-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="genvisr.html#cb206-1" tabindex="-1"></a>file_ngs_part1 <span class="ot">&lt;-</span>  <span class="st">&quot;data_raw/genViz/MATZO_p_TCGAb40_SNP_1N_GenomeWideSNP_6_E09_667812.grch38.seg.v1.txt&quot;</span></span>
+<span id="cb206-2"><a href="genvisr.html#cb206-2" tabindex="-1"></a>file_ngs_part2 <span class="ot">&lt;-</span> <span class="st">&quot;data_raw/genViz/MATZO_p_TCGAb40_SNP_1N_GenomeWideSNP_6_E09_667812.grch38.seg.v2.txt&quot;</span></span>
+<span id="cb206-3"><a href="genvisr.html#cb206-3" tabindex="-1"></a></span>
+<span id="cb206-4"><a href="genvisr.html#cb206-4" tabindex="-1"></a>ngs_v1 <span class="ot">&lt;-</span>  readr<span class="sc">::</span><span class="fu">read_delim</span>(file_ngs_part1, <span class="at">delim =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb206-5"><a href="genvisr.html#cb206-5" tabindex="-1"></a>ngs_v2 <span class="ot">&lt;-</span>  readr<span class="sc">::</span><span class="fu">read_delim</span>(file_ngs_part2, <span class="at">delim =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="genvisr.html#cb207-1" tabindex="-1"></a>ngsv1<span class="fl">.2</span> <span class="ot">&lt;-</span>   <span class="fu">rbind</span>(ngs_v1,ngs_v2)</span>
+<span id="cb207-2"><a href="genvisr.html#cb207-2" tabindex="-1"></a><span class="fu">head</span>(ngsv1<span class="fl">.2</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 6
+##   GDC_Aliquot                   Chromosome  Start    End Num_Probes Segment_Mean
+##   &lt;chr&gt;                         &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+## 1 3573fb47-be73-4d7c-a9c9-b0ba… 1          6.29e4 9.86e4         13       0.632 
+## 2 3573fb47-be73-4d7c-a9c9-b0ba… 1          2.59e5 7.93e5         13       0.152 
+## 3 3573fb47-be73-4d7c-a9c9-b0ba… 1          8.05e5 3.30e6        714       0.338 
+## 4 3573fb47-be73-4d7c-a9c9-b0ba… 1          3.30e6 5.05e6       1321       0.0421
+## 5 3573fb47-be73-4d7c-a9c9-b0ba… 1          5.05e6 5.07e6         12       0.664 
+## 6 3573fb47-be73-4d7c-a9c9-b0ba… 1          5.08e6 5.19e6         87       0.0681</code></pre>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="genvisr.html#cb209-1" tabindex="-1"></a><span class="fu">colnames</span>(ngsv1<span class="fl">.2</span>) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;sample&quot;</span>, <span class="st">&quot;chromosome&quot;</span>,  <span class="st">&quot;start&quot;</span>, <span class="st">&quot;end&quot;</span>, <span class="st">&quot;probes&quot;</span>, <span class="st">&quot;segmean&quot;</span>)</span>
+<span id="cb209-2"><a href="genvisr.html#cb209-2" tabindex="-1"></a>ngsv1<span class="fl">.2</span>  <span class="ot">&lt;-</span>  <span class="fu">mutate</span>(ngsv1<span class="fl">.2</span>, <span class="at">sample=</span><span class="fu">str_sub</span>(sample, <span class="at">start=</span><span class="dv">32</span>, <span class="at">end=</span><span class="dv">36</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="genvisr.html#cb210-1" tabindex="-1"></a>genomeBoundaries <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(chromEnd <span class="sc">~</span> chrom, <span class="at">data=</span>cytoGeno[cytoGeno<span class="sc">$</span>genome<span class="sc">==</span><span class="st">&quot;hg38&quot;</span>,], max)</span>
+<span id="cb210-2"><a href="genvisr.html#cb210-2" tabindex="-1"></a>genomeBoundaries<span class="sc">$</span>chromStart <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb210-3"><a href="genvisr.html#cb210-3" tabindex="-1"></a><span class="fu">colnames</span>(genomeBoundaries) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;chromosome&quot;</span>, <span class="st">&quot;end&quot;</span>, <span class="st">&quot;start&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="genvisr.html#cb211-1" tabindex="-1"></a><span class="fu">cnSpec</span>(ngsv1<span class="fl">.2</span>, <span class="at">genome=</span><span class="st">&quot;hg38&quot;</span>,  <span class="at">CN_Loss_colour =</span> <span class="st">&quot;#add8e6&quot;</span>,</span>
+<span id="cb211-2"><a href="genvisr.html#cb211-2" tabindex="-1"></a>       <span class="at">CN_Gain_colour =</span> <span class="st">&quot;#A30000&quot;</span>, <span class="at">CNscale=</span><span class="st">&quot;relative&quot;</span>,  <span class="at">y=</span>genomeBoundaries )</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-125-1.png" width="100%" /></p>
+<h3>
+Gen cov
+</h3>
+<p>Gencov is the function to view coverage of a specific region of the genome in the context of specific samples. This dataset contains coordinates of 2 gens, BTN1A1, BTN2A1 on the
+chromosome 6 and number their transcripts per coordinate.In this particular plot
+we can see, that BTN1A1 is more covered than BTN2A1. And we can see the region with hight and low GC content, the GC-content is higher in exons than in introns. The second segment of the
+plot with hight CG- content is exon. For this function we need BSgenome object. The BSgenome class is a container for storing the full genome sequences of a given organism. The coverage data for our experiment corresponds to the hg19 reference assembly. Libraries BSgenome.Hsapiens.UCSC.hg19 and TxDb.Hsapiens.UCSC.hg19.knownGene ares loaded.</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="genvisr.html#cb212-1" tabindex="-1"></a><span class="fu">library</span>(TxDb.Hsapiens.UCSC.hg19.knownGene)</span>
+<span id="cb212-2"><a href="genvisr.html#cb212-2" tabindex="-1"></a>txdb <span class="ot">&lt;-</span> TxDb.Hsapiens.UCSC.hg19.knownGene</span>
+<span id="cb212-3"><a href="genvisr.html#cb212-3" tabindex="-1"></a><span class="fu">library</span>(BSgenome.Hsapiens.UCSC.hg19)</span>
+<span id="cb212-4"><a href="genvisr.html#cb212-4" tabindex="-1"></a>genome <span class="ot">&lt;-</span> BSgenome.Hsapiens.UCSC.hg19</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="genvisr.html#cb213-1" tabindex="-1"></a><span class="fu">library</span>(BSgenome.Hsapiens.UCSC.hg19)</span>
+<span id="cb213-2"><a href="genvisr.html#cb213-2" tabindex="-1"></a><span class="fu">library</span>(TxDb.Hsapiens.UCSC.hg19.knownGene)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="genvisr.html#cb214-1" tabindex="-1"></a>url <span class="ot">&lt;-</span>  <span class="st">&quot;data_raw/genViz/BTN1A1_cov_chr6.V1.txt&quot;</span></span>
+<span id="cb214-2"><a href="genvisr.html#cb214-2" tabindex="-1"></a></span>
+<span id="cb214-3"><a href="genvisr.html#cb214-3" tabindex="-1"></a>covData <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(url, <span class="at">sep=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, <span class="at">header=</span>T)</span>
+<span id="cb214-4"><a href="genvisr.html#cb214-4" tabindex="-1"></a></span>
+<span id="cb214-5"><a href="genvisr.html#cb214-5" tabindex="-1"></a><span class="fu">colnames</span>(covData) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;chromosome&quot;</span>, <span class="st">&quot;start&quot;</span>, <span class="st">&quot;end&quot;</span>, <span class="st">&quot;BTN1A1&quot;</span>, <span class="st">&quot;BTN2A1&quot;</span>)</span>
+<span id="cb214-6"><a href="genvisr.html#cb214-6" tabindex="-1"></a></span>
+<span id="cb214-7"><a href="genvisr.html#cb214-7" tabindex="-1"></a><span class="co"># create a function to split the data frame into lists of data frames</span></span>
+<span id="cb214-8"><a href="genvisr.html#cb214-8" tabindex="-1"></a>samples <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;BTN1A1&quot;</span>, <span class="st">&quot;BTN2A1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="genvisr.html#cb215-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y){</span>
+<span id="cb215-2"><a href="genvisr.html#cb215-2" tabindex="-1"></a>  col_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;chromosome&quot;</span>, <span class="st">&quot;end&quot;</span>, x)</span>
+<span id="cb215-3"><a href="genvisr.html#cb215-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> y[,col_names]</span>
+<span id="cb215-4"><a href="genvisr.html#cb215-4" tabindex="-1"></a>  <span class="fu">colnames</span>(y) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;chromosome&quot;</span>, <span class="st">&quot;end&quot;</span>, <span class="st">&quot;cov&quot;</span>)</span>
+<span id="cb215-5"><a href="genvisr.html#cb215-5" tabindex="-1"></a>  <span class="fu">return</span>(y)</span>
+<span id="cb215-6"><a href="genvisr.html#cb215-6" tabindex="-1"></a>}</span>
+<span id="cb215-7"><a href="genvisr.html#cb215-7" tabindex="-1"></a>covData <span class="ot">&lt;-</span> <span class="fu">lapply</span>(samples, a, covData)</span>
+<span id="cb215-8"><a href="genvisr.html#cb215-8" tabindex="-1"></a></span>
+<span id="cb215-9"><a href="genvisr.html#cb215-9" tabindex="-1"></a><span class="fu">names</span>(covData) <span class="ot">&lt;-</span> samples</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="genvisr.html#cb216-1" tabindex="-1"></a>genomeObject <span class="ot">&lt;-</span>BSgenome.Hsapiens.UCSC.hg19</span>
+<span id="cb216-2"><a href="genvisr.html#cb216-2" tabindex="-1"></a>TxDbObject <span class="ot">&lt;-</span> TxDb.Hsapiens.UCSC.hg19.knownGene</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="genvisr.html#cb217-1" tabindex="-1"></a>chromosome <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">unique</span>(covData[[<span class="dv">1</span>]]<span class="sc">$</span>chromosome))</span>
+<span id="cb217-2"><a href="genvisr.html#cb217-2" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">min</span>(covData[[<span class="dv">1</span>]]<span class="sc">$</span>end))</span>
+<span id="cb217-3"><a href="genvisr.html#cb217-3" tabindex="-1"></a>end <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">max</span>(covData[[<span class="dv">1</span>]]<span class="sc">$</span>end))</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="genvisr.html#cb218-1" tabindex="-1"></a>grObject <span class="ot">&lt;-</span> <span class="fu">GRanges</span>(<span class="at">seqnames=</span><span class="fu">c</span>(<span class="st">&quot;chr6&quot;</span>), <span class="at">ranges=</span><span class="fu">IRanges</span>(<span class="at">start=</span>start, <span class="at">end=</span>end))</span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="genvisr.html#cb219-1" tabindex="-1"></a><span class="fu">genCov</span>(<span class="at">x=</span>covData, <span class="at">txdb=</span>TxDbObject, <span class="at">gr=</span>grObject, <span class="at">genome=</span>genomeObject, <span class="at">cov_plotType=</span><span class="st">&quot;line&quot;</span>, <span class="at">label_txtSize =</span> <span class="dv">5</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
+<pre><code>## NULL</code></pre>
+<h4>
+Bibliography
+</h4>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
+<div class="csl-entry">
+<em>Applications for <span>Nanopore</span> sequencing</em>. (n.d.). Oxford Nanopore Technologies. Retrieved November 14, 2024, from <a href="https://nanoporetech.com/applications">https://nanoporetech.com/applications</a>
+</div>
+<div class="csl-entry">
+<em>Augustus</em>. (n.d.). Bioinformatics Notebook. Retrieved November 25, 2024, from <a href="https://rnnh.github.io/bioinfo-notebook/docs/augustus.html">https://rnnh.github.io/bioinfo-notebook/docs/augustus.html</a>
+</div>
+<div class="csl-entry">
+<em>Augustus/docs/<span>RUNNING-AUGUSTUS</span>.md at master · <span>Gaius-Augustus</span>/<span>Augustus</span></em>. (n.d.). GitHub. Retrieved November 25, 2024, from <a href="https://github.com/Gaius-Augustus/Augustus/blob/master/docs/RUNNING-AUGUSTUS.md">https://github.com/Gaius-Augustus/Augustus/blob/master/docs/RUNNING-AUGUSTUS.md</a>
+</div>
+<div class="csl-entry">
+Baum, D. J. (n.d.). <em>Ever thought about <span>Earthworms</span>?</em> African Wildlife Economy Institute. Retrieved November 25, 2024, from <a href="https://www0.sun.ac.za/awei/articles/ever-thought-about-earthworms">https://www0.sun.ac.za/awei/articles/ever-thought-about-earthworms</a>
+</div>
+<div class="csl-entry">
+<em>Bioinformatics and other bits - <span>Creating</span> a local <span>RefSeq</span> protein blast database</em>. (n.d.-a). Retrieved November 28, 2024, from <a href="https://dmnfarrell.github.io/bioinformatics/local-refseq-db">https://dmnfarrell.github.io/bioinformatics/local-refseq-db</a>
+</div>
+<div class="csl-entry">
+<em>Bioinformatics and other bits - <span>Creating</span> a local <span>RefSeq</span> protein blast database</em>. (n.d.-b). Retrieved November 28, 2024, from <a href="https://dmnfarrell.github.io/bioinformatics/local-refseq-db">https://dmnfarrell.github.io/bioinformatics/local-refseq-db</a>
+</div>
+<div class="csl-entry">
+Blaxter, M. L., Spurgeon, D., &amp; Kille, P. (2023). The genome sequence of the common earthworm, <span>Lumbricus</span> terrestris (<span>Linnaeus</span>, 1758). <em>Wellcome Open Research</em>, <em>8</em>, 500. <a href="https://doi.org/10.12688/wellcomeopenres.20178.1">https://doi.org/10.12688/wellcomeopenres.20178.1</a>
+</div>
+<div class="csl-entry">
+Brůna, T., Hoff, K. J., Lomsadze, A., Stanke, M., &amp; Borodovsky, M. (2021). <span>BRAKER2</span>: Automatic eukaryotic genome annotation with <span>GeneMark-EP</span>+ and <span>AUGUSTUS</span> supported by a protein database. <em>NAR Genomics and Bioinformatics</em>, <em>3</em>(1), lqaa108. <a href="https://doi.org/10.1093/nargab/lqaa108">https://doi.org/10.1093/nargab/lqaa108</a>
+</div>
+<div class="csl-entry">
+Buchfink, B., Xie, C., &amp; Huson, D. H. (2015). Fast and sensitive protein alignment using <span>DIAMOND</span>. <em>Nature Methods</em>, <em>12</em>(1), 59–60. <a href="https://doi.org/10.1038/nmeth.3176">https://doi.org/10.1038/nmeth.3176</a>
+</div>
+<div class="csl-entry">
+Calus, S. T., Ijaz, U. Z., &amp; Pinto, A. (2018). <em><span>NanoAmpli-Seq</span> - <span>Sample</span> processing and sequencing library preparation workflow</em>. <a href="https://www.protocols.io/view/nanoampli-seq-sample-processing-and-sequencing-lib-u26eyhe">https://www.protocols.io/view/nanoampli-seq-sample-processing-and-sequencing-lib-u26eyhe</a>
+</div>
+<div class="csl-entry">
+Chen, Y., Davidson, N. M., Wan, Y. K., Patel, H., Yao, F., Low, H. M., Hendra, C., Watten, L., Sim, A., Sawyer, C., Iakovleva, V., Lee, P. L., Xin, L., Ng, H. E. V., Loo, J. M., Ong, X., Ng, H. Q. A., Wang, J., Koh, W. Q. C., … Consortium, S.-N. (2021, April 22). <em>A systematic benchmark of <span>Nanopore</span> long read <span>RNA</span> sequencing for transcript level analysis in human cell lines</em>. <a href="https://doi.org/10.1101/2021.04.21.440736">https://doi.org/10.1101/2021.04.21.440736</a>
+</div>
+<div class="csl-entry">
+Chen, Y., Wang, Y., Chen, W., Tan, Z., Song, Y., Human Genome Structural Variation Consortium, Chen, H., &amp; Chong, Z. (2023). Gene <span>Fusion Detection</span> and <span>Characterization</span> in <span>Long-Read Cancer Transcriptome Sequencing Data</span> with <span>FusionSeeker</span>. <em>Cancer Research</em>, <em>83</em>(1), 28–33. <a href="https://doi.org/10.1158/0008-5472.CAN-22-1628">https://doi.org/10.1158/0008-5472.CAN-22-1628</a>
+</div>
+<div class="csl-entry">
+<em>Chromosome 6 <span>Ring</span> - <span>Symptoms</span>, <span>Causes</span>, <span>Treatment</span> | <span>NORD</span></em>. (n.d.). Retrieved November 16, 2024, from <a href="https://rarediseases.org/rare-diseases/chromosome-6-ring/">https://rarediseases.org/rare-diseases/chromosome-6-ring/</a>
+</div>
+<div class="csl-entry">
+colauttilab.github.io/. (n.d.). <em>De <span>Novo Assembly Tutorial</span></em>. Retrieved November 30, 2024, from <a href="https://colauttilab.github.io/NGS/deNovoTutorial.html">https://colauttilab.github.io/NGS/deNovoTutorial.html</a>
+</div>
+<div class="csl-entry">
+ColauttilLab. (n.d.). <em>De <span>Novo Assembly Tutorial</span></em>. Retrieved November 30, 2024, from <a href="https://colauttilab.github.io/NGS/deNovoTutorial.html">https://colauttilab.github.io/NGS/deNovoTutorial.html</a>
+</div>
+<div class="csl-entry">
+ebi.ac.uk. (n.d.). <em><span>ENA Browser</span></em>. Retrieved November 25, 2024, from <a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB59400">https://www.ebi.ac.uk/ena/browser/view/PRJEB59400</a>
+</div>
+<div class="csl-entry">
+Erikson, G. A., Bodian, D. L., Rueda, M., Molparia, B., Scott, E. R., Scott-Van Zeeland, A. A., Topol, S. E., Wineinger, N. E., Niederhuber, J. E., Topol, E. J., &amp; Torkamani, A. (2016). Whole-<span>Genome Sequencing</span> of a <span>Healthy Aging Cohort</span>. <em>Cell</em>, <em>165</em>(4), 1002–1011. <a href="https://doi.org/10.1016/j.cell.2016.03.022">https://doi.org/10.1016/j.cell.2016.03.022</a>
+</div>
+<div class="csl-entry">
+Erxleben, A., &amp; Grüning, B. (12:19:56 +000012:19:56 +0000). <em>Genome Annotation</em> [Text]. Galaxy Training Network; Galaxy Training Network. <a href="https://translated.turbopages.org/proxy_u/en-ru.ru.dd5ab9ec-67446c58-5ab2c0cb-74722d776562/https/training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/genome-annotation/tutorial.html">https://translated.turbopages.org/proxy_u/en-ru.ru.dd5ab9ec-67446c58-5ab2c0cb-74722d776562/https/training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/genome-annotation/tutorial.html</a>
+</div>
+<div class="csl-entry">
+<em>Gene <span>Cluster Visualizations</span> in <span>R</span></em>. (n.d.). Retrieved November 27, 2024, from <a href="https://nvelden.github.io/geneviewer/">https://nvelden.github.io/geneviewer/</a>
+</div>
+<div class="csl-entry">
+<em>Gene: <span>BTN1A1</span> (<span>ENSG00000124557</span>) - <span>Summary</span> - <span>Homo</span>_sapiens - <span>Ensembl</span> genome browser 113</em>. (n.d.). Retrieved November 16, 2024, from <a href="https://www.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000124557;r=6:26500303-26510425">https://www.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000124557;r=6:26500303-26510425</a>
+</div>
+<div class="csl-entry">
+<em>Genome <span>Annotation</span> / <span>Tutorial List</span></em>. (13:32:22 +000013:32:22 +0000). [Text]. Galaxy Training Network; Galaxy Training Network. <a href="https://training.galaxyproject.org/training-material/topics/genome-annotation/">https://training.galaxyproject.org/training-material/topics/genome-annotation/</a>
+</div>
+<div class="csl-entry">
+<em><span>GWAS</span> of 126,559 <span>Individuals Identifies Genetic Variants Associated</span> with <span>Educational Attainment</span> | <span>Science</span></em>. (n.d.). Retrieved November 16, 2024, from <a href="https://www.science.org/doi/abs/10.1126/science.1235488">https://www.science.org/doi/abs/10.1126/science.1235488</a>
+</div>
+<div class="csl-entry">
+<em>Help - <span>Homo</span>_sapiens - <span>Ensembl</span> genome browser 113</em>. (n.d.). Retrieved November 13, 2024, from <a href="https://www.ensembl.org/Help/View?id=280">https://www.ensembl.org/Help/View?id=280</a>
+</div>
+<div class="csl-entry">
+<em>Home · <span>TransDecoder</span>/<span>TransDecoder Wiki</span></em>. (n.d.). Retrieved November 28, 2024, from <a href="https://github.com/TransDecoder/TransDecoder/wiki">https://github.com/TransDecoder/TransDecoder/wiki</a>
+</div>
+<div class="csl-entry">
+<em><span class="nocase">https://www.cell.com/cell/pdf/S0092-8674(16)30278-1.pdf</span></em>. (n.d.). Retrieved November 16, 2024, from <a href="https://www.cell.com/cell/pdf/S0092-8674(16)30278-1.pdf">https://www.cell.com/cell/pdf/S0092-8674(16)30278-1.pdf</a>
+</div>
+<div class="csl-entry">
+<em>Index of /genomes</em>. (n.d.). Retrieved November 28, 2024, from <a href="https://ftp.ncbi.nlm.nih.gov/genomes/">https://ftp.ncbi.nlm.nih.gov/genomes/</a>
+</div>
+<div class="csl-entry">
+<em>Index of /genomes/<span>MapView</span></em>. (n.d.). Retrieved November 28, 2024, from <a href="https://ftp.ncbi.nlm.nih.gov/genomes/MapView/">https://ftp.ncbi.nlm.nih.gov/genomes/MapView/</a>
+</div>
+<div class="csl-entry">
+<em><span>JBrowse</span> | <span>JBrowse</span></em>. (n.d.). Retrieved November 26, 2024, from <a href="https://jbrowse.org/jb2/">https://jbrowse.org/jb2/</a>
+</div>
+<div class="csl-entry">
+LabX. (n.d.). <em>Accelerating <span>Cancer Research Through Comprehensive Genomic Analysis</span></em>. Retrieved November 15, 2024, from <a href="https://go.technologynetworks.com/accelerating-cancer-research">https://go.technologynetworks.com/accelerating-cancer-research</a>
+</div>
+<div class="csl-entry">
+Leung, M. C. K., Williams, P. L., Benedetto, A., Au, C., Helmcke, K. J., Aschner, M., &amp; Meyer, J. N. (2008). Caenorhabditis elegans: <span>An Emerging Model</span> in <span>Biomedical</span> and <span>Environmental Toxicology</span>. <em>Toxicological Sciences</em>, <em>106</em>(1), 5–28. <a href="https://doi.org/10.1093/toxsci/kfn121">https://doi.org/10.1093/toxsci/kfn121</a>
+</div>
+<div class="csl-entry">
+Lu, H., Giordano, F., &amp; Ning, Z. (2016). Oxford <span>Nanopore MinION Sequencing</span> and <span>Genome Assembly</span>. <em>Genomics, Proteomics &amp; Bioinformatics</em>, <em>14</em>(5), 265–279. <a href="https://doi.org/10.1016/j.gpb.2016.05.004">https://doi.org/10.1016/j.gpb.2016.05.004</a>
+</div>
+<div class="csl-entry">
+<em><span>LumbriBASE</span></em>. (n.d.). Retrieved November 30, 2024, from <a href="http://xyala2.bio.ed.ac.uk/Lumbribase/lumbribase_php/lumbribase.shtml">http://xyala2.bio.ed.ac.uk/Lumbribase/lumbribase_php/lumbribase.shtml</a>
+</div>
+<div class="csl-entry">
+ncbi.nlm.nih.gov. (n.d.). <em>The <span>NCBI Eukaryotic Genome Annotation Pipeline</span></em>. Retrieved November 25, 2024, from <a href="https://www.ncbi.nlm.nih.gov/refseq/annotation_euk/process/">https://www.ncbi.nlm.nih.gov/refseq/annotation_euk/process/</a>
+</div>
+<div class="csl-entry">
+Norris, A. L., Workman, R. E., Fan, Y., Eshleman, J. R., &amp; Timp, W. (2016). Nanopore sequencing detects structural variants in cancer. <em>Cancer Biology &amp; Therapy</em>, <em>17</em>(3), 246–253. <a href="https://doi.org/10.1080/15384047.2016.1139236">https://doi.org/10.1080/15384047.2016.1139236</a>
+</div>
+<div class="csl-entry">
+Pilato, G. (n.d.). <em>The significance of musculature in the origin of the Annelida</em>. Retrieved November 30, 2024, from <a href="http://ouci.dntb.gov.ua/en/works/ldperODl/">http://ouci.dntb.gov.ua/en/works/ldperODl/</a>
+</div>
+<div class="csl-entry">
+PubChem. (n.d.). <em><span>BTN1A1</span> - butyrophilin subfamily 1 member <span>A1</span> (human)</em>. Retrieved November 16, 2024, from <a href="https://pubchem.ncbi.nlm.nih.gov/gene/BTN1A1/human">https://pubchem.ncbi.nlm.nih.gov/gene/BTN1A1/human</a>
+</div>
+<div class="csl-entry">
+Rietveld, C. A., Medland, S. E., Derringer, J., Yang, J., Esko, T., Martin, N. W., Westra, H.-J., Shakhbazov, K., Abdellaoui, A., Agrawal, A., Albrecht, E., Alizadeh, B. Z., Amin, N., Barnard, J., Baumeister, S. E., Benke, K. S., Bielak, L. F., Boatman, J. A., Boyle, P. A., … Koellinger, P. D. (2013). <span>GWAS</span> of 126,559 <span>Individuals Identifies Genetic Variants Associated</span> with <span>Educational Attainment</span>. <em>Science</em>, <em>340</em>(6139), 1467–1471. <a href="https://doi.org/10.1126/science.1235488">https://doi.org/10.1126/science.1235488</a>
+</div>
+<div class="csl-entry">
+Short, S., Green Etxabe, A., Robinson, A., Spurgeon, D., &amp; Kille, P. (2023a). The genome sequence of the red compost earthworm, <span>Lumbricus</span> rubellus (<span>Hoffmeister</span>, 1843). <em>Wellcome Open Research</em>, <em>8</em>, 354. <a href="https://doi.org/10.12688/wellcomeopenres.19834.1">https://doi.org/10.12688/wellcomeopenres.19834.1</a>
+</div>
+<div class="csl-entry">
+Short, S., Green Etxabe, A., Robinson, A., Spurgeon, D., &amp; Kille, P. (2023b). The genome sequence of the red compost earthworm, <span>Lumbricus</span> rubellus (<span>Hoffmeister</span>, 1843). <em>Wellcome Open Research</em>, <em>8</em>, 354. <a href="https://doi.org/10.12688/wellcomeopenres.19834.1">https://doi.org/10.12688/wellcomeopenres.19834.1</a>
+</div>
+<div class="csl-entry">
+Stanke, M. (2005, February 4). <em>Augustus <span>Online</span></em> [Service]. <span>Institute for Mathematics and Computer Science, University of Greifswald</span>. <a href="https://bioinf.uni-greifswald.de/augustus/submission.php">https://bioinf.uni-greifswald.de/augustus/submission.php</a>
+</div>
+<div class="csl-entry">
+Tierney, N. (n.d.). <em>9 <span>Figures</span>, <span>Tables</span>, <span>Captions</span>. | <span>RMarkdown</span> for <span>Scientists</span></em>. Retrieved November 16, 2024, from <a href="https://rmd4sci.njtierney.com/">https://rmd4sci.njtierney.com/</a>
+</div>
+<div class="csl-entry">
+<em>Waterfall: Function introduction</em>. (n.d.). Retrieved November 16, 2024, from <a href="https://www.bioconductor.org/packages/devel/bioc/vignettes/GenVisR/inst/doc/waterfall_introduction.html">https://www.bioconductor.org/packages/devel/bioc/vignettes/GenVisR/inst/doc/waterfall_introduction.html</a>
+</div>
+<div class="csl-entry">
+Xiao, T., &amp; Zhou, W. (2020). The third generation sequencing: The advanced approach to genetic diseases. <em>Translational Pediatrics</em>, <em>9</em>(2), 163. <a href="https://doi.org/10.21037/tp.2020.03.06">https://doi.org/10.21037/tp.2020.03.06</a>
+</div>
+</div>
+
+</div>
+</div>
+<div id="footer">Copyright &copy;  Hogeschool Utrecht   DSFB2  <i class="fa-solid fa-webhook"></i> 2024  		</footer>
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="creating-r-packages.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

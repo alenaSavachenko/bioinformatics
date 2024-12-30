@@ -1,0 +1,40 @@
+--- 
+title: "Portfolio"
+author: "alena savachenko"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+bibliography: [bib/min_seq.bib, bib/genvisr.bib, bib/celegance.bib] 
+csl: assets/apa.csl
+
+
+output: 
+  bookdown::gitbook:
+    css: style.css
+    includes:
+      after_body: assets/html/after.html 
+    config:
+      toc:
+        before: |
+          <li class="toc-logo"><a href="./"><img src="assets/img/logo_toc.png"></a></li>
+          <li><a href="./">Data science for biology </a></li>
+
+    
+---
+
+# Introduction. CV
+
+<div class= "pd22">
+
+This is a Markdown document created as an introduction to a  data science portfolio.
+
+</div>
+
+
+<h3>  CV </h3>
+
+````{=html}
+```{r, echo=FALSE, results='asis'}
+xfun::file_string('assets/html/cv_index.html')
+```
+````
+

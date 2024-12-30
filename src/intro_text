@@ -1,0 +1,106 @@
+
+
+
+Интересный факт, В геноме человека вот в этих четырех миллиардах генетических буквах, 
+вот этом генетическом коде, содержится примерно 20 тысяч генов. То есть вот два процента генетического кода человека, в них,
+ в этих двух процентах записано 20 тысяч генов. То есть у нас в организме двадцать тысяч генов, но при этом в организме человека, 
+ в организме экспрессируется примерно 100 тысяч белков.
+ Но генов 20 тысяч, а экспрессируется 100 тысяч. И вот здесь на сцену выходит тот самый альтернативный сплайсинг.
+ кодирующая последовательность ДНК содержит вот эти самые гены. Там есть промоутерная область, есть терминаторная область.
+ И между промоутерной и терминаторной областью перемежаются экзоны и интроны. Экзоны это кодирующие кусочки ДНК, и интроны это некодирующие цепочки ДНК. 
+ При помощи процесса, который называется транскрипция, строится незрелая РНК, которая потом подвергается процессингу.
+ Одной из фаз процессинга является сплайсинг. Но вот сплайсинг может быть альтернативным., 
+ у нас есть всего лишь одна последовательность кодирующая, да, на ДНК, но мы смогли при помощи неё получить три разных белка. 
+ Да, они похожи друг на друга. Да, они, скорее всего, будут выполнять одну и ту же функцию в организме. 
+ Но одни белки, один вариант сплайсинга, экспрессируется в одном типе клеток, другой вариант сплайсинга в другом типе клеток. Или при каких-то разных условиях.
+ Или  допустим, в нейронах при таких-то условиях формируется вот такой-то белок, а в астроциктах при других условиях формируется другой вариант белка.
+ И все эти варианты белка выполняют схожие функции, но в разных клетках, в разных условиях. 
+ Вот это очень мощнейшая концепция, так скажем, биогенетического программирования. 
+ Фактически у нас есть одна кодирующая последовательность, то есть последовательность данных одна,
+ но из неё мы можем создавать несколько разных инструментов, которые используются в разных условиях.
+ 
+интроны полезны не только для того, чтобы скрывать в себе мутации, но и для того, чтобы создавать вот этот вот альтернативный сплайсинг. 
+Ну кстати, не каждая мутация, попавшая в интрон, как бы скрывается. Иногда мутации, попадающие в интрон, нарушают какие-то там регуляторные последовательности.
+ И нарушается вот этот вот самый альтернативный сплайсинг.
+ 
+ The interesting fact is that in the human genome, in these four billion genetic letters, 
+this genetic code, contains about 20,000 genes. So there's two percent of the human genetic code, there's 20,000 genes,
+ there are 20,000 genes in that two percent of the human genetic code. So we have 20,000 genes in the body, but in the human body, 
+ there's about 100,000 proteins expressed in the body.
+ But there are 20 thousand genes, but 100 thousand are expressed. And that's where alternative splicing comes in.
+ The DNA coding sequence contains these genes. There's a promoter region, there's a terminator region.
+ And between the promoter and terminator regions are interspersed exons and introns. Exons are the coding pieces of DNA, and introns are the non-coding DNA strands. 
+ Through a process called transcription, immature RNA is constructed, which is then subjected to processing.
+ One of the phases of processing is splicing. But splicing can be alternative, 
+ we've got just one sequence coding, yes, on DNA, but we've managed to use it to make three different proteins. 
+ Yes, they're similar to each other. Yes, they're likely to perform the same function in the body. 
+ But some proteins, one splicing variant, is expressed in one type of cell, another splicing variant in another type of cell. Or under some different conditions.
+ Or let's say that this protein is formed in neurons under such conditions, and another variant of the protein is formed in astrocytes under other conditions.
+ And all these protein variants perform similar functions, but in different cells, under different conditions. 
+ This is a very powerful concept of, so to speak, biogenetic programming. 
+ In fact, we have one coding sequence, so we have one data sequence,
+ but from that we can create a number of different tools that are used in different contexts.
+ 
+Introns are useful not only for hiding mutations, but also for creating this alternative splicing. 
+Well, by the way, not every mutation that gets into an intron is sort of hidden. Sometimes mutations that get into the intron disrupt some regulatory sequences.
+ And this very alternative splicing is disrupted.
+
+---
+
+ MSF-7 tumor cell line that were sequenced by MinION sequencer at the ILC Research Center.  
+ The aim of the study was to annotate, characterize and structure-transcriptome analysis of genes expressed during the development of tumor cells using RNA/cDNA nanopore sequencing technology (Oxford Nanopore Technologies).
+tumor cells using nanopore sequencing (Oxford Nanopore Technologies) RNA/cDNA technology.
+Sequencing results were compared with previously obtained results .... 
+ The aim of the  Chen () study was to identify the involvement of different proteins in the regulation of proliferation of breast adenocarcinoma cells of the MSF-7 cell line.
+ The purpose of this study was to obtain data on the expressed  genes of tumor cells, dynamics of their transcription and polymorphism.
+ Despite the available research on  tumor cell function remains open   the question of the mechanisms controlling cell proliferation and “escaping” from apoptotic death.
+Therefore, the study of molecular-genetic and transcriptional features of development of tumor cell lines is an urgent and highly demanded direction of modern research.
+At the same time, new technologies  long-read sequencing technologies  are improving the accuracy of genome annotation and detection of new transcripts, 
+including long non-coding RNAs (dnRNAs). Therefore, the use of third-generation sequencers to   
+characterization of the transcriptome and the study of structural features of oncogenes  is an important task, 
+the solution of which will provide new information on the genetic basis of cancer development.
+
+Third-generation sequencing provided information on genes involved in the process of tumor cell development.  In addition to the complexity and
+ polymorphism of the genes themselves involved in the  tumor cell development process, their study is complicated by the genomic
+organization of hybrid genes ( uppelmentory fiels, media-5.csv ), combines complex genomes, which makes annotation of its genome difficult.
+
+----
+For most eukaryotic cells, as well as prokaryotic cells,
+the transcription initiation stage is the main, major regulatory
+point of expression of gene activity.
+
+Nevertheless, there are significant differences: firstly, the location of transcription (in the nucleus) and translation (in the cytoplasm).
+The location of transcription (in the nucleus) and translation (in the cytoplasm); secondly, the activation of transcription in eukaryotes involves a multitude of complex steps.
+Secondly, the activation of transcription in eukaryotes is associated with many complex changes in chromatin structure in the trans-
+The activation of transcription in eukaryotes is associated with many complex changes in chromatin structure in the transcribed region; thirdly, in
+in eukaryotic cells, positive regulatory mechanisms prevail over negative ones.
+regulatory mechanisms over negative ones. Positive or negative regulation
+regulation is determined by the type of proteins involved in the regulatory mechanism
+
+Five regulatory proteins have also been identified and characterized in eukaryotes.
+proteins, called transcription factors (TF: IIA, IIB,
+IID, IIE and IIF). They are required for the recognition of a DNA site called TATA (concensus sequence).
+called TATA (concensus sequence, TATAAAAAA).
+
+
+Many eukaryotic genes that encode proteins and are transcribed by RNA polymerase II have several regions in their DNA that are recognized by RNA polymerase II.
+Many eukaryotic genes that encode proteins and are transkibbed by RNA polymerase II have several regions in their DNA that are recogniz-
+20
+20 recognized by different regulatory proteins. One of them is the region located near the promoter.
+near the promoter. It includes about 100 nucleotide pairs, including a TATA-block, which is located near the promoter.
+including a TATA-block located 25 nucleotide pairs away from the transcription start point.
+from the transcription start point. It has been found that for the successful attachment of the
+RNA polymerase II to the promoter requires the preliminary connection of a special protein to the TATA-block.
+TATA-block of a special protein - transcription factor - with the formation of a stable transcription complex.
+a stable transcription complex. It is this complex of DNA with
+protein is recognized by RNA polymerase II. Nucleotide sequences,
+adjacent to the TATA-block form the element required for transcription.
+element located upstream of the promoter.
+
+
+Another region, which plays an important role in the regulation of eukaryotic gene activity, 
+is located at a large distance from the promoter (up to several thousand nucleotide pairs) and is called an enhancer
+(Both the enhancer and the prepromoter element of eukaryotic genes contain a series of short nucleotide sequences that bind to the corresponding regulatory proteins.
+to the corresponding regulatory proteins. As a result of the interaction of these proteins, genes are turned on or off
+
+
